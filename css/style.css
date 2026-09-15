@@ -2,33 +2,34 @@
    루톤(ROOTON) 공통 디자인 시스템
    Growth Nutrition / 성장환경 영양
    - 성장의 숫자보다, 성장의 조건을 먼저
+   - 브랜드 컬러: ROOTON 로고 기반 (그린 + 차콜)
    ============================================================ */
 
 /* ---------- 변수 (디자인 토큰) ---------- */
 :root {
-  /* 브랜드 컬러 - 성장의 활력(오렌지) + 자연/건강(그린) */
-  --color-primary: #E86A33;        /* 메인 오렌지 */
-  --color-primary-dark: #C94F1E;   /* 오렌지 진함 */
-  --color-primary-light: #FDE9DE;  /* 오렌지 연함 */
-  --color-secondary: #4CAF7D;      /* 성장/자연 그린 */
-  --color-secondary-dark: #2E8B57;
-  --color-secondary-light: #E5F4EC;
+  /* 브랜드 컬러 - ROOTON 로고 기반 */
+  --color-primary: #5BBD72;        /* 메인 그린 (로고 라인/전원아이콘) */
+  --color-primary-dark: #3E9E56;   /* 그린 진함 */
+  --color-primary-light: #E8F5EC;  /* 그린 연함 */
+  --color-secondary: #3D3D3D;      /* 차콜 (로고 텍스트) */
+  --color-secondary-dark: #2A2A2A;
+  --color-secondary-light: #F0F0F0;
   --color-accent: #F5B301;         /* 포인트 골드 */
 
   /* 텍스트 */
-  --color-text: #2D2D2D;
+  --color-text: #3D3D3D;
   --color-text-light: #6C6C6C;
   --color-text-lighter: #9A9A9A;
   --color-white: #FFFFFF;
 
   /* 배경 */
   --color-bg: #FFFFFF;
-  --color-bg-light: #FAF7F2;       /* 따뜻한 크림 */
-  --color-bg-soft: #F5F0E8;
+  --color-bg-light: #F6FAF7;       /* 그린 틴트 크림 */
+  --color-bg-soft: #EFF7F1;
 
   /* 그라데이션 */
-  --gradient-primary: linear-gradient(90deg, #F5A623, #E86A33);
-  --gradient-cta: linear-gradient(90deg, #F5B301, #E86A33);
+  --gradient-primary: linear-gradient(135deg, #5BBD72, #3E9E56);
+  --gradient-cta: linear-gradient(90deg, #5BBD72, #3E9E56);
 
   /* 폰트 */
   --font-body: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
@@ -229,6 +230,12 @@ h4 { font-size: 1.2rem; }
   font-size: 1.5rem;
   font-weight: 800;
   color: var(--color-primary);
+}
+
+.logo__img {
+  height: 40px;
+  width: auto;
+  display: block;
 }
 
 .logo .logo__mark {

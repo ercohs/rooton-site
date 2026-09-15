@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>루톤 ROOTON | 상담문의</title>
+  <meta name="description" content="루톤(ROOTON) 구매 및 상담 문의. 아이의 성장환경에 대해 궁금한 점을 문의하세요.">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+
+  <!-- ================= 헤더 ================= -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <span class="logo__mark">🌱</span>
+        <span>루톤 <small>ROOTON</small></span>
+      </a>
+      <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav">
+        <a href="index.html" class="nav__link">홈</a>
+        <a href="product.html" class="nav__link">제품</a>
+        <a href="brand.html" class="nav__link">브랜드</a>
+        <a href="contact.html" class="nav__link">상담문의</a>
+        <a href="contact.html" class="nav__cta">무료 상담</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= 페이지 헤더 ================= -->
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow">CONTACT</span>
+      <h1>상담문의</h1>
+      <p>아이의 성장환경에 대해 궁금한 점을 문의하세요.</p>
+    </div>
+  </section>
+
+  <!-- ================= 상담 안내 ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-intro">
+        <div class="contact-intro__visual">
+          <div class="contact-visual-placeholder">💬</div>
+        </div>
+        <div class="contact-intro__content">
+          <span class="eyebrow">FREE COUNSELING</span>
+          <h2>무료 성장환경 상담</h2>
+          <p>
+            아이의 성장에 대해 고민이 많으신가요?<br>
+            루톤은 <strong>쉽게 믿지 않는 부모의 눈높이</strong>에서 정직하게 답합니다.
+          </p>
+          <p>
+            과장된 약속 대신, 아이의 성장환경을 위한<br>
+            검증된 정보와 상담을 제공합니다.
+          </p>
+          <div class="contact-channels">
+            <div class="contact-channel">
+              <span class="contact-channel__icon">📞</span>
+              <div>
+                <strong>전화 상담</strong>
+                <p>0000-0000</p>
+              </div>
+            </div>
+            <div class="contact-channel">
+              <span class="contact-channel__icon">✉️</span>
+              <div>
+                <strong>이메일</strong>
+                <p>help@rooton.co.kr</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 문의 폼 ================= -->
+  <section class="section section--light">
+    <div class="container">
+      <div class="section-title">
+        <span class="eyebrow">INQUIRY</span>
+        <h2>문의하기</h2>
+        <p>아래 양식을 작성해 주시면 빠르게 답변드리겠습니다.</p>
+      </div>
+      <div class="contact-form-wrap">
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" placeholder="성함을 입력해주세요" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">연락처</label>
+            <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
+          </div>
+          <div class="form-group">
+            <label for="email">이메일</label>
+            <input type="email" id="email" name="email" placeholder="example@email.com">
+          </div>
+          <div class="form-group">
+            <label for="child-age">아이 연령</label>
+            <select id="child-age" name="child-age">
+              <option value="">선택해주세요</option>
+              <option value="3-5">만 3~5세</option>
+              <option value="6-8">만 6~8세</option>
+              <option value="9-11">만 9~11세</option>
+              <option value="12-14">만 12~14세</option>
+              <option value="15+">만 15세 이상</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="inquiry-type">문의 유형</label>
+            <select id="inquiry-type" name="inquiry-type">
+              <option value="">선택해주세요</option>
+              <option value="product">제품 문의</option>
+              <option value="purchase">구매 상담</option>
+              <option value="trial">무료 체험</option>
+              <option value="etc">기타</option>
+            </select>
+          </div>
+          <div class="form-group form-group--full">
+            <label for="message">문의 내용</label>
+            <textarea id="message" name="message" rows="5" placeholder="궁금하신 점을 자세히 적어주세요" required></textarea>
+          </div>
+          <div class="form-group form-group--full">
+            <label class="checkbox-label">
+              <input type="checkbox" required>
+              <span>개인정보 수집 및 이용에 동의합니다.</span>
+            </label>
+          </div>
+          <div class="form-group form-group--full">
+            <button type="submit" class="btn btn--primary btn--block">문의 보내기</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <span class="eyebrow">FAQ</span>
+        <h2>자주 묻는 질문</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            루톤은 어떤 제품인가요?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>루톤은 성장환경 영양을 위한 브랜드입니다. 키 숫자만 보는 것이 아니라, 뼈가 자라고 영양을 흡수하고 몸이 건강하게 성장할 수 있는 매일의 조건을 관리하도록 돕습니다.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            WCO31은 어떤 원료인가요?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>WCO31은 성장에 관한 인체연구를 가진 핵심 원료입니다. 루톤은 "만능 원료"라고 과장하지 않고, 검증된 근거를 바탕으로 성장환경의 기초를 지원하는 원료로 소개합니다.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            구매는 어떻게 하나요?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>구매는 상담을 통해 진행됩니다. 상담문의를 남겨주시면 담당자가 연락드려 아이의 성장환경에 맞는 제품을 추천해 드립니다.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            무료 체험이 있나요?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>네, 무료 체험 프로그램이 있습니다. 상담문의를 통해 신청하실 수 있으며, 아이의 성장환경에 맞는 제품을 체험해 보실 수 있습니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 뉴스레터 ================= -->
+  <section class="newsletter">
+    <div class="container newsletter__inner">
+      <h3>성장환경 뉴스레터</h3>
+      <p>아이의 성장에 도움이 되는 건강 정보와 루톤 소식을 받아보세요.</p>
+      <form class="newsletter__form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='구독 완료 ✓';">
+        <input type="email" placeholder="이메일 주소" required>
+        <button type="submit" class="btn btn--primary">구독하기</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= 푸터 ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="logo">
+            <span class="logo__mark">🌱</span>
+            <span>루톤 <small>ROOTON</small></span>
+          </a>
+          <p>성장의 숫자보다, 성장의 조건을 먼저.<br>뼈가 자라고, 영양을 흡수하고, 몸이 건강하게 성장하는 매일의 조건을 관리합니다.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">바로가기</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">홈</a></li>
+            <li><a href="product.html">제품</a></li>
+            <li><a href="brand.html">브랜드</a></li>
+            <li><a href="contact.html">상담문의</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">고객지원</h4>
+          <ul class="footer__links">
+            <li><a href="contact.html">상담 신청</a></li>
+            <li><a href="contact.html">자주 묻는 질문</a></li>
+            <li><a href="contact.html">배송 안내</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">문의</h4>
+          <ul class="footer__links">
+            <li>고객센터: 0000-0000</li>
+            <li>평일 09:00 - 18:00</li>
+            <li><a href="mailto:help@rooton.co.kr">help@rooton.co.kr</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 루톤 ROOTON. All rights reserved.</p>
+        <p>본 제품은 의약품이 아닌 건강기능식품입니다.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

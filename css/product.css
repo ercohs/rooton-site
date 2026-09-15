@@ -1,0 +1,179 @@
+/* ============================================================
+   루톤 제품 페이지 전용 스타일
+   ============================================================ */
+
+/* ---------- 페이지 헤더 ---------- */
+.page-header {
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  padding: var(--space-xl) 0;
+  text-align: center;
+}
+
+.page-header .eyebrow {
+  color: var(--color-accent);
+}
+
+.page-header h1 {
+  color: var(--color-white);
+  font-size: 2.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.page-header p {
+  opacity: 0.95;
+  font-size: 1.1rem;
+}
+
+/* ---------- 제품 상세 ---------- */
+.product-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+  margin-bottom: var(--space-xl);
+}
+
+.product-detail:last-child {
+  margin-bottom: 0;
+}
+
+.product-detail--reverse .product-detail__visual {
+  order: 2;
+}
+
+.product-detail--reverse .product-detail__content {
+  order: 1;
+}
+
+.product-detail__visual {
+  aspect-ratio: 1/1;
+}
+
+.product-visual-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-light));
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  box-shadow: var(--shadow);
+}
+
+.product-tag {
+  display: inline-block;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.3rem 0.9rem;
+  border-radius: 50px;
+  margin-bottom: var(--space-sm);
+}
+
+.product-tag--green {
+  background: var(--color-secondary);
+}
+
+.product-tag--gold {
+  background: var(--color-accent);
+}
+
+.product-detail__content h2 {
+  font-size: 2rem;
+  margin-bottom: var(--space-xs);
+}
+
+.product-subtitle {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: var(--space-md);
+}
+
+.product-desc {
+  color: var(--color-text-light);
+  line-height: 1.9;
+  margin-bottom: var(--space-md);
+}
+
+.product-points {
+  margin-bottom: var(--space-lg);
+}
+
+.product-points li {
+  padding: 0.4rem 0;
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+
+.product-cta {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+/* ---------- 섭취 방법 ---------- */
+.how-to-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.how-to-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: all 0.3s;
+}
+
+.how-to-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.how-to-card__icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-sm);
+}
+
+.how-to-card h3 {
+  margin-bottom: var(--space-xs);
+}
+
+.how-to-card p {
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+}
+
+/* ---------- 반응형 ---------- */
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .product-detail {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .product-detail--reverse .product-detail__visual {
+    order: 1;
+  }
+
+  .product-detail--reverse .product-detail__content {
+    order: 2;
+  }
+
+  .product-detail__visual {
+    aspect-ratio: 4/3;
+  }
+
+  .how-to-grid {
+    grid-template-columns: 1fr;
+  }
+}

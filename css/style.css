@@ -283,6 +283,73 @@ h4 { font-size: 1.2rem; }
   width: 100%;
 }
 
+/* 드롭다운 메뉴 */
+.nav__item {
+  position: relative;
+}
+
+.nav__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--color-white);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+  padding: var(--space-xs) 0;
+  min-width: 160px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 200;
+}
+
+.nav__item:hover .nav__dropdown,
+.nav__item:focus-within .nav__dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav__dropdown a {
+  display: block;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+  transition: all 0.3s;
+}
+
+.nav__dropdown a:hover {
+  background: var(--color-bg-light);
+  color: var(--color-primary);
+}
+
+.nav__dropdown a.active {
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.nav__link--dropdown {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.nav__link--dropdown::after {
+  content: '▾';
+  font-size: 0.7rem;
+  position: static;
+  width: auto;
+  height: auto;
+  background: none;
+  transition: none;
+}
+
+.nav__link--dropdown:hover::after {
+  width: auto;
+}
+
 .nav__cta {
   padding: 0.6rem 1.5rem;
   font-size: 0.9rem;
@@ -594,6 +661,24 @@ h4 { font-size: 1.2rem; }
 
   .nav.is-open {
     transform: translateY(0);
+  }
+
+  .nav__item {
+    width: 100%;
+  }
+
+  .nav__dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    padding: 0 0 0 var(--space-md);
+    min-width: 0;
+  }
+
+  .nav__dropdown a {
+    padding: 0.5rem 0;
   }
 
   .nav-toggle {

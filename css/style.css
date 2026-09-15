@@ -7,29 +7,29 @@
 
 /* ---------- 변수 (디자인 토큰) ---------- */
 :root {
-  /* 브랜드 컬러 - ROOTON 로고 기반 */
-  --color-primary: #5BBD72;        /* 메인 그린 (로고 라인/전원아이콘) */
-  --color-primary-dark: #3E9E56;   /* 그린 진함 */
+  /* 브랜드 컬러 - ROOTON 로고 기반 (공식 BI 컬러) */
+  --color-primary: #55BE83;        /* 메인 그린 (ROOTON GREEN) */
+  --color-primary-dark: #1C6A4C;   /* 그린 진함 */
   --color-primary-light: #E8F5EC;  /* 그린 연함 */
-  --color-secondary: #3D3D3D;      /* 차콜 (로고 텍스트) */
-  --color-secondary-dark: #2A2A2A;
+  --color-secondary: #3F3F3F;      /* 차콜 (ROOTON CHARCOAL) */
+  --color-secondary-dark: #20252B;
   --color-secondary-light: #F0F0F0;
   --color-accent: #F5B301;         /* 포인트 골드 */
 
   /* 텍스트 */
-  --color-text: #3D3D3D;
+  --color-text: #3F3F3F;
   --color-text-light: #6C6C6C;
   --color-text-lighter: #9A9A9A;
   --color-white: #FFFFFF;
 
   /* 배경 */
   --color-bg: #FFFFFF;
-  --color-bg-light: #F6FAF7;       /* 그린 틴트 크림 */
+  --color-bg-light: #F7FAF8;       /* 그린 틴트 크림 */
   --color-bg-soft: #EFF7F1;
 
   /* 그라데이션 */
-  --gradient-primary: linear-gradient(135deg, #5BBD72, #3E9E56);
-  --gradient-cta: linear-gradient(90deg, #5BBD72, #3E9E56);
+  --gradient-primary: linear-gradient(135deg, #55BE83, #1C6A4C);
+  --gradient-cta: linear-gradient(90deg, #55BE83, #1C6A4C);
 
   /* 폰트 */
   --font-body: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;

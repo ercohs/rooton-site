@@ -1,0 +1,362 @@
+/* ============================================================
+   루톤 BI 페이지 전용 스타일
+   ============================================================ */
+
+/* ---------- BI 히어로 ---------- */
+.bi-hero {
+  background: linear-gradient(180deg, #fff 0%, #fbfdfc 100%);
+  border-bottom: 1px solid var(--color-secondary-light);
+  padding: var(--space-xl) 0;
+}
+
+.bi-hero__inner {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.bi-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--color-primary-dark);
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+
+.bi-eyebrow::before {
+  content: '';
+  width: 34px;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: 3px;
+}
+
+.bi-hero__title {
+  font-size: clamp(2.4rem, 5.1vw, 4.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-md);
+  font-weight: 800;
+  color: var(--color-secondary);
+}
+
+.bi-hero__highlight {
+  color: var(--color-primary-dark);
+  font-size: 0.8em;
+  line-height: 1.15;
+}
+
+.bi-hero__lead {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #50585F;
+  margin-bottom: var(--space-lg);
+  max-width: 700px;
+}
+
+.bi-hero__lead strong {
+  color: var(--color-primary-dark);
+}
+
+.bi-slogan {
+  display: inline-block;
+  padding: 13px 18px;
+  border-left: 4px solid var(--color-primary);
+  background: var(--color-bg-light);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+/* ---------- 로고 카드 ---------- */
+.bi-hero__visual {
+  display: flex;
+  justify-content: center;
+}
+
+.bi-logo-card {
+  background: #fff;
+  border: 1px solid var(--color-secondary-light);
+  border-radius: 24px;
+  padding: 34px;
+  box-shadow: 0 16px 50px rgba(28, 106, 76, 0.08);
+  max-width: 480px;
+  width: 100%;
+}
+
+.bi-logo-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bi-logo-note {
+  margin-top: 18px;
+  font-size: 0.8rem;
+  color: var(--color-text-lighter);
+  text-align: center;
+}
+
+/* ---------- 브랜드 의미 ---------- */
+.bi-meaning-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.bi-meaning-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-secondary-light);
+  border-radius: 20px;
+  padding: 28px;
+  min-height: 250px;
+  transition: all 0.3s;
+}
+
+.bi-meaning-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+
+.bi-meaning__label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  letter-spacing: 0.08em;
+  margin-bottom: 18px;
+  background: var(--color-primary-light);
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+}
+
+.bi-meaning__label--on {
+  background: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.bi-meaning-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: var(--color-secondary);
+}
+
+.bi-meaning-card p {
+  color: #596168;
+  font-size: 0.97rem;
+  line-height: 1.8;
+}
+
+/* ---------- 로고 상징 ---------- */
+.bi-symbol-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.bi-symbol {
+  background: var(--color-white);
+  border: 1px solid var(--color-secondary-light);
+  border-radius: 20px;
+  padding: 26px;
+  transition: all 0.3s;
+}
+
+.bi-symbol:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+
+.bi-symbol__shape {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.bi-r-mark {
+  font-size: 76px;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--color-secondary);
+  font-family: Arial, sans-serif;
+  position: relative;
+  display: inline-block;
+  transform: scaleX(0.88);
+  transform-origin: left center;
+}
+
+.bi-r-mark::after {
+  content: '';
+  position: absolute;
+  left: 42px;
+  bottom: 3px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 18px solid var(--color-primary);
+}
+
+.bi-line-mark {
+  width: 100%;
+  height: 12px;
+  background: var(--color-primary);
+  border-radius: 1px;
+}
+
+.bi-power-mark {
+  width: 70px;
+  height: 70px;
+  border: 11px solid var(--color-secondary);
+  border-top-color: transparent;
+  border-radius: 50%;
+  position: relative;
+}
+
+.bi-power-mark::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -16px;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 31px;
+  background: var(--color-primary);
+  border-radius: 2px;
+}
+
+.bi-symbol h3 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+  color: var(--color-secondary);
+}
+
+.bi-symbol p {
+  color: #5E666D;
+  font-size: 0.94rem;
+  line-height: 1.8;
+}
+
+/* ---------- 컬러 시스템 ---------- */
+.bi-color-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.bi-swatch {
+  border-radius: 20px;
+  padding: 28px;
+  min-height: 205px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.bi-swatch--green {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.bi-swatch--dark {
+  background: var(--color-secondary);
+  color: #fff;
+}
+
+.bi-swatch small {
+  opacity: 0.8;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+.bi-swatch strong {
+  font-size: 1.55rem;
+  margin-top: 6px;
+}
+
+.bi-swatch p {
+  margin: 8px 0 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  line-height: 1.7;
+}
+
+/* ---------- BI 스토리 ---------- */
+.bi-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 42px;
+  align-items: center;
+}
+
+.bi-quote {
+  font-size: 1.9rem;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  color: var(--color-secondary);
+  margin: 0;
+}
+
+.bi-quote strong {
+  color: var(--color-primary-dark);
+}
+
+.bi-story-copy p {
+  font-size: 1.05rem;
+  color: #5C646B;
+  margin-bottom: 14px;
+  line-height: 1.8;
+}
+
+.bi-story-copy p strong {
+  color: var(--color-secondary);
+}
+
+/* ---------- 반응형 ---------- */
+@media (max-width: 900px) {
+  .bi-hero {
+    padding: var(--space-lg) 0;
+  }
+
+  .bi-hero__inner {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .bi-logo-card {
+    max-width: 680px;
+  }
+
+  .bi-meaning-grid,
+  .bi-symbol-grid,
+  .bi-color-row,
+  .bi-story {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .bi-hero__lead {
+    font-size: 1rem;
+  }
+
+  .bi-slogan {
+    font-size: 0.95rem;
+  }
+
+  .bi-quote {
+    font-size: 1.5rem;
+  }
+
+  .bi-logo-card {
+    padding: 22px;
+    border-radius: 18px;
+  }
+}

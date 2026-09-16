@@ -83,6 +83,54 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // ---------- 루톤소개 탭 전환 ----------
+  const aboutTabs = document.querySelectorAll('.about-tab');
+  if (aboutTabs.length) {
+    aboutTabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        const target = tab.getAttribute('data-tab');
+        // 탭 활성화
+        aboutTabs.forEach(function (t) {
+          t.classList.remove('active');
+        });
+        tab.classList.add('active');
+        // 콘텐츠 전환
+        document.querySelectorAll('.about-tab-content').forEach(function (content) {
+          content.classList.remove('active');
+        });
+        const targetContent = document.getElementById('tab-' + target);
+        if (targetContent) {
+          targetContent.classList.add('active');
+        }
+      });
+    });
+  }
+
+  // ---------- 성장ON정보 블로그 카테고리 필터 ----------
+  const blogCats = document.querySelectorAll('.blog-cat');
+  if (blogCats.length) {
+    const blogItems = document.querySelectorAll('.blog-item');
+    blogCats.forEach(function (cat) {
+      cat.addEventListener('click', function () {
+        const category = cat.getAttribute('data-cat');
+        // 활성 카테고리 표시
+        blogCats.forEach(function (c) {
+          c.classList.remove('active');
+        });
+        cat.classList.add('active');
+        // 아이템 필터링
+        blogItems.forEach(function (item) {
+          const itemCat = item.getAttribute('data-cat');
+          if (category === 'all' || itemCat === category) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+      });
+    });
+  }
+
   // ---------- 문의 폼 (데모 - 실제 전송 없음) ----------
   const contactForm = document.querySelector('.contact-form');
   if (contactForm) {

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>루톤 ROOTON | 성장정보</title>
-  <meta name="description" content="루톤(ROOTON) 성장정보. 아이의 성장에 관한 최신 연구와 근거를 정직하게 소개합니다.">
+  <title>루톤 ROOTON | 성장ON정보</title>
+  <meta name="description" content="루톤(ROOTON) 성장ON정보. 아이의 성장에 관한 연구와 건강 정보를 블로그 형태로 제공합니다.">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -24,16 +24,9 @@
       <nav class="nav">
         <a href="index.html" class="nav__link">홈</a>
         <a href="product.html" class="nav__link">제품</a>
-        <div class="nav__item">
-          <a href="brand.html" class="nav__link nav__link--dropdown">브랜드</a>
-          <div class="nav__dropdown">
-            <a href="brand.html">브랜드 소개</a>
-            <a href="bi.html">BI</a>
-          </div>
-        </div>
-        <a href="growth.html" class="nav__link">성장정보</a>
+        <a href="about.html" class="nav__link">루톤소개</a>
+        <a href="growth.html" class="nav__link">성장ON정보</a>
         <a href="faq.html" class="nav__link">FAQ</a>
-        <a href="contact.html" class="nav__link">상담문의</a>
         <a href="contact.html" class="nav__cta">무료 상담</a>
       </nav>
     </div>
@@ -42,184 +35,255 @@
   <!-- ================= 페이지 헤더 ================= -->
   <section class="page-header">
     <div class="container">
-      <span class="eyebrow">GROWTH INSIGHT</span>
-      <h1>성장정보</h1>
-      <p>아이의 성장에 관한 최신 연구와 근거를 정직하게 소개합니다.</p>
+      <span class="eyebrow">GROWTH ON INFO</span>
+      <h1>성장ON정보</h1>
+      <p>아이의 성장에 관한 연구와 건강 정보를 나눕니다.</p>
     </div>
   </section>
 
-  <!-- ================= 주요 기사 ================= -->
+  <!-- ================= 블로그 리스트 ================= -->
   <section class="section">
     <div class="container">
-      <div class="section-title">
-        <span class="eyebrow">FEATURED</span>
-        <h2>성장에 관한 연구 이야기</h2>
-        <p>루톤은 과장된 약속 대신, 검증된 근거를 정직하게 전달합니다.</p>
+
+      <!-- 카테고리 필터 -->
+      <div class="blog-cats">
+        <button class="blog-cat active" data-cat="all">전체</button>
+        <button class="blog-cat" data-cat="research">연구·근거</button>
+        <button class="blog-cat" data-cat="health">성장환경</button>
+        <button class="blog-cat" data-cat="ingredient">원료</button>
       </div>
 
-      <!-- 주요 기사 1 -->
-      <article class="growth-article growth-article--featured">
-        <div class="growth-article__visual">
-          <div class="growth-visual-placeholder">🧬</div>
-        </div>
-        <div class="growth-article__content">
-          <span class="growth-article__tag">인체연구</span>
-          <h3>성장에 관한 인체연구, 왜 중요한가</h3>
-          <p class="growth-article__meta">2026.09.16 · 성장환경 영양</p>
-          <p class="growth-article__excerpt">
-            아이의 성장을 돕는 영양을 고를 때, 가장 먼저 확인해야 할 것은 무엇일까요?
-            많은 제품이 "효과"를 내세우지만, 그 근거가 인체를 대상으로 한 연구인지가 핵심입니다.
-            동물실험 결과와 인체연구 결과는 같은 의미가 아닙니다.
-          </p>
-          <p class="growth-article__excerpt">
-            루톤은 성장에 관한 <strong>인체연구를 가진 원료</strong>에 집중합니다.
-            검증된 근거를 바탕으로, 아이의 성장환경을 정직하게 지원합니다.
-          </p>
-          <a href="#research-detail" class="btn btn--primary">자세히 보기</a>
-        </div>
-      </article>
-    </div>
-  </section>
+      <!-- 블로그 리스트 -->
+      <div class="blog-list">
 
-  <!-- ================= 연구 근거 상세 ================= -->
-  <section class="section section--light" id="research-detail">
-    <div class="container">
-      <div class="section-title">
-        <span class="eyebrow">RESEARCH</span>
-        <h2>성장환경 연구 근거</h2>
-        <p>성장의 뿌리를 이루는 세 가지 조건과 관련된 연구를 소개합니다.</p>
-      </div>
-
-      <div class="research-grid">
-        <!-- 뼈 성장 -->
-        <article class="research-card">
-          <div class="research-card__icon">🦴</div>
-          <span class="research-card__category">뼈 성장</span>
-          <h3>뼈 성장의 기반</h3>
-          <p>
-            성장판이 건강하게 활동하기 위해서는 뼈 성장에 필요한 영양 환경이 중요합니다.
-            뼈는 성장의 기반이 되는 구조로, 성장기 아이에게 특히 중요한 시기입니다.
-          </p>
-          <div class="research-card__evidence">
-            <span class="evidence-badge">인체연구</span>
-            <span class="evidence-badge">동물연구</span>
+        <!-- 포스트 1: 인체연구 중요성 -->
+        <article class="blog-item" data-cat="research">
+          <div class="blog-item__thumb">
+            <span class="blog-thumb-icon">🧪</span>
           </div>
-        </article>
-
-        <!-- 영양 흡수 -->
-        <article class="research-card">
-          <div class="research-card__icon">💧</div>
-          <span class="research-card__category">영양 흡수</span>
-          <h3>장 건강과 흡수</h3>
-          <p>
-            아무리 좋은 영양도 흡수되지 않으면 의미가 없습니다.
-            장이 건강해야 먹은 영양이 몸에 흡수되고, 성장의 조건이 갖춰집니다.
-          </p>
-          <div class="research-card__evidence">
-            <span class="evidence-badge">인체연구</span>
-          </div>
-        </article>
-
-        <!-- 건강한 몸 -->
-        <article class="research-card">
-          <div class="research-card__icon">🛡️</div>
-          <span class="research-card__category">건강한 몸</span>
-          <h3>건강과 면역</h3>
-          <p>
-            아프지 않고 자라는 것이 성장의 바탕입니다.
-            건강한 몸이 유지될 때 성장의 기회를 놓치지 않습니다.
-          </p>
-          <div class="research-card__evidence">
-            <span class="evidence-badge">인체연구</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= WCO31 연구 ================= -->
-  <section class="section">
-    <div class="container">
-      <div class="section-title">
-        <span class="eyebrow">CORE INGREDIENT</span>
-        <h2>핵심 원료 WCO31의 연구 근거</h2>
-        <p>루톤의 핵심 원료 WCO31은 성장에 관한 인체연구를 가진 원료입니다.</p>
-      </div>
-
-      <div class="wco-research">
-        <div class="wco-research__header">
-          <span class="wco-research__badge">🔬</span>
-          <div>
-            <h3>WCO31 인체 적용 연구</h3>
-            <p>성장환경의 기초를 다지는 핵심 원료</p>
-          </div>
-        </div>
-        <div class="wco-research__body">
-          <div class="wco-research__point">
-            <span class="wco-research__num">01</span>
-            <div>
-              <h4>인체 대상 연구</h4>
-              <p>WCO31은 성장에 관한 인체 적용 연구를 바탕으로 한 원료입니다.</p>
+          <div class="blog-item__body">
+            <div class="blog-item__meta">
+              <span class="blog-tag">연구·근거</span>
+              <span class="blog-date">2026.09</span>
             </div>
+            <h2 class="blog-item__title">성장에 관한 인체연구, 왜 중요한가</h2>
+            <p class="blog-item__desc">
+              키 성장 제품을 고를 때 가장 먼저 확인해야 할 것은 '과연 사람에게 검증되었는가'입니다.
+              동물실험 결과와 인체 임상 결과는 다릅니다. 인체연구가 중요한 이유를 정리했습니다.
+            </p>
+            <a href="#" class="blog-item__more">자세히 보기 →</a>
           </div>
-          <div class="wco-research__point">
-            <span class="wco-research__num">02</span>
-            <div>
-              <h4>성장환경 집중</h4>
-              <p>키 숫자가 아닌, 성장의 조건을 지원하는 데 초점을 맞춥니다.</p>
-            </div>
-          </div>
-          <div class="wco-research__point">
-            <span class="wco-research__num">03</span>
-            <div>
-              <h4>정직한 소개</h4>
-              <p>루톤은 "만능 원료"라고 과장하지 않고, 검증된 근거를 정직하게 전달합니다.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        </article>
 
-  <!-- ================= 성장 정보 리스트 ================= -->
-  <section class="section section--soft">
-    <div class="container">
-      <div class="section-title">
-        <span class="eyebrow">GROWTH TIPS</span>
-        <h2>성장환경을 위한 건강 정보</h2>
-        <p>아이의 성장을 위한 매일의 작은 습관을 소개합니다.</p>
-      </div>
-      <div class="tip-grid">
-        <article class="tip-card">
-          <span class="tip-card__icon">😴</span>
-          <h3>충분한 수면</h3>
-          <p>성장호르몬은 주로 깊은 수면 중에 분비됩니다. 규칙적인 수면 습관이 중요합니다.</p>
+        <!-- 포스트 2: 뼈 성장의 기반 -->
+        <article class="blog-item" data-cat="health">
+          <div class="blog-item__thumb">
+            <span class="blog-thumb-icon">🦴</span>
+          </div>
+          <div class="blog-item__body">
+            <div class="blog-item__meta">
+              <span class="blog-tag">성장환경</span>
+              <span class="blog-date">2026.09</span>
+            </div>
+            <h2 class="blog-item__title">뼈 성장의 기반, 튼튼한 뼈가 성장의 시작</h2>
+            <p class="blog-item__desc">
+              키는 뼈가 자라는 과정입니다. 성장판이 건강하게 활동하려면 뼈의 기반이 되는 영양과
+              생활 습관이 중요합니다. 뼈 성장을 돕는 조건을 알아봅니다.
+            </p>
+            <a href="#" class="blog-item__more">자세히 보기 →</a>
+          </div>
         </article>
-        <article class="tip-card">
-          <span class="tip-card__icon">🏃</span>
-          <h3>규칙적인 운동</h3>
-          <p>점프, 달리기 등 뼈에 자극을 주는 운동은 성장판을 건강하게 유지하는 데 도움이 됩니다.</p>
+
+        <!-- 포스트 3: 장 건강과 흡수 -->
+        <article class="blog-item" data-cat="health">
+          <div class="blog-item__thumb">
+            <span class="blog-thumb-icon">💧</span>
+          </div>
+          <div class="blog-item__body">
+            <div class="blog-item__meta">
+              <span class="blog-tag">성장환경</span>
+              <span class="blog-date">2026.09</span>
+            </div>
+            <h2 class="blog-item__title">장이 건강해야 영양이 흡수됩니다</h2>
+            <p class="blog-item__desc">
+              아무리 좋은 영양제를 먹여도 장이 흡수하지 못하면 의미가 없습니다.
+              장 건강이 성장 영양 흡수에 미치는 영향과 관리 방법을 소개합니다.
+            </p>
+            <a href="#" class="blog-item__more">자세히 보기 →</a>
+          </div>
         </article>
-        <article class="tip-card">
-          <span class="tip-card__icon">🍎</span>
-          <h3>균형 잡힌 식사</h3>
-          <p>단백질, 칼슘, 비타민 등 성장에 필요한 영양을 골고루 섭취하는 것이 중요합니다.</p>
+
+        <!-- 포스트 4: 건강과 면역 -->
+        <article class="blog-item" data-cat="health">
+          <div class="blog-item__thumb">
+            <span class="blog-thumb-icon">🛡️</span>
+          </div>
+          <div class="blog-item__body">
+            <div class="blog-item__meta">
+              <span class="blog-tag">성장환경</span>
+              <span class="blog-date">2026.09</span>
+            </div>
+            <h2 class="blog-item__title">아프지 않고 자라는 것, 면역이 성장의 바탕</h2>
+            <p class="blog-item__desc">
+              아이가 아프면 성장도 멈춥니다. 건강한 몸이 성장의 바탕이 되는 이유와
+              면역력을 키우는 성장환경을 정리했습니다.
+            </p>
+            <a href="#" class="blog-item__more">자세히 보기 →</a>
+          </div>
         </article>
-        <article class="tip-card">
-          <span class="tip-card__icon">☀️</span>
-          <h3>햇빛과 야외활동</h3>
-          <p>햇빛을 통해 합성되는 비타민 D는 칼슘 흡수를 도와 뼈 건강에 중요합니다.</p>
+
+        <!-- 포스트 5: WCO31 연구 근거 -->
+        <article class="blog-item" data-cat="ingredient">
+          <div class="blog-item__thumb">
+            <span class="blog-thumb-icon">🌾</span>
+          </div>
+          <div class="blog-item__body">
+            <div class="blog-item__meta">
+              <span class="blog-tag">원료</span>
+              <span class="blog-date">2026.09</span>
+            </div>
+            <h2 class="blog-item__title">핵심 원료 WCO31의 연구 근거</h2>
+            <p class="blog-item__desc">
+              루톤의 핵심 원료 WCO31은 성장에 관한 인체연구를 가진 원료입니다.
+              WCO31이 어떤 연구를 바탕으로 하는지 정직하게 소개합니다.
+            </p>
+            <a href="#" class="blog-item__more">자세히 보기 →</a>
+          </div>
         </article>
-        <article class="tip-card">
-          <span class="tip-card__icon">💧</span>
-          <h3>수분 섭취</h3>
-          <p>충분한 수분 섭취는 신진대사와 영양 흡수에 도움이 됩니다.</p>
+
+        <!-- 포스트 6: 충분한 수면 -->
+        <article class="blog-item" data-cat="health">
+          <div class="blog-item__thumb">
+            <span class="blog-thumb-icon">😴</span>
+          </div>
+          <div class="blog-item__body">
+            <div class="blog-item__meta">
+              <span class="blog-tag">성장환경</span>
+              <span class="blog-date">2026.09</span>
+            </div>
+            <h2 class="blog-item__title">성장호르몬이 분비되는 시간, 충분한 수면</h2>
+            <p class="blog-item__desc">
+              성장호르몬은 잠자는 동안 가장 많이 분비됩니다. 아이의 성장을 위한
+              수면 습관과 권장 수면 시간을 알아봅니다.
+            </p>
+            <a href="#" class="blog-item__more">자세히 보기 →</a>
+          </div>
         </article>
-        <article class="tip-card">
-          <span class="tip-card__icon">🧘</span>
-          <h3>바른 자세</h3>
-          <p>바른 자세는 척추 건강을 유지하고, 성장에 긍정적인 영향을 줍니다.</p>
+
+        <!-- 포스트 7: 규칙적인 운동 -->
+        <article class="blog-item" data-cat="health">
+          <div class="blog-item__thumb">
+            <span class="blog-thumb-icon">🏃</span>
+          </div>
+          <div class="blog-item__body">
+            <div class="blog-item__meta">
+              <span class="blog-tag">성장환경</span>
+              <span class="blog-date">2026.09</span>
+            </div>
+            <h2 class="blog-item__title">성장판을 자극하는 규칙적인 운동</h2>
+            <p class="blog-item__desc">
+              점프, 스트레칭 같은 운동은 성장판을 자극하고 성장호르몬 분비를 돕습니다.
+              아이의 성장에 좋은 운동 습관을 소개합니다.
+            </p>
+            <a href="#" class="blog-item__more">자세히 보기 →</a>
+          </div>
         </article>
+
+        <!-- 포스트 8: 균형 잡힌 식사 -->
+        <article class="blog-item" data-cat="health">
+          <div class="blog-item__thumb">
+            <span class="blog-thumb-icon">🥗</span>
+          </div>
+          <div class="blog-item__body">
+            <div class="blog-item__meta">
+              <span class="blog-tag">성장환경</span>
+              <span class="blog-date">2026.09</span>
+            </div>
+            <h2 class="blog-item__title">성장을 위한 균형 잡힌 식사</h2>
+            <p class="blog-item__desc">
+              단백질, 칼슘, 비타민D 등 성장에 필요한 영양소를 골고루 섭취하는 방법을
+              아이의 눈높이에 맞춰 알려드립니다.
+            </p>
+            <a href="#" class="blog-item__more">자세히 보기 →</a>
+          </div>
+        </article>
+
+        <!-- 포스트 9: 햇빛과 야외활동 -->
+        <article class="blog-item" data-cat="health">
+          <div class="blog-item__thumb">
+            <span class="blog-thumb-icon">☀️</span>
+          </div>
+          <div class="blog-item__body">
+            <div class="blog-item__meta">
+              <span class="blog-tag">성장환경</span>
+              <span class="blog-date">2026.09</span>
+            </div>
+            <h2 class="blog-item__title">햇빛과 야외활동, 비타민D의 자연 공급원</h2>
+            <p class="blog-item__desc">
+              햇빛을 쬐면 피부에서 비타민D가 합성됩니다. 비타민D는 칼슘 흡수를 도와
+              뼈 성장에 중요합니다. 야외활동의 중요성을 알아봅니다.
+            </p>
+            <a href="#" class="blog-item__more">자세히 보기 →</a>
+          </div>
+        </article>
+
+        <!-- 포스트 10: 수분 섭취 -->
+        <article class="blog-item" data-cat="health">
+          <div class="blog-item__thumb">
+            <span class="blog-thumb-icon">💦</span>
+          </div>
+          <div class="blog-item__body">
+            <div class="blog-item__meta">
+              <span class="blog-tag">성장환경</span>
+              <span class="blog-date">2026.09</span>
+            </div>
+            <h2 class="blog-item__title">성장에도 중요한 수분 섭취</h2>
+            <p class="blog-item__desc">
+              아이 몸의 70%는 물입니다. 수분이 부족하면 영양소 운반과 대사가 느려집니다.
+              아이의 올바른 수분 섭취 습관을 소개합니다.
+            </p>
+            <a href="#" class="blog-item__more">자세히 보기 →</a>
+          </div>
+        </article>
+
+        <!-- 포스트 11: 바른 자세 -->
+        <article class="blog-item" data-cat="health">
+          <div class="blog-item__thumb">
+            <span class="blog-thumb-icon">🧍</span>
+          </div>
+          <div class="blog-item__body">
+            <div class="blog-item__meta">
+              <span class="blog-tag">성장환경</span>
+              <span class="blog-date">2026.09</span>
+            </div>
+            <h2 class="blog-item__title">바른 자세가 키 성장에 미치는 영향</h2>
+            <p class="blog-item__desc">
+              구부정한 자세는 척추를 압박해 실제 키보다 작아 보이게 합니다.
+              바른 자세 습관이 성장에 좋은 이유를 알아봅니다.
+            </p>
+            <a href="#" class="blog-item__more">자세히 보기 →</a>
+          </div>
+        </article>
+
+        <!-- 포스트 12: 성장환경 연구 -->
+        <article class="blog-item" data-cat="research">
+          <div class="blog-item__thumb">
+            <span class="blog-thumb-icon">📊</span>
+          </div>
+          <div class="blog-item__body">
+            <div class="blog-item__meta">
+              <span class="blog-tag">연구·근거</span>
+              <span class="blog-date">2026.09</span>
+            </div>
+            <h2 class="blog-item__title">성장환경 연구 근거, 뼈·장·면역</h2>
+            <p class="blog-item__desc">
+              최근 연구들은 키 성장이 단순히 '키만'의 문제가 아니라 뼈 성장, 장 건강,
+              면역이라는 성장환경 전체의 문제임을 보여줍니다. 연구 근거를 정리했습니다.
+            </p>
+            <a href="#" class="blog-item__more">자세히 보기 →</a>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
@@ -251,11 +315,10 @@
           <ul class="footer__links">
             <li><a href="index.html">홈</a></li>
             <li><a href="product.html">제품</a></li>
-            <li><a href="brand.html">브랜드</a></li>
-            <li><a href="bi.html">BI</a></li>
-            <li><a href="growth.html">성장정보</a></li>
+            <li><a href="about.html">루톤소개</a></li>
+            <li><a href="growth.html">성장ON정보</a></li>
             <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact.html">상담문의</a></li>
+            <li><a href="contact.html">무료 상담</a></li>
           </ul>
         </div>
         <div>

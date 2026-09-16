@@ -1,0 +1,525 @@
+/* ============================================================
+   루톤 CSS 그래픽 컴포넌트
+   이미지 파일 없이 브랜드 컬러로 만든 일러스트
+   ============================================================ */
+
+/* ============================================================
+   1. 제품 용기 일러스트 (CSS)
+   - 루톤 성장환경 영양 (그린 용기)
+   ============================================================ */
+.product-illustration {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-light));
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+/* 용기 */
+.product-illustration .jar {
+  position: relative;
+  width: 150px;
+  height: 210px;
+  background: linear-gradient(145deg, #ffffff 0%, #e8f5ec 100%);
+  border-radius: 18px 18px 26px 26px;
+  box-shadow: 0 20px 40px rgba(28, 106, 76, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+
+.product-illustration:hover .jar {
+  transform: translateY(-6px) scale(1.02);
+}
+
+/* 용기 뚜껑 */
+.product-illustration .jar::before {
+  content: '';
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 170px;
+  height: 34px;
+  background: linear-gradient(90deg, var(--color-primary-dark), var(--color-primary));
+  border-radius: 12px 12px 4px 4px;
+  box-shadow: 0 4px 10px rgba(28, 106, 76, 0.3);
+}
+
+/* 용기 라벨 */
+.product-illustration .jar::after {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 12px;
+  right: 12px;
+  height: 130px;
+  background: var(--color-white);
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 2px rgba(85, 190, 131, 0.15);
+}
+
+/* 용기 안의 내용물 (파우더) */
+.product-illustration .jar .powder {
+  position: absolute;
+  bottom: 18px;
+  left: 20px;
+  right: 20px;
+  height: 26px;
+  background: linear-gradient(90deg, #d4ecd9, #c5e5cd, #d4ecd9);
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+/* 용기 라벨 텍스트 */
+.product-illustration .jar .label-text {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 2;
+}
+
+.product-illustration .jar .label-text .brand {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  letter-spacing: 0.12em;
+}
+
+.product-illustration .jar .label-text .product-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-top: 6px;
+  line-height: 1.3;
+  padding: 0 15px;
+}
+
+.product-illustration .jar .label-text .leaf {
+  font-size: 1.6rem;
+  margin-top: 8px;
+}
+
+/* 배경 장식 - 잎사귀 */
+.product-illustration .deco-leaf {
+  position: absolute;
+  font-size: 2.5rem;
+  opacity: 0.35;
+}
+
+.product-illustration .deco-leaf--1 {
+  top: 20px;
+  left: 25px;
+  transform: rotate(-20deg);
+}
+
+.product-illustration .deco-leaf--2 {
+  bottom: 25px;
+  right: 30px;
+  transform: rotate(25deg);
+}
+
+.product-illustration .deco-leaf--3 {
+  top: 40%;
+  right: 15px;
+  transform: rotate(15deg);
+  font-size: 1.8rem;
+}
+
+/* ============================================================
+   2. 제품 박스 일러스트 (플러스)
+   ============================================================ */
+.product-illustration--box .box {
+  position: relative;
+  width: 170px;
+  height: 200px;
+  background: linear-gradient(145deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(28, 106, 76, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+
+.product-illustration--box:hover .box {
+  transform: translateY(-6px) scale(1.02);
+}
+
+/* 박스 상단 플랩 */
+.product-illustration--box .box::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 186px;
+  height: 24px;
+  background: linear-gradient(90deg, var(--color-primary-dark), var(--color-primary));
+  border-radius: 6px 6px 0 0;
+}
+
+/* 박스 라벨 */
+.product-illustration--box .box .box-label {
+  position: absolute;
+  top: 30px;
+  left: 14px;
+  right: 14px;
+  height: 120px;
+  background: var(--color-white);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-illustration--box .box .box-label .brand {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  letter-spacing: 0.12em;
+}
+
+.product-illustration--box .box .box-label .product-name {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-top: 5px;
+  text-align: center;
+  padding: 0 10px;
+  line-height: 1.3;
+}
+
+.product-illustration--box .box .box-label .leaf {
+  font-size: 1.5rem;
+  margin-top: 6px;
+}
+
+/* ============================================================
+   3. 제품 스틱 일러스트 (키즈)
+   ============================================================ */
+.product-illustration--stick .stick {
+  position: relative;
+  width: 120px;
+  height: 200px;
+  background: linear-gradient(145deg, var(--color-white) 0%, #e8f5ec 100%);
+  border-radius: 60px 60px 24px 24px;
+  box-shadow: 0 20px 40px rgba(28, 106, 76, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+
+.product-illustration--stick:hover .stick {
+  transform: translateY(-6px) scale(1.02);
+}
+
+/* 스틱 상단 */
+.product-illustration--stick .stick::before {
+  content: '';
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 28px;
+  background: linear-gradient(90deg, var(--color-primary-dark), var(--color-primary));
+  border-radius: 50px 50px 4px 4px;
+}
+
+/* 스틱 라벨 */
+.product-illustration--stick .stick .stick-label {
+  position: absolute;
+  top: 40px;
+  left: 12px;
+  right: 12px;
+  height: 110px;
+  background: var(--color-white);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 0 2px rgba(85, 190, 131, 0.1);
+}
+
+.product-illustration--stick .stick .stick-label .brand {
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  letter-spacing: 0.1em;
+}
+
+.product-illustration--stick .stick .stick-label .product-name {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-top: 5px;
+  text-align: center;
+  padding: 0 8px;
+  line-height: 1.3;
+}
+
+.product-illustration--stick .stick .stick-label .leaf {
+  font-size: 1.4rem;
+  margin-top: 6px;
+}
+
+/* ============================================================
+   4. 성장/뿌리 일러스트 (히어로, 브랜드, 성장정보)
+   ============================================================ */
+.growth-illustration {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-light));
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+/* 뿌리/새싹 */
+.growth-illustration .sprout {
+  position: relative;
+  width: 120px;
+  height: 160px;
+}
+
+.growth-illustration .sprout .stem {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 110px;
+  background: linear-gradient(180deg, var(--color-primary), var(--color-primary-dark));
+  border-radius: 3px;
+}
+
+.growth-illustration .sprout .leaf-left {
+  position: absolute;
+  bottom: 75px;
+  left: 40px;
+  width: 45px;
+  height: 25px;
+  background: var(--color-primary);
+  border-radius: 0 50% 0 50%;
+  transform: rotate(-25deg);
+  box-shadow: 0 4px 8px rgba(28, 106, 76, 0.2);
+}
+
+.growth-illustration .sprout .leaf-right {
+  position: absolute;
+  bottom: 95px;
+  right: 40px;
+  width: 45px;
+  height: 25px;
+  background: var(--color-primary-dark);
+  border-radius: 50% 0 50% 0;
+  transform: rotate(25deg);
+  box-shadow: 0 4px 8px rgba(28, 106, 76, 0.2);
+}
+
+.growth-illustration .sprout .leaf-top {
+  position: absolute;
+  bottom: 115px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 22px;
+  background: var(--color-primary);
+  border-radius: 50% 50% 0 0;
+}
+
+/* 뿌리 */
+.growth-illustration .sprout .roots {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 30px;
+}
+
+.growth-illustration .sprout .roots::before,
+.growth-illustration .sprout .roots::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 4px;
+  height: 28px;
+  background: var(--color-primary-dark);
+  border-radius: 2px;
+}
+
+.growth-illustration .sprout .roots::before {
+  left: 20px;
+  transform: rotate(-15deg);
+}
+
+.growth-illustration .sprout .roots::after {
+  right: 20px;
+  transform: rotate(15deg);
+}
+
+/* 토양 */
+.growth-illustration .soil {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(180deg, var(--color-primary-dark), var(--color-secondary-dark));
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+/* ON 스위치 */
+.growth-illustration .power {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  border: 6px solid var(--color-primary);
+  border-top-color: transparent;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.growth-illustration .power::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 18px;
+  background: var(--color-primary);
+  border-radius: 2px;
+}
+
+/* ============================================================
+   5. 상담/채팅 일러스트
+   ============================================================ */
+.contact-illustration {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-light));
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+/* 채팅 버블 */
+.contact-illustration .chat-bubble {
+  position: relative;
+  background: var(--color-white);
+  border-radius: 18px;
+  padding: 20px 24px;
+  box-shadow: 0 12px 30px rgba(28, 106, 76, 0.15);
+  max-width: 220px;
+}
+
+.contact-illustration .chat-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 30px;
+  width: 24px;
+  height: 24px;
+  background: var(--color-white);
+  border-radius: 0 0 50% 0;
+  transform: rotate(45deg);
+}
+
+.contact-illustration .chat-bubble .chat-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  margin-bottom: 8px;
+}
+
+.contact-illustration .chat-bubble .chat-text {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+/* 말풍선 장식 */
+.contact-illustration .chat-bubble--small {
+  position: absolute;
+  background: var(--color-white);
+  border-radius: 14px;
+  padding: 12px 16px;
+  box-shadow: 0 8px 20px rgba(28, 106, 76, 0.12);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.contact-illustration .chat-bubble--small.s1 {
+  top: 30px;
+  right: 40px;
+}
+
+.contact-illustration .chat-bubble--small.s2 {
+  bottom: 30px;
+  left: 40px;
+}
+
+/* ============================================================
+   6. 반응형
+   ============================================================ */
+@media (max-width: 768px) {
+  .product-illustration,
+  .growth-illustration,
+  .contact-illustration {
+    min-height: 200px;
+  }
+
+  .product-illustration .jar {
+    width: 120px;
+    height: 170px;
+  }
+
+  .product-illustration .jar::before {
+    width: 140px;
+    height: 28px;
+    top: -18px;
+  }
+
+  .product-illustration .jar::after {
+    top: 32px;
+    height: 105px;
+  }
+
+  .product-illustration--box .box {
+    width: 140px;
+    height: 165px;
+  }
+
+  .product-illustration--stick .stick {
+    width: 100px;
+    height: 165px;
+  }
+}

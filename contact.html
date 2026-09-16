@@ -46,14 +46,14 @@
     <div class="container">
 
       <!-- 탭 버튼 -->
-      <div class="contact-tabs">
-        <button class="contact-tab active" data-tab="growth">성장상담</button>
-        <button class="contact-tab" data-tab="ingredient">원료문의</button>
-        <button class="contact-tab" data-tab="hospital">병의원입점문의</button>
+      <div class="contact-cats">
+        <button class="contact-cat active" data-cat="growth">성장상담</button>
+        <button class="contact-cat" data-cat="ingredient">원료문의</button>
+        <button class="contact-cat" data-cat="hospital">병의원입점문의</button>
       </div>
 
       <!-- ===== 성장상담 탭 ===== -->
-      <div class="contact-tab-content active" id="tab-growth">
+      <div class="contact-content active" data-cat="growth">
 
         <!-- 상담 안내 -->
         <div class="contact-intro">
@@ -153,7 +153,7 @@
       </div>
 
       <!-- ===== 원료문의 탭 ===== -->
-      <div class="contact-tab-content" id="tab-ingredient">
+      <div class="contact-content" data-cat="ingredient">
 
         <!-- 원료 안내 -->
         <div class="contact-intro">
@@ -242,7 +242,7 @@
       </div>
 
       <!-- ===== 병의원입점문의 탭 ===== -->
-      <div class="contact-tab-content" id="tab-hospital">
+      <div class="contact-content" data-cat="hospital">
 
         <!-- 병의원 안내 -->
         <div class="contact-intro">

@@ -3,7 +3,7 @@
    ============================================================ */
 
 /* ---------- 탭 UI ---------- */
-.contact-tabs {
+.contact-cats {
   display: flex;
   justify-content: center;
   gap: var(--space-sm);
@@ -12,7 +12,7 @@
   padding-bottom: 0;
 }
 
-.contact-tab {
+.contact-cat {
   padding: 0.9rem 2rem;
   font-size: 1.05rem;
   font-weight: 700;
@@ -25,20 +25,20 @@
   cursor: pointer;
 }
 
-.contact-tab:hover {
+.contact-cat:hover {
   color: var(--color-primary);
 }
 
-.contact-tab.active {
+.contact-cat.active {
   color: var(--color-primary);
   border-bottom-color: var(--color-primary);
 }
 
-.contact-tab-content {
+.contact-content {
   display: none;
 }
 
-.contact-tab-content.active {
+.contact-content.active {
   display: block;
 }
 
@@ -294,11 +294,11 @@
     font-size: 2rem;
   }
 
-  .contact-tabs {
+  .contact-cats {
     gap: var(--space-xs);
   }
 
-  .contact-tab {
+  .contact-cat {
     padding: 0.7rem 1.2rem;
     font-size: 0.95rem;
   }

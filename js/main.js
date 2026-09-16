@@ -106,25 +106,27 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ---------- 상담/문의 탭 전환 ----------
-  const contactTabs = document.querySelectorAll('.contact-tab');
-  if (contactTabs.length) {
-    contactTabs.forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        const target = tab.getAttribute('data-tab');
-        // 탭 활성화
-        contactTabs.forEach(function (t) {
-          t.classList.remove('active');
+  // ---------- 상담/문의 탭 전환 (GROW ON TIP 방식) ----------
+  const contactCats = document.querySelectorAll('.contact-cat');
+  if (contactCats.length) {
+    const contactContents = document.querySelectorAll('.contact-content');
+    contactCats.forEach(function (cat) {
+      cat.addEventListener('click', function () {
+        const category = cat.getAttribute('data-cat');
+        // 활성 카테고리 표시
+        contactCats.forEach(function (c) {
+          c.classList.remove('active');
         });
-        tab.classList.add('active');
-        // 콘텐츠 전환
-        document.querySelectorAll('.contact-tab-content').forEach(function (content) {
-          content.classList.remove('active');
+        cat.classList.add('active');
+        // 콘텐츠 전환 (숨기기/보이기)
+        contactContents.forEach(function (content) {
+          const contentCat = content.getAttribute('data-cat');
+          if (category === contentCat) {
+            content.classList.add('active');
+          } else {
+            content.classList.remove('active');
+          }
         });
-        const targetContent = document.getElementById('tab-' + target);
-        if (targetContent) {
-          targetContent.classList.add('active');
-        }
       });
     });
   }

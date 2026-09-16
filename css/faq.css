@@ -1,0 +1,159 @@
+/* ============================================================
+   루톤 FAQ 페이지 전용 스타일
+   ============================================================ */
+
+/* ---------- 페이지 헤더 ---------- */
+.page-header {
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  padding: var(--space-xl) 0;
+  text-align: center;
+}
+
+.page-header .eyebrow {
+  color: var(--color-accent);
+}
+
+.page-header h1 {
+  color: var(--color-white);
+  font-size: 2.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.page-header p {
+  opacity: 0.95;
+  font-size: 1.1rem;
+}
+
+/* ---------- FAQ 카테고리 ---------- */
+.faq-categories {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-lg);
+}
+
+.faq-cat {
+  padding: 0.6rem 1.5rem;
+  border: 2px solid var(--color-secondary-light);
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-light);
+  background: var(--color-white);
+  transition: all 0.3s;
+}
+
+.faq-cat:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.faq-cat.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ---------- FAQ 리스트 ---------- */
+.faq-list {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border: 2px solid var(--color-secondary-light);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-sm);
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.faq-item.active {
+  border-color: var(--color-primary);
+}
+
+.faq-item.hidden {
+  display: none;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: left;
+  background: var(--color-white);
+  color: var(--color-text);
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 var(--space-md);
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px;
+  padding: 0 var(--space-md) var(--space-md);
+}
+
+.faq-answer p {
+  color: var(--color-text-light);
+  line-height: 1.8;
+  font-size: 0.95rem;
+  border-top: 1px solid var(--color-secondary-light);
+  padding-top: var(--space-sm);
+}
+
+/* ---------- 추가 문의 CTA ---------- */
+.faq-cta {
+  text-align: center;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: var(--space-xl) var(--space-lg);
+  box-shadow: var(--shadow);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.faq-cta h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.faq-cta p {
+  color: var(--color-text-light);
+  margin-bottom: var(--space-lg);
+}
+
+/* ---------- 반응형 ---------- */
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .faq-categories {
+    gap: var(--space-xs);
+  }
+
+  .faq-cat {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}

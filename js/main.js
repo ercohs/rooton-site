@@ -58,6 +58,31 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  // ---------- FAQ 카테고리 필터 ----------
+  const faqCats = document.querySelectorAll('.faq-cat');
+  if (faqCats.length) {
+    faqCats.forEach(function (cat) {
+      cat.addEventListener('click', function () {
+        const category = cat.getAttribute('data-cat');
+        // 활성 카테고리 표시
+        faqCats.forEach(function (c) {
+          c.classList.remove('active');
+        });
+        cat.classList.add('active');
+        // 아이템 필터링
+        faqItems.forEach(function (item) {
+          const itemCat = item.getAttribute('data-cat');
+          if (category === 'all' || itemCat === category) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+            item.classList.remove('active');
+          }
+        });
+      });
+    });
+  }
+
   // ---------- 문의 폼 (데모 - 실제 전송 없음) ----------
   const contactForm = document.querySelector('.contact-form');
   if (contactForm) {

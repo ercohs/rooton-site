@@ -228,6 +228,26 @@
   padding-top: var(--space-sm);
 }
 
+/* ---------- FAQ 안내 CTA ---------- */
+.faq-cta {
+  text-align: center;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: var(--space-xl) var(--space-lg);
+  box-shadow: var(--shadow);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.faq-cta h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.faq-cta p {
+  color: var(--color-text-light);
+  margin-bottom: var(--space-lg);
+}
+
 /* ---------- 반응형 ---------- */
 @media (max-width: 768px) {
   .page-header h1 {

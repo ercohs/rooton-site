@@ -1,121 +1,248 @@
 /* ============================================================
    루톤 제품 페이지 전용 스타일
+   (horlicks 컬렉션 페이지 레이아웃 참고)
    ============================================================ */
 
-/* ---------- 페이지 헤더 ---------- */
-.page-header {
+/* ============================================================
+   히어로 배너 (컬렉션 히어로)
+   ============================================================ */
+.collection-hero {
   background: var(--gradient-primary);
   color: var(--color-white);
   padding: var(--space-xl) 0;
-  text-align: center;
 }
 
-.page-header .eyebrow {
+.collection-hero__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.collection-hero__content .eyebrow {
+  color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+}
+
+.collection-hero__content h1 {
+  color: var(--color-white);
+  font-size: 2.8rem;
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+}
+
+.collection-hero__highlight {
   color: var(--color-accent);
 }
 
-.page-header h1 {
-  color: var(--color-white);
-  font-size: 2.5rem;
-  margin-bottom: var(--space-sm);
-}
-
-.page-header p {
+.collection-hero__content p {
   opacity: 0.95;
   font-size: 1.1rem;
+  line-height: 1.8;
 }
 
-/* ---------- 제품 상세 ---------- */
-.product-detail {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
-  align-items: center;
-  margin-bottom: var(--space-xl);
-}
-
-.product-detail:last-child {
-  margin-bottom: 0;
-}
-
-.product-detail--reverse .product-detail__visual {
-  order: 2;
-}
-
-.product-detail--reverse .product-detail__content {
-  order: 1;
-}
-
-.product-detail__visual {
-  aspect-ratio: 1/1;
-}
-
-.product-visual-placeholder {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-light));
-  border-radius: var(--radius);
+/* 히어로 제품 이미지 */
+.collection-hero__visual {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 6rem;
-  box-shadow: var(--shadow);
 }
 
-.product-tag {
-  display: inline-block;
-  background: var(--color-primary);
-  color: var(--color-white);
-  font-size: 0.8rem;
-  font-weight: 700;
-  padding: 0.3rem 0.9rem;
-  border-radius: 50px;
-  margin-bottom: var(--space-sm);
+.collection-hero__products {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: flex-end;
 }
 
-.product-tag--green {
-  background: var(--color-secondary);
+.hero-product {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  backdrop-filter: blur(4px);
 }
 
-.product-tag--gold {
-  background: var(--color-accent);
+.hero-product--1 {
+  transform: translateY(0);
 }
 
-.product-detail__content h2 {
+.hero-product--2 {
+  transform: translateY(-20px);
+  width: 110px;
+  height: 110px;
+  font-size: 3rem;
+}
+
+.hero-product--3 {
+  transform: translateY(0);
+}
+
+/* ============================================================
+   섹션 타이틀
+   ============================================================ */
+.section-title {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.section-title h2 {
   font-size: 2rem;
   margin-bottom: var(--space-xs);
 }
 
-.product-subtitle {
-  color: var(--color-primary);
-  font-weight: 700;
-  font-size: 1.05rem;
-  margin-bottom: var(--space-md);
-}
-
-.product-desc {
+.section-title p {
   color: var(--color-text-light);
-  line-height: 1.9;
-  margin-bottom: var(--space-md);
+  font-size: 1rem;
 }
 
-.product-points {
-  margin-bottom: var(--space-lg);
-}
-
-.product-points li {
-  padding: 0.4rem 0;
-  color: var(--color-text);
-  font-size: 0.95rem;
-}
-
-.product-cta {
+/* ============================================================
+   필터 탭 (Pill 형태)
+   ============================================================ */
+.product-cats {
   display: flex;
+  justify-content: center;
   gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
   flex-wrap: wrap;
 }
 
-/* ---------- 섭취 방법 ---------- */
+.product-cat {
+  padding: 0.6rem 1.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  background: var(--color-white);
+  border: 1.5px solid var(--color-secondary-light);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.product-cat:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.product-cat.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ============================================================
+   4열 상품 카드 그리드
+   ============================================================ */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+.product-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-secondary-light);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.product-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+
+.product-card.hidden {
+  display: none;
+}
+
+/* 카드 미디어 (이미지 영역) */
+.product-card__media {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-visual-placeholder {
+  font-size: 4rem;
+  filter: drop-shadow(0 4px 8px rgba(28, 106, 76, 0.15));
+}
+
+/* 배지 */
+.product-card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-white);
+  background: var(--color-primary);
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  z-index: 1;
+}
+
+.product-card__badge--green {
+  background: var(--color-primary-dark);
+}
+
+.product-card__badge--gold {
+  background: var(--color-accent);
+}
+
+/* 카드 본문 */
+.product-card__body {
+  padding: var(--space-md);
+  text-align: center;
+}
+
+.product-card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+.product-card__desc {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+  min-height: 2.7em;
+}
+
+/* 카드 버튼 */
+.product-card__btn {
+  display: block;
+  width: 100%;
+  padding: 0.7rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--color-primary);
+  background: transparent;
+  border: 1.5px solid var(--color-primary);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.product-card__btn:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ============================================================
+   섭취 방법
+   ============================================================ */
 .how-to-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -142,7 +269,7 @@
 }
 
 .how-to-card h3 {
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-sm);
 }
 
 .how-to-card p {
@@ -150,30 +277,55 @@
   font-size: 0.95rem;
 }
 
-/* ---------- 반응형 ---------- */
+/* ============================================================
+   반응형
+   ============================================================ */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
-  .page-header h1 {
+  .collection-hero__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .collection-hero__content h1 {
     font-size: 2rem;
   }
 
-  .product-detail {
+  .collection-hero__visual {
+    order: -1;
+  }
+
+  .hero-product {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+
+  .hero-product--2 {
+    width: 85px;
+    height: 85px;
+    font-size: 2.4rem;
+  }
+
+  .product-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-md);
-  }
-
-  .product-detail--reverse .product-detail__visual {
-    order: 1;
-  }
-
-  .product-detail--reverse .product-detail__content {
-    order: 2;
-  }
-
-  .product-detail__visual {
-    aspect-ratio: 4/3;
   }
 
   .how-to-grid {
     grid-template-columns: 1fr;
+  }
+
+  .product-cats {
+    gap: var(--space-xs);
+  }
+
+  .product-cat {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
   }
 }

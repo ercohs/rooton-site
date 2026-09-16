@@ -109,7 +109,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // ---------- 성장ON정보 블로그 카테고리 필터 ----------
   const blogCats = document.querySelectorAll('.blog-cat');
   if (blogCats.length) {
-    const blogItems = document.querySelectorAll('.blog-item');
+    // 블로그 카드 (3열 그리드) 또는 블로그 아이템 (리스트)
+    const blogItems = document.querySelectorAll('.blog-card, .blog-item');
     blogCats.forEach(function (cat) {
       cat.addEventListener('click', function () {
         const category = cat.getAttribute('data-cat');
@@ -125,6 +126,31 @@ document.addEventListener('DOMContentLoaded', function () {
             item.classList.remove('hidden');
           } else {
             item.classList.add('hidden');
+          }
+        });
+      });
+    });
+  }
+
+  // ---------- 제품 페이지 카테고리 필터 ----------
+  const productCats = document.querySelectorAll('.product-cat');
+  if (productCats.length) {
+    const productCards = document.querySelectorAll('.product-card');
+    productCats.forEach(function (cat) {
+      cat.addEventListener('click', function () {
+        const category = cat.getAttribute('data-cat');
+        // 활성 카테고리 표시
+        productCats.forEach(function (c) {
+          c.classList.remove('active');
+        });
+        cat.classList.add('active');
+        // 아이템 필터링
+        productCards.forEach(function (card) {
+          const cardCat = card.getAttribute('data-cat');
+          if (category === 'all' || cardCat === category) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
           }
         });
       });

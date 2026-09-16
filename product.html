@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,91 +32,95 @@
     </div>
   </header>
 
-  <!-- ================= 페이지 헤더 ================= -->
-  <section class="page-header">
-    <div class="container">
-      <span class="eyebrow">PRODUCTS</span>
-      <h1>루톤 제품</h1>
-      <p>아이의 성장 조건을 채우는 루톤 제품을 소개합니다.</p>
+  <!-- ================= 히어로 배너 ================= -->
+  <section class="collection-hero">
+    <div class="container collection-hero__inner">
+      <div class="collection-hero__content">
+        <span class="eyebrow">ROOTON PRODUCTS</span>
+        <h1>성장환경 영양,<br><span class="collection-hero__highlight">루톤 제품</span></h1>
+        <p>성장의 뿌리를 켜는 핵심 원료 WCO31.<br>뼈·장·면역, 매일의 성장 조건을 채웁니다.</p>
+      </div>
+      <div class="collection-hero__visual">
+        <div class="collection-hero__products">
+          <div class="hero-product hero-product--1">🥛</div>
+          <div class="hero-product hero-product--2">🍃</div>
+          <div class="hero-product hero-product--3">🌾</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ================= 제품 상세 ================= -->
+  <!-- ================= 제품 탐색 ================= -->
   <section class="section">
     <div class="container">
-      <!-- 제품 1 -->
-      <div class="product-detail">
-        <div class="product-detail__visual">
-          <div class="product-visual-placeholder">🥛</div>
-        </div>
-        <div class="product-detail__content">
-          <span class="product-tag">베스트</span>
-          <h2>루톤 성장환경 영양</h2>
-          <p class="product-subtitle">뼈·장·면역을 위한 매일의 성장환경 영양</p>
-          <p class="product-desc">
-            성장기 아이의 뼈 성장과 영양 흡수, 건강한 몸을 위한 기초를 채우는 제품입니다.
-            성장에 관한 인체연구를 가진 핵심 원료 WCO31을 담았습니다.
-          </p>
-          <ul class="product-points">
-            <li>✔ 성장환경의 기초 영양 설계</li>
-            <li>✔ WCO31 인체연구 기반 원료</li>
-            <li>✔ 매일 꾸준히 섭취할 수 있는 부드러운 맛</li>
-          </ul>
-          <div class="product-cta">
-            <a href="contact.html" class="btn btn--primary">구매 상담</a>
-            <a href="contact.html" class="btn btn--outline">무료 체험 신청</a>
-          </div>
-        </div>
+      <div class="section-title">
+        <h2>루톤 제품 알아보기</h2>
+        <p>매일의 성장환경을 위한 루톤의 제품 라인업입니다.</p>
       </div>
 
-      <!-- 제품 2 -->
-      <div class="product-detail product-detail--reverse">
-        <div class="product-detail__visual">
-          <div class="product-visual-placeholder">🍃</div>
-        </div>
-        <div class="product-detail__content">
-          <span class="product-tag product-tag--green">플러스</span>
-          <h2>루톤 성장환경 플러스</h2>
-          <p class="product-subtitle">성장기 아이를 위한 맞춤 영양 설계</p>
-          <p class="product-desc">
-            성장환경 영양에 더해, 성장기 아이의 활동량과 영양 요구를 고려한 제품입니다.
-            뼈·장·면역의 기초 위에 성장 조건을 더합니다.
-          </p>
-          <ul class="product-points">
-            <li>✔ 성장환경 영양의 강화 설계</li>
-            <li>✔ 활발한 성장기 아이를 위한 영양</li>
-            <li>✔ 균형 잡힌 미네랄·비타민 구성</li>
-          </ul>
-          <div class="product-cta">
-            <a href="contact.html" class="btn btn--primary">구매 상담</a>
-            <a href="contact.html" class="btn btn--outline">무료 체험 신청</a>
-          </div>
-        </div>
+      <!-- 필터 탭 -->
+      <div class="product-cats">
+        <button class="product-cat active" data-cat="all">전체</button>
+        <button class="product-cat" data-cat="basic">성장환경</button>
+        <button class="product-cat" data-cat="plus">플러스</button>
+        <button class="product-cat" data-cat="kids">키즈</button>
       </div>
 
-      <!-- 제품 3 -->
-      <div class="product-detail">
-        <div class="product-detail__visual">
-          <div class="product-visual-placeholder">🌾</div>
-        </div>
-        <div class="product-detail__content">
-          <span class="product-tag product-tag--gold">키즈</span>
-          <h2>루톤 성장환경 키즈</h2>
-          <p class="product-subtitle">어린 성장기 아이를 위한 부드러운 영양</p>
-          <p class="product-desc">
-            어린 성장기 아이도 부담 없이 섭취할 수 있도록 부드러운 맛과 질감으로 설계했습니다.
-            성장의 기초를 다지는 영양을 아이의 눈높이에 맞춰 담았습니다.
-          </p>
-          <ul class="product-points">
-            <li>✔ 어린 아이를 위한 부드러운 제형</li>
-            <li>✔ 성장 기초 영양 설계</li>
-            <li>✔ 아이가 좋아하는 맛</li>
-          </ul>
-          <div class="product-cta">
-            <a href="contact.html" class="btn btn--primary">구매 상담</a>
-            <a href="contact.html" class="btn btn--outline">무료 체험 신청</a>
+      <!-- 4열 상품 카드 그리드 -->
+      <div class="product-grid">
+
+        <!-- 제품 1 -->
+        <article class="product-card" data-cat="basic">
+          <div class="product-card__media">
+            <div class="product-visual-placeholder">🥛</div>
+            <span class="product-card__badge">베스트</span>
           </div>
-        </div>
+          <div class="product-card__body">
+            <h3 class="product-card__title">루톤 성장환경 영양</h3>
+            <p class="product-card__desc">뼈·장·면역을 위한 매일의 성장환경 영양</p>
+            <a href="contact.html" class="product-card__btn">구매 상담</a>
+          </div>
+        </article>
+
+        <!-- 제품 2 -->
+        <article class="product-card" data-cat="plus">
+          <div class="product-card__media">
+            <div class="product-visual-placeholder">🍃</div>
+            <span class="product-card__badge product-card__badge--green">플러스</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__title">루톤 성장환경 플러스</h3>
+            <p class="product-card__desc">성장기 아이를 위한 맞춤 영양 설계</p>
+            <a href="contact.html" class="product-card__btn">구매 상담</a>
+          </div>
+        </article>
+
+        <!-- 제품 3 -->
+        <article class="product-card" data-cat="kids">
+          <div class="product-card__media">
+            <div class="product-visual-placeholder">🌾</div>
+            <span class="product-card__badge product-card__badge--gold">키즈</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__title">루톤 성장환경 키즈</h3>
+            <p class="product-card__desc">어린 성장기 아이를 위한 부드러운 영양</p>
+            <a href="contact.html" class="product-card__btn">구매 상담</a>
+          </div>
+        </article>
+
+        <!-- 제품 4 -->
+        <article class="product-card" data-cat="basic">
+          <div class="product-card__media">
+            <div class="product-visual-placeholder">💧</div>
+            <span class="product-card__badge product-card__badge--green">스틱</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__title">루톤 성장환경 스틱</h3>
+            <p class="product-card__desc">휴대하기 편한 스틱형 성장환경 영양</p>
+            <a href="contact.html" class="product-card__btn">구매 상담</a>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
@@ -186,7 +190,7 @@
           <h4 class="footer__heading">고객지원</h4>
           <ul class="footer__links">
             <li><a href="contact.html">상담 신청</a></li>
-            <li><a href="contact.html">자주 묻는 질문</a></li>
+            <li><a href="faq.html">자주 묻는 질문</a></li>
             <li><a href="contact.html">배송 안내</a></li>
           </ul>
         </div>

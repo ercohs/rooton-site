@@ -106,6 +106,29 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // ---------- 상담/문의 탭 전환 ----------
+  const contactTabs = document.querySelectorAll('.contact-tab');
+  if (contactTabs.length) {
+    contactTabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        const target = tab.getAttribute('data-tab');
+        // 탭 활성화
+        contactTabs.forEach(function (t) {
+          t.classList.remove('active');
+        });
+        tab.classList.add('active');
+        // 콘텐츠 전환
+        document.querySelectorAll('.contact-tab-content').forEach(function (content) {
+          content.classList.remove('active');
+        });
+        const targetContent = document.getElementById('tab-' + target);
+        if (targetContent) {
+          targetContent.classList.add('active');
+        }
+      });
+    });
+  }
+
   // ---------- 성장ON정보 블로그 카테고리 필터 ----------
   const blogCats = document.querySelectorAll('.blog-cat');
   if (blogCats.length) {

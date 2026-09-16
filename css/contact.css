@@ -1,6 +1,46 @@
 /* ============================================================
-   루톤 상담문의 페이지 전용 스타일
+   루톤 상담/문의 페이지 전용 스타일
    ============================================================ */
+
+/* ---------- 탭 UI ---------- */
+.contact-tabs {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+  border-bottom: 2px solid var(--color-secondary-light);
+  padding-bottom: 0;
+}
+
+.contact-tab {
+  padding: 0.9rem 2rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text-light);
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.contact-tab:hover {
+  color: var(--color-primary);
+}
+
+.contact-tab.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.contact-tab-content {
+  display: none;
+}
+
+.contact-tab-content.active {
+  display: block;
+}
 
 /* ---------- 페이지 헤더 ---------- */
 .page-header {
@@ -252,6 +292,15 @@
 @media (max-width: 768px) {
   .page-header h1 {
     font-size: 2rem;
+  }
+
+  .contact-tabs {
+    gap: var(--space-xs);
+  }
+
+  .contact-tab {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
   }
 
   .contact-intro {

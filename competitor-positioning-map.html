@@ -60,7 +60,8 @@ tr.rooton:hover td{background:#DBEAFE}
 .calc-note{font-size:10px;color:#64748B;background:#F8FAFC;border-radius:6px;padding:8px 12px;margin-bottom:12px;line-height:1.6}
 /* 말풍선 스타일 */
 .bubble-popup{position:absolute;background:#1E293B;color:#F8FAFC;padding:14px 18px;border-radius:12px;font-size:12px;pointer-events:none;z-index:999;max-width:280px;box-shadow:0 8px 30px rgba(0,0,0,0.25);line-height:1.6;white-space:normal}
-.bubble-popup::after{content:'';position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);border-left:8px solid transparent;border-right:8px solid transparent;border-top:8px solid #1E293B}
+.bubble-popup.bp-below::after{content:'';position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);border-left:8px solid transparent;border-right:8px solid transparent;border-top:8px solid #1E293B}
+.bubble-popup.bp-above::after{content:'';position:absolute;top:-8px;left:50%;transform:translateX(-50%);border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:8px solid #1E293B}
 .bubble-popup .bp-title{font-size:13px;font-weight:600;margin-bottom:6px;color:#fff}
 .bubble-popup .bp-row{display:flex;justify-content:space-between;gap:16px;padding:2px 0}
 .bubble-popup .bp-label{color:#94A3B8;font-size:11px}
@@ -221,7 +222,7 @@ let activeCat='all';
 
 // 그래프 버블 클릭 시 말풍선으로 관련 정보 표시
 let activeBubble=null;
-function showBubble(e, chart, raw){
+function showBubble(e, chart, raw, elements){
   // 기존 말풍선 제거
   if(activeBubble){
     activeBubble.remove();
@@ -247,28 +248,62 @@ function showBubble(e, chart, raw){
     <div class="bp-row"><span class="bp-label">기능성</span><span class="bp-val">${prod.func}/10 · ${funcLabel[prod.func]||''}</span></div>
     <div class="bp-feat">${prod.feat}</div>
   `;
-  // 위치 계산 (차트 컨테이너 기준)
+  // 차트 컨테이너에 추가
   const container=chart.canvas.parentNode;
   container.appendChild(el);
-  // 차트 캔버스 위치 기준으로 말풍선 배치
+  // 말풍선 크기 측정 (visible 상태로)
+  el.style.visibility='hidden';
+  const elW=el.offsetWidth;
+  const elH=el.offsetHeight;
+  el.style.visibility='visible';
+  
+  // 클릭한 버블의 실제 위치 (Chart.js 요소 좌표)
+  const meta=chart.getDatasetMeta(elements && elements.length>0 ? elements[0].datasetIndex : 0);
+  const bubbleEl=meta.data[elements && elements.length>0 ? elements[0].index : 0];
+  const bx=bubbleEl.x; // 캔버스 기준 x
+  const by=bubbleEl.y; // 캔버스 기준 y
+  const br=bubbleEl.options.radius || 6; // 버블 반지름
+  
+  // 캔버스와 컨테이너의 상대 위치
   const canvasRect=chart.canvas.getBoundingClientRect();
   const containerRect=container.getBoundingClientRect();
   const offsetX=canvasRect.left-containerRect.left;
   const offsetY=canvasRect.top-containerRect.top;
-  // 클릭 좌표 (캔버스 기준)
-  const rect=chart.canvas.getBoundingClientRect();
-  const x=e.clientX-rect.left;
-  const y=e.clientY-rect.top;
-  el.style.left=(x+15)+'px';
-  el.style.top=(y-20)+'px';
-  // 말풍선이 차트 밖으로 나가지 않도록 조정
-  const elRect=el.getBoundingClientRect();
-  if(elRect.right>containerRect.right){
-    el.style.left=(x-elRect.width-15)+'px';
+  
+  // 캔버스 내부 영역 (차트 플롯 영역)
+  const chartArea=chart.chartArea;
+  const plotLeft=chartArea.left;
+  const plotRight=chartArea.right;
+  const plotTop=chartArea.top;
+  const plotBottom=chartArea.bottom;
+  
+  // 말풍선 위치 결정: 버블 위에 배치 우선, 공간 없으면 아래
+  let left, top;
+  const margin=12; // 버블과 말풍선 사이 간격
+  
+  // X 위치: 버블 중심 기준, 좌우 공간 고려
+  left=bx-elW/2;
+  if(left<plotLeft+5) left=plotLeft+5;
+  if(left+elW>plotRight-5) left=plotRight-elW-5;
+  
+  // Y 위치: 버블 위에 배치 (공간 충분할 때)
+  if(by-elH-margin>plotTop){
+    top=by-elH-margin;
+    el.classList.add('bp-below'); // 화살표가 아래쪽 (말풍선이 버블 위)
+  } else if(by+br+elH+margin<plotBottom){
+    // 버블 아래에 배치
+    top=by+br+margin;
+    el.classList.add('bp-above'); // 화살표가 위쪽
+  } else {
+    // 위아래 모두 공간 없으면 차트 중앙에 배치
+    top=plotTop+10;
+    el.classList.add('bp-below');
   }
-  if(elRect.bottom>containerRect.bottom){
-    el.style.top=(y-elRect.height-15)+'px';
-  }
+  
+  // 컨테이너 기준 좌표로 변환
+  el.style.left=(offsetX+left)+'px';
+  el.style.top=(offsetY+top)+'px';
+  
   activeBubble=el;
 }
 
@@ -417,7 +452,7 @@ new Chart(ctx,{
         const dataIdx=elements[0].index;
         const raw=chart.data.datasets[idx].data[dataIdx];
         if(raw && raw.brand){
-          showBubble(e, chart, raw);
+          showBubble(e, chart, raw, elements);
         }
       }
     },

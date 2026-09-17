@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>LUSOL × ROOT ON | 경쟁사 분석 & 포지셔닝 맵 (입수량 기반)</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F4F8;color:#1E293B;font-size:14px;line-height:1.5}
+.wrap{max-width:1280px;margin:0 auto;padding:24px 20px}
+h2{font-size:18px;font-weight:500;color:#0F172A;margin-bottom:4px}
+h3{font-size:15px;font-weight:500;color:#334155;margin-bottom:12px}
+.subtitle{font-size:12px;color:#64748B;margin-bottom:20px}
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px}
+.kpi{background:#fff;border:0.5px solid #E2E8F0;border-radius:10px;padding:14px 16px}
+.kpi-label{font-size:11px;color:#64748B;margin-bottom:4px}
+.kpi-val{font-size:22px;font-weight:500;color:#0F172A}
+.kpi-sub{font-size:11px;color:#94A3B8;margin-top:2px}
+.section{background:#fff;border:0.5px solid #E2E8F0;border-radius:12px;padding:20px;margin-bottom:20px}
+.tabs{display:flex;gap:4px;margin-bottom:16px;flex-wrap:wrap}
+.tab{padding:6px 14px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:0.5px solid #E2E8F0;background:#F8FAFC;color:#64748B;transition:.15s}
+.tab.active-all{background:#0F172A;color:#fff;border-color:#0F172A}
+.tab.active-분말{background:#1D4ED8;color:#fff;border-color:#1D4ED8}
+.tab.active-액상{background:#059669;color:#fff;border-color:#059669}
+.tab.active-초유{background:#D97706;color:#fff;border-color:#D97706}
+.tab.active-기능성{background:#7C3AED;color:#fff;border-color:#7C3AED}
+.tab.active-lusol{background:#0D9488;color:#fff;border-color:#0D9488}
+.tab.active-rooton{background:#1D4ED8;color:#fff;border-color:#1D4ED8}
+.tbl-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:#F8FAFC;text-align:left;padding:8px 10px;font-weight:500;color:#475569;border-bottom:1px solid #E2E8F0;white-space:nowrap}
+td{padding:8px 10px;border-bottom:0.5px solid #F1F5F9;vertical-align:top}
+tr:hover td{background:#FAFBFF}
+tr.lusol td{background:#F0FDFA}
+tr.rooton td{background:#EFF6FF}
+tr.lusol:hover td{background:#CCFBF1}
+tr.rooton:hover td{background:#DBEAFE}
+.badge{display:inline-block;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:500;white-space:nowrap}
+.b-분말{background:#EFF6FF;color:#1D4ED8}
+.b-액상{background:#ECFDF5;color:#059669}
+.b-초유{background:#FFFBEB;color:#D97706}
+.b-기능성{background:#F5F3FF;color:#7C3AED}
+.b-lusol{background:#F0FDFA;color:#0D9488}
+.b-rooton{background:#EFF6FF;color:#1D4ED8}
+.b-estimate{background:#FFF7ED;color:#C2410C;font-size:9px;margin-left:2px}
+.func-bar{display:flex;align-items:center;gap:6px}
+.func-track{width:64px;height:6px;background:#F1F5F9;border-radius:3px;overflow:hidden}
+.func-fill{height:100%;border-radius:3px}
+.score-num{font-size:11px;font-weight:500;color:#475569;min-width:16px}
+.daily{font-weight:500;color:#0F172A}
+.daily-est{font-size:10px;color:#F97316}
+.note{font-size:10px;color:#94A3B8;margin-top:2px}
+.map-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.legend{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.leg-item{display:flex;align-items:center;gap:5px;font-size:11px;color:#64748B}
+.leg-dot{width:10px;height:10px;border-radius:50%}
+.chart-container{position:relative;width:100%;height:440px}
+.axis-label{font-size:11px;color:#94A3B8;text-align:center;margin-top:6px}
+.q-note{font-size:10px;color:#94A3B8;margin-top:6px}
+.src{font-size:10px;color:#94A3B8;margin-top:12px;padding-top:8px;border-top:0.5px solid #F1F5F9}
+.calc-note{font-size:10px;color:#64748B;background:#F8FAFC;border-radius:6px;padding:8px 12px;margin-bottom:12px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h2>LUSOL × ROOT ON | 경쟁사 종합 분석 & 포지셔닝 맵</h2>
+<p class="subtitle">영양보충제(분말·액상) · 초유영양제 · 기능성 젤리/스틱 전 카테고리 통합 | 입수량 기반 1일 비용 산출 | 2026.09</p>
+
+<div class="kpi-row">
+  <div class="kpi"><div class="kpi-label">분석 제품 수</div><div class="kpi-val">33</div><div class="kpi-sub">경쟁사 27 + 기획 6</div></div>
+  <div class="kpi"><div class="kpi-label">일일 비용 범위</div><div class="kpi-val">159~6,000원</div><div class="kpi-sub">입수량 기반 산출</div></div>
+  <div class="kpi"><div class="kpi-label">제품 카테고리</div><div class="kpi-val">5개</div><div class="kpi-sub">분말·액상·초유·기능성·기획</div></div>
+  <div class="kpi"><div class="kpi-label">ROOTON 기획가 일일비용</div><div class="kpi-val">◆예측◆</div><div class="kpi-sub">1,500 ~ 3,500원/일</div></div>
+</div>
+
+<div class="section">
+  <div class="calc-note">
+    📐 <strong>1일 비용 산출 기준</strong> — 판매가 ÷ 총중량(g) × 1일 섭취량(g) 방식. 각 제품의 포당 중량과 1일 섭취 횟수를 반영하여 산출. 예: 하이키드 밀크 = 25,000원 ÷ 600g × 45g(6스푼) = 1,875원/일
+  </div>
+  <div class="map-header">
+    <div><h3>포지셔닝 맵 — 일일 비용 × 기능성 집중도</h3>
+    <p style="font-size:11px;color:#94A3B8">X축: 일일 섭취 비용(원, 입수량 기반) &nbsp;|&nbsp; Y축: 기능성 집중도 (기초 영양 보완 ↔ 키성장 전문 임상 기능성)</p></div>
+    <div class="legend">
+      <div class="leg-item"><div class="leg-dot" style="background:#0D9488;width:14px;height:14px;"></div> LUSOL 기획</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#1D4ED8;width:14px;height:14px;"></div> ROOT ON 기획</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#6B7280"></div> 경쟁사 일반</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#7C3AED"></div> 경쟁사 기능성</div>
+      <div class="leg-item" style="font-size:10px;color:#F97316">◆ 예측치 포함</div>
+    </div>
+  </div>
+  <div class="chart-container"><canvas id="posMap" role="img" aria-label="경쟁사 일일비용과 기능성집중도 기준 포지셔닝 버블 맵">LUSOL·ROOTON 및 경쟁 27개 제품의 일일비용 대비 기능성 집중도 산포도</canvas></div>
+  <div class="axis-label">← 저가 (일일 비용, 원) 고가 →</div>
+  <div class="q-note">※ 표시: ◆예측◆ 는 공개 판매가 미확인으로 내부 추정치 적용 | 버블 크기: 대형=LUSOL/ROOT ON 기획 제품</div>
+</div>
+
+<div class="section">
+  <div class="map-header">
+    <h3>경쟁사 종합 분석 테이블</h3>
+    <div class="tabs" id="tabBar">
+      <div class="tab active-all" data-cat="all">전체</div>
+      <div class="tab" data-cat="분말">영양보충제(분말)</div>
+      <div class="tab" data-cat="액상">영양보충제(액상)</div>
+      <div class="tab" data-cat="초유">초유영양제</div>
+      <div class="tab" data-cat="기능성">기능성 젤리/스틱/이중</div>
+      <div class="tab" data-cat="lusol">LUSOL 기획</div>
+      <div class="tab" data-cat="rooton">ROOT ON 기획</div>
+    </div>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>분류</th><th>브랜드</th><th>제품명</th><th>제형</th><th>타깃 연령</th>
+          <th>입수량</th><th>1일 섭취량</th><th>판매가</th><th>일일 비용</th><th>기능성 집중도</th><th>주요 소구점</th>
+        </tr>
+      </thead>
+      <tbody id="tbl"></tbody>
+    </table>
+  </div>
+  <div class="src">출처: 영양보충제(분말·액상)·초유영양제 시장조사 Excel(2026.09) | 키성장 젤리·홈쇼핑 시장조사 Excel(2026.09) | 잘크톤 에스 jalkton.co.kr | 키클래오 HT042 newsam.co.kr/news/article.html?no=39940 | 경쟁사 가격 일부 ◆예측◆</div>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const prods=[
+  // ===== 영양보충제(분말) =====
+  {brand:'한국메디칼푸드',name:'멀티칼',form:'분말',age:'영유아~성인',pack:'300g/캔',daily:'7g(6개월+)',price:40800,daily:952,func:2,cat:'분말',est:false,feat:'MCT오일 함유, 1g당 5kcal 열량보충'},
+  {brand:'한국메디칼푸드',name:'하이칼',form:'분말',age:'영유아~성인',pack:'400g/캔',daily:'5g',price:12750,daily:159,func:2,cat:'분말',est:false,feat:'탄수화물 열량보충, 1g당 4kcal'},
+  {brand:'한국메디칼푸드',name:'프로맥스',form:'분말',age:'만6세~',pack:'11g×30포',daily:'22g(2포)',price:34500,daily:2300,func:3,cat:'분말',est:false,feat:'분리유청단백 98.9%, PDCAAS 1'},
+  {brand:'매일유업',name:'셀렉스 골든밀크',form:'분말',age:'만6세~',pack:'360g/캔',daily:'30g(2스푼)',price:19900,daily:1658,func:3,cat:'분말',est:false,feat:'대한골대사학회 공동개발, 고칼슘 700mg'},
+  {brand:'일동후디스',name:'하이키드 밀크',form:'분말',age:'1~9세',pack:'600g/캔',daily:'45g(6스푼)',price:25000,daily:1875,func:3,cat:'분말',est:false,feat:'초유 lgG·DHA·타우린, 12종비타민+9종미네랄'},
+  {brand:'일동후디스',name:'하이키드 골드',form:'분말',age:'1~9세',pack:'650g/캔',daily:'45g(6~7스푼)',price:29000,daily:2008,func:4,cat:'분말',est:false,feat:'네덜란드 산양유+초유 lgG·TGF'},
+  {brand:'일동후디스',name:'프리미엄 하이키드',form:'분말',age:'1~9세',pack:'600g/캔',daily:'45g(6스푼)',price:25000,daily:1875,func:3,cat:'분말',est:false,feat:'초유 lgG·IGF·TGF, 곡류·과일·채소'},
+  {brand:'데일리플랜',name:'데이하이',form:'분말',age:'유아~청소년',pack:'17g×15포',daily:'17g(1포)',price:18200,daily:1213,func:3,cat:'분말',est:false,feat:'비타민B군+프로바이오틱스+로얄젤리'},
+  {brand:'글로벌탑01',name:'PM FitLine 파워칵테일',form:'분말',age:'유아~청소년',pack:'210g/캔',daily:'28g(8스푼)',price:39900,daily:5320,func:3,cat:'분말',est:false,feat:'비타민C·E·D·B군+미네랄 15종'},
+  {brand:'모닝파파',name:'키즈 탄단지 쉐이크',form:'분말',age:'24개월~',pack:'450g/캔',daily:'30g(1회)',price:35000,daily:2333,func:3,cat:'분말',est:false,feat:'WPC단백질+식물성 단백질, MCT오일'},
+  {brand:'닥터포키즈',name:'키즈레시피 성장기',form:'분말',age:'3~16세',pack:'750g/캔',daily:'40g(1회)',price:39000,daily:2080,func:3,cat:'분말',est:false,feat:'WPI분리유청+치커리+아미노산 18종'},
+  {brand:'베러데이',name:'그로우데이',form:'분말',age:'청소년',pack:'22g×10포',daily:'22g(1포)',price:39900,daily:3990,func:6,cat:'분말',est:false,feat:'특허 효모추출물 SR103, 칼슘 5종+10종 비타민'},
+
+  // ===== 영양보충제(액상) =====
+  {brand:'대상웰라이프',name:'뉴케어 마이키즈',form:'액상',age:'1~11세',pack:'150ml×24팩',daily:'150ml(1팩)',price:24900,daily:1038,func:2,cat:'액상',est:false,feat:'5대 영양설계, 22가지 비타민미네랄, 어린이기호식품'},
+  {brand:'정식품',name:'그린비아 키즈모아',form:'액상',age:'12개월~',pack:'150ml×24팩',daily:'150ml(1팩)',price:21900,daily:912,func:2,cat:'액상',est:false,feat:'5대 영양설계, 25가지 비타민미네랄, 저당'},
+  {brand:'정식품',name:'그린비아 소아영양식',form:'액상',age:'1~13세',pack:'200ml×30팩',daily:'200ml(1팩)',price:49900,daily:1663,func:2,cat:'액상',est:false,feat:'24가지 비타민미네랄, MCT오일, 소아환자용'},
+  {brand:'한국메디칼푸드',name:'고단백 미니웰',form:'액상',age:'1세~',pack:'150ml×24팩',daily:'150ml(1팩)',price:32160,daily:1340,func:2,cat:'액상',est:false,feat:'3대 영양+25종 비타민무기질, 단백질 9g'},
+  {brand:'한미사이언스',name:'텐텐 키즈영양식',form:'액상',age:'3세~',pack:'140ml×24팩',daily:'140ml(1팩)',price:23500,daily:979,func:2,cat:'액상',est:false,feat:'19가지 비타민미네랄+포스트바이오틱스 100억'},
+  {brand:'함소아',name:'키온 프로틴',form:'액상',age:'24개월~',pack:'200ml×18개',daily:'200ml(1개)',price:30900,daily:1717,func:4,cat:'액상',est:false,feat:'AMCO사 단백질 12g, 아미노산스코어 103점'},
+  {brand:'함소아',name:'키온(흡수가 좋은)',form:'액상',age:'8세~',pack:'125ml×24개',daily:'125ml(1개)',price:30900,daily:1288,func:5,cat:'액상',est:false,feat:'5중 기능성, 글루콘산칼슘+녹각오미자'},
+  {brand:'키디업',name:'뽀로로 키디밀',form:'두유',age:'36개월~',pack:'135ml×24개',daily:'135ml(1개)',price:27000,daily:1125,func:1,cat:'액상',est:false,feat:'20종 국산곡물, 13종 비타민미네랄'},
+  {brand:'연세유업',name:'키짱 미니 유산균',form:'액상',age:'12개월~',pack:'125ml×24개',daily:'125ml(1개)',price:8900,daily:371,func:2,cat:'액상',est:false,feat:'성장추출분말 12.5mg+비타민 5종, 가성비'},
+  {brand:'웅진식품',name:'캐치티니핑 아이튼튼',form:'액상',age:'12개월~',pack:'150ml×24개',daily:'150ml(1개)',price:21900,daily:912,func:2,cat:'액상',est:false,feat:'5대 영양소, 아미노산 18종, 고칼슘'},
+
+  // ===== 초유 영양제(분말) =====
+  {brand:'젠어필',name:'뉴질랜드 초유 파우더',form:'초유분말',age:'3세~청소년',pack:'2g×30포',daily:'2g(1포)',price:37200,daily:1240,func:3,cat:'초유',est:false,feat:'뉴질랜드 초유 100%, lgG 최대 20%'},
+  {brand:'젠어필',name:'트리밀데이즈 프로틴',form:'초유분말',age:'유아~청소년',pack:'20g×15포',daily:'20g(1포)',price:20800,daily:1387,func:3,cat:'초유',est:false,feat:'초유/산양유+혼합단백질 11g'},
+  {brand:'더헬스런',name:'키즈 초유 산양유',form:'초유분말',age:'24개월~',pack:'5g×30포',daily:'5g(1포)',price:24000,daily:800,func:4,cat:'초유',est:false,feat:'네덜란드 산양유 퀼리고트, lgG'},
+  {brand:'모닝파파',name:'초유 BALANCE UP',form:'초유분말',age:'3세~청소년',pack:'15g×10개',daily:'15g(1회)',price:29500,daily:2950,func:3,cat:'초유',est:false,feat:'초유 1000mg+WPI 12g+lgG 20%'},
+  {brand:'연세생활건강',name:'키즈텐 온가족 초유',form:'초유분말',age:'36개월~',pack:'288g/캔',daily:'36g(4스푼)',price:25000,daily:3125,func:4,cat:'초유',est:false,feat:'8대 기능성, 6Mix 프로틴, 단백질 20g'},
+  {brand:'연세생활건강',name:'키즈텐 어린이 초유',form:'초유분말',age:'유아~어린이',pack:'3g×30포',daily:'3g(1포)',price:19500,daily:650,func:4,cat:'초유',est:false,feat:'동식물성 6종 단백질, 초유 15%+산양유 12%'},
+  {brand:'락티브',name:'프로케어 단백질',form:'초유분말',age:'12개월~',pack:'304g/캔',daily:'38g(3스푼)',price:28000,daily:3500,func:3,cat:'초유',est:false,feat:'오은영 성분배합, WPI+ISP, 단백질 20g'},
+  {brand:'하이웰',name:'프리미엄 초유 파우더',form:'초유분말',age:'6개월~',pack:'100g/캔',daily:'2g(유아)',price:77000,daily:1540,func:3,cat:'초유',est:false,feat:'뉴질랜드 순수 초유 100%, lgG 20~25%'},
+  {brand:'하이헬스',name:'락토페린 산양유 초유',form:'초유분말',age:'5세~',pack:'2g×30포',daily:'2g(1포)',price:23500,daily:783,func:4,cat:'초유',est:false,feat:'락토페린+산양유+초유 61%+17종 유산균'},
+
+  // ===== 기능성 (키성장 전용) =====
+  {brand:'키르메스',name:'모스트린 산',form:'분말',age:'5세~',pack:'3g×30포',daily:'3g(1포)',price:48900,daily:1630,func:6,cat:'기능성',est:false,feat:'현직약사 개발, 리포좀, 황기추출분말 1500mg'},
+  {brand:'호주픽업',name:'키즈그로우',form:'분말',age:'-',pack:'4g×30포',daily:'4g(1포)',price:88000,daily:2933,func:6,cat:'기능성',est:false,feat:'황기추출물 425mg+뉴질랜드 초유 100mg'},
+  {brand:'아이하이',name:'아이서파',form:'분말',age:'유아~청소년',pack:'2g×30포',daily:'2g(1포)',price:42000,daily:1400,func:7,cat:'기능성',est:false,feat:'서파08 수면의 질 개선 특허, 성장호르몬 유도'},
+  {brand:'휴럼',name:'뮴 키즈하이부스터',form:'분말',age:'3세~',pack:'5g×30포',daily:'10g(2포)',price:44000,daily:2933,func:7,cat:'기능성',est:false,feat:'Upgro190™ 125mg+CBP 초유유래단백'},
+  {brand:'슬리무드',name:'초유 에피바이오틱스',form:'분말',age:'1세~',pack:'2g×30포',daily:'2g(1포)',price:98400,daily:3280,func:7,cat:'기능성',est:false,feat:'4개국 특허 CBP(IGF-Complex)+에피바이오틱스'},
+  {brand:'고려은단',name:'키즈아이 FGO 분말',form:'분말/건기식',age:'6세~',pack:'5g×30포',daily:'5g(1포)',price:98000,daily:3267,func:8,cat:'기능성',est:false,feat:'FGO 500mg+SCIE급 논문+4개국 특허'},
+  {brand:'동아제약',name:'미니막스 FGO 파우더',form:'분말/건기식',age:'4세~',pack:'6g×30포',daily:'6g(1포)',price:94500,daily:3150,func:8,cat:'기능성',est:false,feat:'개별인정형 FGO+비타민D·K+망간'},
+  {brand:'뉴지아',name:'키위아이 하이 FGO',form:'분말/건기식',age:'-',pack:'10g×28포',daily:'10g(1포)',price:98000,daily:3500,func:8,cat:'기능성',est:false,feat:'뉴질랜드 FGO+아연·비타민D·산양유·초유'},
+
+  // ===== 기능성 젤리 (키성장 원료 기반) =====
+  {brand:'종근당건강',name:'아이커 HT042',form:'젤리스틱',age:'5~12세',pack:'25g×60포',daily:'50g(2포)',price:'~54,000(30일)',daily:1800,func:7,cat:'기능성',est:true,feat:'HT042+비타민&미네랄 7종, 약국 채널'},
+  {brand:'뉴메드엘앤비',name:'키클래오 HT042 프라임',form:'이중제형',age:'10~15세',pack:'50ml×28병',daily:'50ml(1병)',price:'~180,000(월)',daily:6000,func:9,cat:'기능성',est:true,feat:'식약처 인정 HT042+비타민B군5종+A·D·E·K, 19중 기능성'},
+  {brand:'정관장',name:'아이키커 하이',form:'액상스틱',age:'초등~중등',pack:'15ml×42포',daily:'15ml(1포)',price:'~120,000(월)',daily:4000,func:7,cat:'기능성',est:true,feat:'FGO 500mg+6년근 홍삼, TV홈쇼핑 프리미엄'},
+  {brand:'조아제약',name:'잘크톤 에스',form:'앰플',age:'전연령',pack:'20ml×30앰플',daily:'20ml(1앰플)',price:'~16,000(30앰플)',daily:533,func:5,cat:'기능성',est:true,feat:'13종 영양(아미노산4종+비타민B군+칼슘·마그네슘·아연), 20년 스테디셀러'},
+
+  // ===== LUSOL 기획 =====
+  {brand:'LUSOL',name:'영양죽 파우치',form:'파우치죽',age:'7~12세',pack:'기획중',daily:'1팩',price:'기획중',daily:1200,func:2,cat:'lusol',est:true,feat:'성장기 식단 공백 보완, 데일리 영양죽, DAILY CARE'},
+  {brand:'LUSOL',name:'이너케어 액상드링크',form:'액상드링크',age:'1~9세',pack:'기획중',daily:'1병',price:'기획중',daily:1200,func:4,cat:'lusol',est:true,feat:'잘크톤 에스 벤치마크, 아미노산+칼슘+아연+비타민D, FOUNDATION'},
+
+  // ===== ROOT ON 기획 =====
+  {brand:'ROOT ON',name:'젤리스틱 브릿지',form:'젤리스틱',age:'3~9세',pack:'기획중',daily:'2포',price:'기획중',daily:1500,func:5,cat:'rooton',est:true,feat:'루틴 입문, 하루 2포, 아이 선호 맛, BRIDGE'},
+  {brand:'ROOT ON',name:'파우더 1단계 스타트',form:'파우더스틱',age:'5~9세',pack:'기획중',daily:'1포',price:'기획중',daily:1800,func:6,cat:'rooton',est:true,feat:'식단 연계 성장루틴, 우유블렌딩, 하이키드 벤치마크'},
+  {brand:'ROOT ON',name:'프리미엄 액상스틱 코어',form:'액상스틱',age:'10~12세',pack:'기획중',daily:'1포',price:'기획중',daily:2500,func:7,cat:'rooton',est:true,feat:'WCO31 1.2g/day 집중관리, 1일 1포 원샷, 아이커 상위'},
+  {brand:'ROOT ON',name:'HT042 프라임',form:'이중제형',age:'10~15세',pack:'기획중',daily:'1세트',price:'기획중',daily:3500,func:9,cat:'rooton',est:true,feat:'키클래오 HT042 벤치마크, HT042+비타민A·D·E·K+아연·셀렌, 프리미엄 플래그십'},
+];
+
+const funcLabel=['','기초 영양식','일반 영양 음료','성장기 종합 영양','초유·기능성 입문','성장 기능성 시작','기능성 전문 중가','키성장 전문 기능성','개별인정원료 수준','임상 근거 프리미엄','최상위 키성장 기능성'];
+const catColor={'분말':'#1D4ED8','액상':'#059669','초유':'#D97706','기능성':'#7C3AED','lusol':'#0D9488','rooton':'#1D4ED8'};
+
+function funcColor(v){
+  if(v<=2)return '#94A3B8';
+  if(v<=4)return '#60A5FA';
+  if(v<=6)return '#34D399';
+  if(v<=8)return '#A78BFA';
+  return '#F472B6';
+}
+
+let activeCat='all';
+
+function buildTable(){
+  const tb=document.getElementById('tbl');
+  const data=activeCat==='all'?prods:prods.filter(p=>p.cat===activeCat);
+  tb.innerHTML=data.map(p=>`
+    <tr class="${p.cat==='lusol'?'lusol':p.cat==='rooton'?'rooton':''}">
+      <td><span class="badge b-${p.cat}">${p.cat==='lusol'?'LUSOL기획':p.cat==='rooton'?'ROOTON기획':p.cat}</span></td>
+      <td style="font-weight:500;color:#0F172A">${p.brand}</td>
+      <td>${p.name}${p.est?'<span class="badge b-estimate" style="margin-left:4px">◆예측</span>':''}</td>
+      <td style="color:#64748B">${p.form}</td>
+      <td style="color:#64748B">${p.age}</td>
+      <td style="color:#64748B">${p.pack}</td>
+      <td style="color:#64748B">${p.daily}</td>
+      <td>${typeof p.price==='number'?'₩'+p.price.toLocaleString():p.price}</td>
+      <td><span class="daily">₩${p.daily.toLocaleString()}</span><br><span class="note">입수량 기반</span></td>
+      <td>
+        <div class="func-bar">
+          <div class="func-track"><div class="func-fill" style="width:${p.func*10}%;background:${funcColor(p.func)}"></div></div>
+          <span class="score-num">${p.func}</span>
+        </div>
+        <div style="font-size:10px;color:#94A3B8;margin-top:2px">${funcLabel[p.func]||''}</div>
+      </td>
+      <td style="color:#475569;max-width:200px">${p.feat}</td>
+    </tr>`).join('');
+}
+
+document.getElementById('tabBar').querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    activeCat=t.dataset.cat;
+    document.querySelectorAll('.tab').forEach(x=>{x.className='tab'});
+    t.className='tab active-'+(activeCat==='all'?'all':activeCat);
+    buildTable();
+  });
+});
+buildTable();
+
+const ctx=document.getElementById('posMap').getContext('2d');
+
+const competitor=prods.filter(p=>p.cat!=='lusol'&&p.cat!=='rooton');
+const lusolData=prods.filter(p=>p.cat==='lusol');
+const rootonData=prods.filter(p=>p.cat==='rooton');
+
+const toPoint=(p,r)=>({x:p.daily,y:p.func,r,label:p.brand+'\n'+p.name,est:p.est,feat:p.feat});
+
+const compGeneral=competitor.filter(p=>p.func<=5).map(p=>toPoint(p,6));
+const compFunc=competitor.filter(p=>p.func>5).map(p=>toPoint(p,6));
+
+const quadrantPlugin={
+  id:'quadrant',
+  beforeDatasetsDraw(chart){
+    const{ctx:c,chartArea:{left,right,top,bottom,width,height}}=chart;
+    const mx=chart.scales.x.getPixelForValue(2000);
+    const my=chart.scales.y.getPixelForValue(5);
+    c.save();
+    c.fillStyle='rgba(248,250,252,0.7)';
+    c.fillRect(left,top,mx-left,my-top);
+    c.fillStyle='rgba(237,247,255,0.7)';
+    c.fillRect(mx,top,right-mx,my-top);
+    c.fillStyle='rgba(240,253,250,0.7)';
+    c.fillRect(left,my,mx-left,bottom-my);
+    c.fillStyle='rgba(245,243,255,0.7)';
+    c.fillRect(mx,my,right-mx,bottom-my);
+    c.strokeStyle='rgba(203,213,225,0.6)';
+    c.setLineDash([4,4]);
+    c.beginPath();c.moveTo(mx,top);c.lineTo(mx,bottom);c.stroke();
+    c.beginPath();c.moveTo(left,my);c.lineTo(right,my);c.stroke();
+    c.setLineDash([]);
+    const qLabels=[
+      {x:left+12,y:top+16,t:'가성비 기초 영양',col:'#94A3B8'},
+      {x:mx+12,y:top+16,t:'프리미엄 기초 영양',col:'#60A5FA'},
+      {x:left+12,y:bottom-8,t:'가성비 키성장 기능성',col:'#34D399'},
+      {x:mx+12,y:bottom-8,t:'프리미엄 키성장 기능성',col:'#A78BFA'},
+    ];
+    c.font='11px -apple-system,sans-serif';
+    qLabels.forEach(q=>{c.fillStyle=q.col;c.fillText(q.t,q.x,q.y)});
+    c.restore();
+  }
+};
+
+const tooltip={
+  external({chart,tooltip}){
+    let el=document.getElementById('chartTip');
+    if(!el){el=document.createElement('div');el.id='chartTip';el.style.cssText='position:absolute;background:#1E293B;color:#F8FAFC;padding:10px 14px;border-radius:8px;font-size:12px;pointer-events:none;white-space:pre;max-width:240px;white-space:normal;line-height:1.5;z-index:99';chart.canvas.parentNode.appendChild(el)}
+    if(tooltip.opacity===0){el.style.display='none';return}
+    const pt=tooltip.dataPoints[0];
+    const raw=pt.raw;
+    el.style.display='block';
+    el.style.left=pt.element.x+12+'px';
+    el.style.top=pt.element.y-20+'px';
+    el.innerHTML=`<strong>${raw.label}</strong><br>일일 비용: ₩${raw.x.toLocaleString()}<br>기능성: ${raw.y}/10${raw.est?'<br><span style="color:#FBB042">◆ 예측치 포함</span>':''}<br><span style="color:#94A3B8;font-size:11px">${raw.feat||''}</span>`;
+  }
+};
+
+new Chart(ctx,{
+  type:'bubble',
+  data:{
+    datasets:[
+      {label:'경쟁사 일반',data:compGeneral,backgroundColor:'rgba(148,163,184,0.65)',borderColor:'rgba(148,163,184,0.9)',borderWidth:1},
+      {label:'경쟁사 기능성',data:compFunc,backgroundColor:'rgba(124,58,237,0.55)',borderColor:'rgba(124,58,237,0.8)',borderWidth:1},
+      {label:'LUSOL 기획',data:lusolData.map(p=>toPoint(p,12)),backgroundColor:'rgba(13,148,136,0.75)',borderColor:'#0D9488',borderWidth:2},
+      {label:'ROOT ON 기획',data:rootonData.map(p=>toPoint(p,12)),backgroundColor:'rgba(29,78,216,0.75)',borderColor:'#1D4ED8',borderWidth:2},
+    ]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    scales:{
+      x:{min:200,max:7000,title:{display:true,text:'일일 비용 (원, 입수량 기반)',color:'#94A3B8',font:{size:12}},ticks:{color:'#94A3B8',callback:v=>'₩'+v.toLocaleString()},grid:{color:'rgba(226,232,240,0.5)'}},
+      y:{min:0,max:10.5,title:{display:true,text:'기능성 집중도',color:'#94A3B8',font:{size:12}},ticks:{color:'#94A3B8',stepSize:1,callback:v=>['','영양식','음료','종합영양','초유입문','기능성시작','기능성전문','키성장전문','개별인정','임상근거','최상위'][v]||v},grid:{color:'rgba(226,232,240,0.5)'}},
+    },
+    plugins:{
+      legend:{display:false},
+      tooltip:{enabled:false,external:tooltip},
+    }
+  },
+  plugins:[quadrantPlugin]
+});
+
+Chart.register({
+  id:'bubblelabels',
+  afterDatasetsDraw(chart){
+    const{ctx:c}=chart;
+    const ds=chart.data.datasets;
+    [2,3].forEach(idx=>{
+      const meta=chart.getDatasetMeta(idx);
+      meta.data.forEach((el,i)=>{
+        const raw=ds[idx].data[i];
+        const name=raw.label.split('\n')[1];
+        c.save();
+        c.font='500 10px -apple-system,sans-serif';
+        c.fillStyle=idx===2?'#065F46':'#1E3A8A';
+        c.textAlign='center';
+        c.fillText(name,el.x,el.y-14);
+        c.restore();
+      });
+    });
+  }
+});
+</script>
+</body>
+</html>

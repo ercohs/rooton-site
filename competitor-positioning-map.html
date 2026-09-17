@@ -58,6 +58,25 @@ tr.rooton:hover td{background:#DBEAFE}
 .q-note{font-size:10px;color:#94A3B8;margin-top:6px}
 .src{font-size:10px;color:#94A3B8;margin-top:12px;padding-top:8px;border-top:0.5px solid #F1F5F9}
 .calc-note{font-size:10px;color:#64748B;background:#F8FAFC;border-radius:6px;padding:8px 12px;margin-bottom:12px;line-height:1.6}
+/* 말풍선 스타일 */
+.bubble-popup{position:absolute;background:#1E293B;color:#F8FAFC;padding:14px 18px;border-radius:12px;font-size:12px;pointer-events:none;z-index:999;max-width:280px;box-shadow:0 8px 30px rgba(0,0,0,0.25);line-height:1.6;white-space:normal}
+.bubble-popup::after{content:'';position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);border-left:8px solid transparent;border-right:8px solid transparent;border-top:8px solid #1E293B}
+.bubble-popup .bp-title{font-size:13px;font-weight:600;margin-bottom:6px;color:#fff}
+.bubble-popup .bp-row{display:flex;justify-content:space-between;gap:16px;padding:2px 0}
+.bubble-popup .bp-label{color:#94A3B8;font-size:11px}
+.bubble-popup .bp-val{color:#F8FAFC;font-weight:500;font-size:12px}
+.bubble-popup .bp-feat{margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.15);color:#CBD5E1;font-size:11px}
+.bubble-popup .bp-est{display:inline-block;background:#FBB042;color:#1E293B;font-size:9px;padding:1px 6px;border-radius:3px;margin-left:4px;font-weight:600}
+/* 정렬 아이콘 */
+th.sortable{cursor:pointer;user-select:none;position:relative;padding-right:20px}
+th.sortable:hover{background:#EEF2FF}
+th.sortable .sort-arrow{position:absolute;right:6px;top:50%;transform:translateY(-50%);display:inline-block;font-size:9px;color:#94A3B8;transition:.15s}
+th.sortable.sorted-asc .sort-arrow{color:#1D4ED8}
+th.sortable.sorted-desc .sort-arrow{color:#1D4ED8}
+th.sortable .sort-arrow::before{content:'▲';display:block;font-size:7px;line-height:1}
+th.sortable .sort-arrow::after{content:'▼';display:block;font-size:7px;line-height:1;margin-top:1px}
+th.sortable.sorted-asc .sort-arrow::before{color:#1D4ED8}
+th.sortable.sorted-desc .sort-arrow::after{color:#1D4ED8}
 </style>
 </head>
 <body>
@@ -110,7 +129,7 @@ tr.rooton:hover td{background:#DBEAFE}
       <thead>
         <tr>
           <th>분류</th><th>브랜드</th><th>제품명</th><th>제형</th><th>타깃 연령</th>
-          <th>입수량</th><th>1일 섭취량</th><th>판매가</th><th>일일 비용</th><th>기능성 집중도</th><th>주요 소구점</th>
+          <th>입수량</th><th>1일 섭취량</th><th class="sortable" data-sort="price">판매가<span class="sort-arrow"></span></th><th class="sortable" data-sort="daily">일일 비용<span class="sort-arrow"></span></th><th class="sortable" data-sort="func">기능성 집중도<span class="sort-arrow"></span></th><th>주요 소구점</th>
         </tr>
       </thead>
       <tbody id="tbl"></tbody>
@@ -200,9 +219,78 @@ function funcColor(v){
 
 let activeCat='all';
 
+// 그래프 버블 클릭 시 말풍선으로 관련 정보 표시
+let activeBubble=null;
+function showBubble(e, chart, raw){
+  // 기존 말풍선 제거
+  if(activeBubble){
+    activeBubble.remove();
+    activeBubble=null;
+  }
+  // 원본 제품 데이터 찾기
+  const prod=prods.find(p=>p.brand===raw.brand && p.name===raw.name);
+  if(!prod) return;
+  
+  const el=document.createElement('div');
+  el.className='bubble-popup';
+  const priceStr=typeof prod.price==='number'?'₩'+prod.price.toLocaleString():prod.price;
+  const estBadge=prod.est?'<span class="bp-est">◆예측</span>':'';
+  el.innerHTML=`
+    <div class="bp-title">${prod.brand} ${estBadge}</div>
+    <div class="bp-title" style="font-weight:500;font-size:12px;color:#CBD5E1;margin-top:-4px">${prod.name}</div>
+    <div class="bp-row"><span class="bp-label">제형</span><span class="bp-val">${prod.form}</span></div>
+    <div class="bp-row"><span class="bp-label">타깃 연령</span><span class="bp-val">${prod.age}</span></div>
+    <div class="bp-row"><span class="bp-label">입수량</span><span class="bp-val">${prod.pack}</span></div>
+    <div class="bp-row"><span class="bp-label">1일 섭취량</span><span class="bp-val">${prod.daily}</span></div>
+    <div class="bp-row"><span class="bp-label">판매가</span><span class="bp-val">${priceStr}</span></div>
+    <div class="bp-row"><span class="bp-label">일일 비용</span><span class="bp-val" style="color:#FBB042;font-weight:600">₩${prod.daily.toLocaleString()}</span></div>
+    <div class="bp-row"><span class="bp-label">기능성</span><span class="bp-val">${prod.func}/10 · ${funcLabel[prod.func]||''}</span></div>
+    <div class="bp-feat">${prod.feat}</div>
+  `;
+  // 위치 계산 (차트 컨테이너 기준)
+  const container=chart.canvas.parentNode;
+  container.appendChild(el);
+  // 차트 캔버스 위치 기준으로 말풍선 배치
+  const canvasRect=chart.canvas.getBoundingClientRect();
+  const containerRect=container.getBoundingClientRect();
+  const offsetX=canvasRect.left-containerRect.left;
+  const offsetY=canvasRect.top-containerRect.top;
+  // 클릭 좌표 (캔버스 기준)
+  const rect=chart.canvas.getBoundingClientRect();
+  const x=e.clientX-rect.left;
+  const y=e.clientY-rect.top;
+  el.style.left=(x+15)+'px';
+  el.style.top=(y-20)+'px';
+  // 말풍선이 차트 밖으로 나가지 않도록 조정
+  const elRect=el.getBoundingClientRect();
+  if(elRect.right>containerRect.right){
+    el.style.left=(x-elRect.width-15)+'px';
+  }
+  if(elRect.bottom>containerRect.bottom){
+    el.style.top=(y-elRect.height-15)+'px';
+  }
+  activeBubble=el;
+}
+
+// 테이블 정렬 상태
+let sortState={key:null,dir:'asc'};
+
 function buildTable(){
   const tb=document.getElementById('tbl');
-  const data=activeCat==='all'?prods:prods.filter(p=>p.cat===activeCat);
+  let data=activeCat==='all'?prods:prods.filter(p=>p.cat===activeCat);
+  // 정렬 적용
+  if(sortState.key){
+    const key=sortState.key;
+    data=[...data].sort((a,b)=>{
+      let va=a[key], vb=b[key];
+      if(typeof va==='number'&&typeof vb==='number'){
+        return sortState.dir==='asc'?va-vb:vb-va;
+      }
+      va=String(va||'').toLowerCase();
+      vb=String(vb||'').toLowerCase();
+      return sortState.dir==='asc'?va.localeCompare(vb):vb.localeCompare(va);
+    });
+  }
   tb.innerHTML=data.map(p=>`
     <tr class="${p.cat==='lusol'?'lusol':p.cat==='rooton'?'rooton':''}">
       <td><span class="badge b-${p.cat}">${p.cat==='lusol'?'LUSOL기획':p.cat==='rooton'?'ROOTON기획':p.cat}</span></td>
@@ -230,6 +318,25 @@ document.getElementById('tabBar').querySelectorAll('.tab').forEach(t=>{
     activeCat=t.dataset.cat;
     document.querySelectorAll('.tab').forEach(x=>{x.className='tab'});
     t.className='tab active-'+(activeCat==='all'?'all':activeCat);
+    buildTable();
+  });
+});
+
+// 정렬 이벤트
+document.querySelectorAll('th.sortable').forEach(th=>{
+  th.addEventListener('click',()=>{
+    const key=th.dataset.sort;
+    if(sortState.key===key){
+      sortState.dir=sortState.dir==='asc'?'desc':'asc';
+    }else{
+      sortState.key=key;
+      sortState.dir='asc';
+    }
+    // 클래스 업데이트
+    document.querySelectorAll('th.sortable').forEach(x=>{
+      x.classList.remove('sorted-asc','sorted-desc');
+    });
+    th.classList.add(sortState.dir==='asc'?'sorted-asc':'sorted-desc');
     buildTable();
   });
 });
@@ -292,43 +399,6 @@ const tooltip={
   }
 };
 
-// 그래프 버블 클릭 시 아래 표의 해당 행으로 스크롤 + 하이라이트
-function highlightRow(brand, name){
-  // 기존 하이라이트 제거
-  document.querySelectorAll('tr.clicked').forEach(r=>{
-    r.classList.remove('clicked');
-    r.style.outline='';
-    r.style.boxShadow='';
-  });
-  // 해당 제품 행 찾기 (브랜드+제품명 매칭)
-  const rows=document.querySelectorAll('#tbl tr');
-  let target=null;
-  rows.forEach(r=>{
-    const td=r.querySelectorAll('td');
-    if(td.length>=3){
-      const b=td[1]?.textContent.trim();
-      const n=td[2]?.textContent.trim().replace('◆예측','').trim();
-      if(b===brand && (n===name || n.includes(name) || name.includes(n))){
-        target=r;
-      }
-    }
-  });
-  if(target){
-    target.classList.add('clicked');
-    target.style.outline='3px solid #F59E0B';
-    target.style.boxShadow='0 0 0 3px rgba(245,158,11,0.3)';
-    target.style.background='#FEF3C7';
-    // 표 영역으로 스크롤
-    const tblWrap=document.querySelector('.tbl-wrap');
-    if(tblWrap){
-      tblWrap.scrollIntoView({behavior:'smooth',block:'start'});
-      setTimeout(()=>{
-        target.scrollIntoView({behavior:'smooth',block:'center'});
-      },300);
-    }
-  }
-}
-
 new Chart(ctx,{
   type:'bubble',
   data:{
@@ -347,7 +417,7 @@ new Chart(ctx,{
         const dataIdx=elements[0].index;
         const raw=chart.data.datasets[idx].data[dataIdx];
         if(raw && raw.brand){
-          highlightRow(raw.brand, raw.name);
+          showBubble(e, chart, raw);
         }
       }
     },

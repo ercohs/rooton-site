@@ -77,6 +77,11 @@ img {
   letter-spacing: -0.5px;
 }
 
+.nav-logo img {
+  height: 40px;
+  width: auto;
+}
+
 .nav-logo span {
   color: var(--rooton-green);
 }
@@ -152,14 +157,12 @@ img {
   margin-bottom: 30px;
 }
 
-.hero-logo h1 {
-  font-size: 42px;
-  font-weight: 700;
-  letter-spacing: -1px;
-}
-
-.hero-logo h1 span {
-  color: var(--rooton-green);
+.hero-logo img {
+  height: 80px;
+  width: auto;
+  background: var(--white);
+  border-radius: 8px;
+  padding: 8px 12px;
 }
 
 .hero h2 {
@@ -922,13 +925,12 @@ img {
   margin-bottom: 40px;
 }
 
-.footer-logo {
-  font-size: 22px;
-  font-weight: 700;
-}
-
-.footer-logo span {
-  color: var(--rooton-green);
+.footer-logo img {
+  height: 50px;
+  width: auto;
+  background: var(--white);
+  border-radius: 6px;
+  padding: 6px 10px;
 }
 
 .footer-social {
@@ -1030,7 +1032,9 @@ img {
      NAVIGATION
      ============================================================ -->
 <nav class="nav">
-  <div class="nav-logo">루톤<span>랩</span></div>
+  <div class="nav-logo">
+    <img src="images/rooton-logo.jpg" alt="ROOTON 로고"> <!-- 🔴 로고 이미지 교체 -->
+  </div>
   <div class="nav-right">
     <a href="#ingredient">원료 소개</a>
     <a href="#synergy">시너지</a>
@@ -1048,7 +1052,7 @@ img {
 <section class="hero">
   <div class="hero-content">
     <div class="hero-logo">
-      <h1>루톤<span>랩</span></h1>
+      <img src="images/rooton-logo.jpg" alt="ROOTON 로고"> <!-- 🔴 로고 이미지 교체 -->
     </div>
     <h2>
       성장의 뿌리,<br>
@@ -1538,7 +1542,9 @@ img {
      ============================================================ -->
 <footer class="footer">
   <div class="footer-top">
-    <div class="footer-logo">루톤<span>랩</span></div>
+    <div class="footer-logo">
+      <img src="images/rooton-logo.jpg" alt="ROOTON 로고"> <!-- 🔴 로고 이미지 교체 -->
+    </div>
     <div class="footer-social">
       <a href="#">인스타그램</a>
       <a href="#">유튜브</a>

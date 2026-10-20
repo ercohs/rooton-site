@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>전통식치 — 루톤랩</title>
+<style>
+:root {
+  --rooton-green: #55BE83;
+  --rooton-green-dark: #3D9E6A;
+  --rooton-charcoal: #3F3F3F;
+  --sage: #A3B18A;
+  --sage-light: #E8EDD8;
+  --beige: #F5F0E6;
+  --cream: #FAF7F0;
+  --navy: #1B2740;
+  --navy-light: #24365A;
+  --white: #FFFFFF;
+  --gray: #8A8A8A;
+  --dark-gray: #2B2B2B;
+  --border: #E0E0E0;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+  color: var(--dark-gray);
+  line-height: 1.7;
+  background: var(--white);
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 60px;
+  background: rgba(27, 39, 64, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.nav-logo img { height: 36px; width: auto; }
+.nav-right { display: flex; align-items: center; gap: 24px; }
+.nav-right a { color: var(--white); font-size: 14px; font-weight: 500; opacity: 0.85; transition: opacity 0.3s; }
+.nav-right a:hover { opacity: 1; }
+.nav-right a.active { color: var(--rooton-green); opacity: 1; }
+.nav-ercohs img { height: 28px; width: auto; opacity: 0.9; }
+.page-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+  color: var(--white); padding: 140px 60px 80px;
+}
+.page-hero .container { max-width: 1200px; margin: 0 auto; }
+.page-hero .breadcrumb { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
+.page-hero .breadcrumb a { color: rgba(255,255,255,0.7); }
+.page-hero .breadcrumb a:hover { color: var(--rooton-green); }
+.page-hero h1 { font-size: 48px; font-weight: 700; margin-bottom: 16px; letter-spacing: -1px; }
+.page-hero p { font-size: 16px; color: rgba(255,255,255,0.7); max-width: 700px; }
+.section { padding: 80px 60px; }
+.section-white { background: var(--white); }
+.section-sage { background: var(--sage-light); }
+.section-beige { background: var(--beige); }
+.section-navy { background: var(--navy); color: var(--white); }
+.container { max-width: 1200px; margin: 0 auto; }
+.section-label { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rooton-green); margin-bottom: 16px; }
+.section-title { font-size: 36px; font-weight: 700; line-height: 1.3; margin-bottom: 24px; color: var(--rooton-charcoal); letter-spacing: -1px; }
+.section-navy .section-title { color: var(--white); }
+.section-desc { font-size: 16px; color: var(--gray); max-width: 700px; margin-bottom: 40px; line-height: 1.8; }
+.section-navy .section-desc { color: rgba(255,255,255,0.8); }
+.content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.content-image img { border-radius: 16px; width: 100%; height: 400px; object-fit: cover; }
+.content-text h2 { font-size: 32px; font-weight: 700; margin-bottom: 20px; line-height: 1.3; }
+.content-text p { font-size: 15px; color: var(--gray); margin-bottom: 16px; line-height: 1.8; }
+.quote-box { background: var(--white); border-left: 4px solid var(--rooton-green); border-radius: 0 12px 12px 0; padding: 24px; margin: 24px 0; font-style: italic; font-size: 14px; color: var(--dark-gray); line-height: 1.8; }
+.quote-box .source { display: block; margin-top: 12px; font-style: normal; font-size: 13px; color: var(--gray); }
+.info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+.info-card { padding: 30px; border: 1px solid var(--border); border-radius: 12px; transition: all 0.3s; }
+.info-card:hover { border-color: var(--rooton-green); box-shadow: 0 8px 30px rgba(85, 190, 131, 0.1); }
+.info-card h3 { font-size: 18px; font-weight: 600; color: var(--rooton-charcoal); margin-bottom: 12px; }
+.info-card p { font-size: 14px; color: var(--gray); line-height: 1.8; }
+.back-cta { display: inline-block; padding: 14px 36px; border: 1px solid var(--rooton-green); border-radius: 50px; color: var(--rooton-green); font-weight: 600; font-size: 15px; transition: all 0.3s; }
+.back-cta:hover { background: var(--rooton-green); color: var(--white); }
+.footer { background: var(--rooton-charcoal); color: var(--white); padding: 60px; }
+.footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
+.footer-logo img { height: 50px; width: auto; background: var(--white); border-radius: 6px; padding: 6px 10px; }
+.footer-divider { border-top: 1px solid rgba(255,255,255,0.15); margin: 30px 0; }
+.footer-disclaimer { font-size: 13px; font-style: italic; color: rgba(255,255,255,0.6); margin-bottom: 30px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,0.7); }
+.footer-copyright { font-size: 13px; color: rgba(255,255,255,0.5); }
+.footer-social { display: flex; gap: 20px; }
+.footer-social a { color: var(--white); font-size: 14px; opacity: 0.7; }
+@media (max-width: 1024px) { .content-grid { grid-template-columns: 1fr; } .info-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) { .section { padding: 60px 24px; } .page-hero { padding: 120px 24px 60px; } .page-hero h1 { font-size: 32px; } .info-grid { grid-template-columns: 1fr; } .nav { padding: 15px 24px; } .nav-right a { display: none; } .footer { padding: 40px 24px; } }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo"><a href="index.html"><img src="images/rooton-logo.jpg" alt="ROOTON 로고"></a></div>
+  <div class="nav-right">
+    <a href="index.html">메인</a>
+    <a href="ingredient.html">원료 소개</a>
+    <a href="synergy.html">시너지</a>
+    <a href="science.html">과학적 근거</a>
+    <a href="clinical.html">임상 데이터</a>
+    <a href="traditional.html" class="active">전통식치</a>
+    <a href="safety.html">안전성</a>
+    <a href="faq.html">FAQ</a>
+    <a href="https://ercohs.com" class="nav-ercohs" target="_blank"><img src="images/logo_ercohs.svg" alt="에르코스 로고"></a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">홈</a> &gt; <span>전통식치</span></div>
+    <h1>전통식치(食治)의 지혜</h1>
+    <p>음식으로 질병을 예방하고 치료하는 전통 식이요법. 총백은 동의보감에서 가장 빈번하게 활용된 약재입니다.</p>
+  </div>
+</section>
+
+<section class="section section-white">
+  <div class="container">
+    <div class="content-grid">
+      <div class="content-text">
+        <div class="section-label">Traditional Food Therapy</div>
+        <h2>식치(食治)란?</h2>
+        <p>
+          식치(食治)는 음식으로 질병을 예방하고 치료하는 전통 식이요법입니다.
+          총백은 단순 채소가 아닌 '약용 음식(Food-Medicine)'으로 분류되어,
+          동의보감에서 단방(單方)으로 가장 빈번하게 활용되었습니다.
+        </p>
+        <p>
+          한의학에서 귀리, 멥쌀 등의 곡물은 비위(脾胃)를 보강하는 '보익(補益)' 작용을,
+          총백은 기운을 순환시키고 땀을 내는 '발산(發散)' 작용을 합니다.
+        </p>
+        <div class="quote-box">
+          "性平(一云溫) 味辛... 蔥白 治傷寒 初覺 頭痛 體强 宜煮 蔥白湯 飮之"
+          <span class="source">— 『동의보감(東醫寶鑑)』 탕액편 권3 채부 - 파(蔥)</span>
+        </div>
+      </div>
+      <div class="content-image">
+        <img src="images/stats-1.jpg" alt="전통식치 이미지">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-sage">
+  <div class="container">
+    <div class="section-label">Donguibogam</div>
+    <h2 class="section-title">동의보감 속 총백</h2>
+    <p class="section-desc">
+      총백은 동의보감 전체에서 227회 처방되었으며, 단방 부문에서 가장 빈번하게 활용된 핵심 약재입니다.
+    </p>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>부인과 37회 처방</h3>
+        <p>
+          부인과(婦人門) 질환에 가장 높은 빈도(37회)로 처방되었습니다.
+          태동불안, 임신 중 감기, 난산 등 임산부의 응급 및 다빈도 질환에 사용되었습니다.
+        </p>
+      </div>
+      <div class="info-card">
+        <h3>가장 민감한 계층에도 안전</h3>
+        <p>
+          총백은 태아와 산모에게 부작용을 일으키지 않는, 가장 민감한 계층에게도
+          안심하고 사용할 수 있는 안전성을 지닌 천연 약재입니다.
+        </p>
+      </div>
+      <div class="info-card">
+        <h3>식약동원(食藥同源)</h3>
+        <p>
+          총백을 단독으로 강하게 쓰면 기운이 과도하게 빠져나갈 수 있으나,
+          귀리와 함께 죽 형태로 섭취하면 위장을 보호하면서 약효를 나타내는
+          식약동원 효과를 냅니다.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-white">
+  <div class="container">
+    <div class="section-label">Traditional Analysis</div>
+    <h2 class="section-title">총백죽과 귀리총백죽 비교</h2>
+
+    <div class="content-grid">
+      <div class="content-text">
+        <h2>소아 성장 관점에서의 비교</h2>
+        <p>
+          <strong>기존 총백죽 (쌀 베이스):</strong> 백미는 소화가 매우 빨라 급성기 질환 시
+          즉각적인 에너지 공급원으로 우수합니다. 그러나 정제 탄수화물 위주의 식사는
+          식후 혈당을 급격히 높여 야간 수면 시 성장 호르몬 분비를 저해할 수 있습니다.
+        </p>
+        <p>
+          <strong>귀리총백죽 (귀리 베이스):</strong> 단백질과 뼈 성장에 필수적인 미네랄이
+          풍부하며, 복합 탄수화물과 식이섬유가 혈당을 서서히 올려 인슐린 스파이크를
+          방지합니다. 수면 중 성장 호르몬이 원활하게 분비될 수 있는 환경을 조성합니다.
+        </p>
+      </div>
+      <div class="content-image">
+        <img src="images/stats-2.jpg" alt="비교 분석">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-beige" style="text-align: center;">
+  <div class="container">
+    <h2 class="section-title" style="text-align: center;">안전성 확인하기</h2>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="safety.html" class="back-cta">안전성 보기</a>
+      <a href="index.html" class="back-cta" style="border-color: var(--navy); color: var(--navy);">메인으로</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-logo"><img src="images/rooton-logo.jpg" alt="ROOTON 로고"></div>
+    <div class="footer-social">
+      <a href="#">인스타그램</a><a href="#">유튜브</a><a href="#">블로그</a>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <p class="footer-disclaimer">* 본 제품은 질병의 예방 및 치료를 위한 의약품이 아닙니다. 개별 인정형 원료에 대한 기능성 정보입니다.</p>
+  <div class="footer-links">
+    <a href="#">개인정보처리방침</a><a href="#">이용약관</a><a href="#">고객센터</a><a href="#">사이트맵</a>
+  </div>
+  <p class="footer-copyright">© 2026 루톤랩. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

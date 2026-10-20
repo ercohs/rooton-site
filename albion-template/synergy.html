@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>시너지 효과 — 루톤랩</title>
+<style>
+/* ============================================================
+   루톤랩 상세페이지 공통 스타일
+   ============================================================ */
+:root {
+  --rooton-green: #55BE83;
+  --rooton-green-dark: #3D9E6A;
+  --rooton-charcoal: #3F3F3F;
+  --sage: #A3B18A;
+  --sage-light: #E8EDD8;
+  --beige: #F5F0E6;
+  --cream: #FAF7F0;
+  --navy: #1B2740;
+  --navy-light: #24365A;
+  --white: #FFFFFF;
+  --gray: #8A8A8A;
+  --dark-gray: #2B2B2B;
+  --border: #E0E0E0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+  color: var(--dark-gray);
+  line-height: 1.7;
+  background: var(--white);
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+/* NAVIGATION */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 60px;
+  background: rgba(27, 39, 64, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+
+.nav-logo img { height: 36px; width: auto; }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-right a {
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.85;
+  transition: opacity 0.3s;
+}
+
+.nav-right a:hover { opacity: 1; }
+.nav-right a.active { color: var(--rooton-green); opacity: 1; }
+.nav-ercohs img { height: 28px; width: auto; opacity: 0.9; }
+
+/* HERO */
+.page-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+  color: var(--white);
+  padding: 140px 60px 80px;
+}
+
+.page-hero .container { max-width: 1200px; margin: 0 auto; }
+
+.page-hero .breadcrumb {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 20px;
+}
+
+.page-hero .breadcrumb a { color: rgba(255,255,255,0.7); }
+.page-hero .breadcrumb a:hover { color: var(--rooton-green); }
+
+.page-hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+  color: var(--sage);
+}
+
+.page-hero p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.7);
+  max-width: 700px;
+}
+
+/* SECTION */
+.section { padding: 80px 60px; }
+.section-white { background: var(--white); }
+.section-sage { background: var(--sage-light); }
+.section-beige { background: var(--beige); }
+.section-navy { background: var(--navy); color: var(--white); }
+
+.container { max-width: 1200px; margin: 0 auto; }
+
+.section-label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--rooton-green);
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 24px;
+  color: var(--rooton-charcoal);
+  letter-spacing: -1px;
+}
+
+.section-navy .section-title { color: var(--sage); }
+.section-navy .section-desc { color: rgba(255,255,255,0.8); }
+
+.section-desc {
+  font-size: 16px;
+  color: var(--gray);
+  max-width: 700px;
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+/* CONTENT GRID */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.content-image img {
+  border-radius: 16px;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.content-text h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.content-text p {
+  font-size: 15px;
+  color: var(--gray);
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+/* INFO CARDS */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.info-card {
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+
+.info-card:hover {
+  border-color: var(--rooton-green);
+  box-shadow: 0 8px 30px rgba(85, 190, 131, 0.1);
+}
+
+.info-card .num {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--rooton-green);
+  margin-bottom: 15px;
+}
+
+.info-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--rooton-charcoal);
+  margin-bottom: 12px;
+}
+
+.info-card p {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+/* CTA */
+.back-cta {
+  display: inline-block;
+  padding: 14px 36px;
+  border: 1px solid var(--rooton-green);
+  border-radius: 50px;
+  color: var(--rooton-green);
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s;
+}
+
+.back-cta:hover {
+  background: var(--rooton-green);
+  color: var(--white);
+}
+
+/* FOOTER */
+.footer {
+  background: var(--rooton-charcoal);
+  color: var(--white);
+  padding: 60px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.footer-logo img {
+  height: 50px;
+  width: auto;
+  background: var(--white);
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.footer-divider {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  margin: 30px 0;
+}
+
+.footer-disclaimer {
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 30px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+}
+
+.footer-copyright {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+}
+
+.footer-social {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-social a {
+  color: var(--white);
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .content-grid { grid-template-columns: 1fr; }
+  .info-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .section { padding: 60px 24px; }
+  .page-hero { padding: 120px 24px 60px; }
+  .page-hero h1 { font-size: 32px; }
+  .info-grid { grid-template-columns: 1fr; }
+  .nav { padding: 15px 24px; }
+  .nav-right a { display: none; }
+  .footer { padding: 40px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav">
+  <div class="nav-logo">
+    <a href="index.html"><img src="images/rooton-logo.jpg" alt="ROOTON 로고"></a>
+  </div>
+  <div class="nav-right">
+    <a href="index.html">메인</a>
+    <a href="ingredient.html">원료 소개</a>
+    <a href="synergy.html" class="active">시너지</a>
+    <a href="science.html">과학적 근거</a>
+    <a href="clinical.html">임상 데이터</a>
+    <a href="traditional.html">전통식치</a>
+    <a href="safety.html">안전성</a>
+    <a href="faq.html">FAQ</a>
+    <a href="https://ercohs.com" class="nav-ercohs" target="_blank">
+      <img src="images/logo_ercohs.svg" alt="에르코스 로고">
+    </a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">홈</a> &gt; <span>시너지</span>
+    </div>
+    <h1>총백 + 귀리, 시너지의 과학</h1>
+    <p>두 원료의 결합이 만들어내는 상호 보완적 시너지 효과를 과학적으로 분석합니다.</p>
+  </div>
+</section>
+
+<!-- 시너지 소개 -->
+<section class="section section-white">
+  <div class="container">
+    <div class="section-label">Synergy Effect</div>
+    <h2 class="section-title">왜 시너지인가?</h2>
+    <p class="section-desc">
+      총백과 귀리의 결합은 단순한 영양 보충을 넘어, 각 원료의 장점을 극대화하고
+      단점을 보완하는 상호 보완적 관계를 형성합니다.
+    </p>
+
+    <div class="content-grid">
+      <div class="content-text">
+        <h2>면역력 이중 방어막</h2>
+        <p>
+          총백의 알리신(Allicin)과 비타민 C는 강력한 항균 및 항바이러스 작용을 하여
+          호흡기 감염(감기) 초기 방어에 탁월합니다.
+        </p>
+        <p>
+          귀리의 베타글루칸(β-glucan)은 장내 유익균의 먹이(프리바이오틱스)가 되어
+          장내 환경을 개선합니다. 장은 인체 면역 세포의 70% 이상이 모여 있는 곳으로,
+          베타글루칸은 대식세포(Macrophage)와 자연살해세포(NK cell)의 기능을
+          직접적으로 활성화합니다.
+        </p>
+        <p>
+          <strong>총백이 외부 병원균을 직접 타격하는 동안, 귀리는 체내 면역의
+          베이스캠프인 장 환경을 튼튼하게 구축하여 '직접 방어 + 근본 면역 강화'의
+          이중 방어막을 형성합니다.</strong>
+        </p>
+      </div>
+      <div class="content-image">
+        <img src="images/stats-1.jpg" alt="면역력 시너지">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 흡수율 -->
+<section class="section section-sage">
+  <div class="container">
+    <div class="section-label">Absorption</div>
+    <h2 class="section-title">영양 흡수율 극대화</h2>
+    <p class="section-desc">
+      총백의 알리신이 귀리의 비타민 B1과 결합하여 흡수율을 극대화합니다.
+    </p>
+
+    <div class="content-grid">
+      <div class="content-image">
+        <img src="images/science-image.jpg" alt="영양 흡수">
+      </div>
+      <div class="content-text">
+        <h2>알리티아민(Allithiamine)의 힘</h2>
+        <p>
+          귀리의 풍부한 비타민 B1(티아민)은 탄수화물을 에너지로 전환하는 데
+          필수적입니다. 총백의 알리신과 결합하면 '알리티아민'이라는 물질로 변환됩니다.
+        </p>
+        <p>
+          수용성인 비타민 B1은 체내 흡수율이 낮고 쉽게 배출되지만,
+          알리티아민으로 변환되면 <strong>체내 흡수율이 일반 비타민 B1보다
+          10~20배 높아지고</strong> 혈액 속에 오래 머물게 됩니다.
+        </p>
+        <p>
+          이는 아이들의 피로를 빠르게 회복시키고, 섭취한 영양소를 뼈와 근육을 키우는
+          에너지로 100% 활용할 수 있도록 돕는 최고의 대사 촉진 궁합입니다.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 항산화 -->
+<section class="section section-white">
+  <div class="container">
+    <div class="section-label">Antioxidant</div>
+    <h2 class="section-title">항산화 및 혈관 건강</h2>
+
+    <div class="content-grid">
+      <div class="content-text">
+        <h2>퀘르세틴 + 아베난쓰라마이드</h2>
+        <p>
+          총백의 퀘르세틴(Quercetin)은 강력한 항산화 물질로 체내 활성산소를 제거하고
+          염증 수치를 조절합니다.
+        </p>
+        <p>
+          귀리에만 존재하는 독특한 항산화 물질인 AVA(Avenanthramides)는
+          혈관 내벽에 염증이 생기는 것을 막고 혈류를 개선합니다.
+        </p>
+        <p>
+          <strong>두 가지 강력한 항산화 물질이 만나 체내 염증 반응을 억제합니다.</strong>
+          이는 소아의 아토피, 비염 등 알레르기성 염증 질환을 완화하는 데 도움을 주며,
+          원활한 혈류 공급을 통해 뇌 발달과 신체 성장 기관으로 산소와 영양소를 전달합니다.
+        </p>
+      </div>
+      <div class="content-image">
+        <img src="images/stats-2.jpg" alt="항산화 시너지">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 소화 보완 -->
+<section class="section section-navy">
+  <div class="container">
+    <div class="section-label">Digestion</div>
+    <h2 class="section-title">소화 흡수 보완</h2>
+    <p class="section-desc">
+      귀리의 풍부한 영양소가 소화·흡수되도록 총백이 천연 소화제 역할을 합니다.
+    </p>
+
+    <div class="info-grid">
+      <div class="info-card" style="border-color: rgba(255,255,255,0.2);">
+        <div class="num" style="color: var(--rooton-green);">01</div>
+        <h3 style="color: var(--white);">귀리의 단점 보완</h3>
+        <p style="color: rgba(255,255,255,0.8);">
+          귀리는 식이섬유가 풍부하여 위장 기능이 미숙한 영유아에게는
+          다소 소화 부담을 줄 수 있습니다.
+        </p>
+      </div>
+      <div class="info-card" style="border-color: rgba(255,255,255,0.2);">
+        <div class="num" style="color: var(--rooton-green);">02</div>
+        <h3 style="color: var(--white);">총백의 소화 촉진</h3>
+        <p style="color: rgba(255,255,255,0.8);">
+          총백의 매운맛 성분은 위장 점막을 적절히 자극하여 위액 분비를 촉진하고
+          위장관의 연동 운동을 돕습니다.
+        </p>
+      </div>
+      <div class="info-card" style="border-color: rgba(255,255,255,0.2);">
+        <div class="num" style="color: var(--rooton-green);">03</div>
+        <h3 style="color: var(--white);">상호 보완 관계</h3>
+        <p style="color: rgba(255,255,255,0.8);">
+          총백이 천연 소화제 역할을 하여 귀리의 풍부한 영양소(단백질, 미네랄)가
+          소화·흡수되도록 돕는 상호 보완 관계를 형성합니다.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-beige" style="text-align: center;">
+  <div class="container">
+    <h2 class="section-title" style="text-align: center;">더 알아보기</h2>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="science.html" class="back-cta">과학적 근거 보기</a>
+      <a href="clinical.html" class="back-cta">임상 데이터 보기</a>
+      <a href="index.html" class="back-cta" style="border-color: var(--navy); color: var(--navy);">메인으로</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-logo">
+      <img src="images/rooton-logo.jpg" alt="ROOTON 로고">
+    </div>
+    <div class="footer-social">
+      <a href="#">인스타그램</a>
+      <a href="#">유튜브</a>
+      <a href="#">블로그</a>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <p class="footer-disclaimer">
+    * 본 제품은 질병의 예방 및 치료를 위한 의약품이 아닙니다. 개별 인정형 원료에 대한 기능성 정보입니다.
+  </p>
+  <div class="footer-links">
+    <a href="#">개인정보처리방침</a>
+    <a href="#">이용약관</a>
+    <a href="#">고객센터</a>
+    <a href="#">사이트맵</a>
+  </div>
+  <p class="footer-copyright">© 2026 루톤랩. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -3,25 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>브랜드명 — 서브타이틀</title>
+<title>ROOTON — 매일, 성장의 뿌리부터 ON</title>
 <style>
 /* ============================================================
-   ALBION MINERALS 스타일 템플릿
+   ROOTON 랜딩페이지 (Albion Minerals 스타일 기반)
    - 이미지 교체: <img> 태그의 src 속성만 변경
    - 텍스트 교체: 각 섹션의 텍스트만 변경
    - 색상 변경: :root 변수에서 수정
    ============================================================ */
 :root {
-  /* 브랜드 컬러 (필요시 변경) */
-  --navy: #0d2d3f;
-  --navy-light: #123a4e;
-  --teal: #1a6b6b;
-  --teal-light: #2a8a8a;
-  --white: #ffffff;
-  --light-gray: #f5f7f8;
-  --gray: #666666;
-  --dark-gray: #333333;
-  --border-gray: #e0e0e0;
+  /* ROOTON BI 컬러 */
+  --rooton-green: #55BE83;
+  --rooton-green-dark: #3D9E6A;
+  --rooton-charcoal: #3F3F3F;
+  --sage: #A3B18A;
+  --sage-light: #E8EDD8;
+  --beige: #F5F0E6;
+  --cream: #FAF7F0;
+  --navy: #1B2A45;
+  --navy-light: #24365A;
+  --white: #FFFFFF;
+  --gray: #8A8A8A;
+  --dark-gray: #2B2B2B;
+  --border: #E0E0E0;
 }
 
 * {
@@ -33,7 +37,8 @@
 body {
   font-family: 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
   color: var(--dark-gray);
-  line-height: 1.6;
+  line-height: 1.7;
+  background: var(--white);
 }
 
 a {
@@ -44,86 +49,6 @@ a {
 img {
   max-width: 100%;
   display: block;
-}
-
-/* ============================================================
-   HEADER (히어로 영역)
-   ============================================================ */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 80px 60px;
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 40%, var(--teal) 100%);
-  color: var(--white);
-  overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('images/hero-bg.jpg'); /* 🔴 히어로 배경 이미지 교체 */
-  background-size: cover;
-  background-position: center;
-  opacity: 0.4;
-  z-index: 0;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-}
-
-.hero-logo {
-  margin-bottom: 30px;
-}
-
-.hero-logo img {
-  height: 60px;
-  width: auto;
-}
-
-.hero h1 {
-  font-size: 56px;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 12px;
-  letter-spacing: -1px;
-}
-
-.hero h1 .light {
-  font-weight: 300;
-}
-
-.hero .hero-subtitle {
-  font-size: 18px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.85);
-  margin-bottom: 30px;
-  max-width: 600px;
-}
-
-.hero .hero-cta {
-  display: inline-block;
-  padding: 14px 36px;
-  border: 1px solid var(--white);
-  border-radius: 50px;
-  color: var(--white);
-  font-weight: 600;
-  font-size: 15px;
-  transition: all 0.3s;
-}
-
-.hero .hero-cta:hover {
-  background: var(--white);
-  color: var(--navy);
 }
 
 /* ============================================================
@@ -138,13 +63,21 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 60px;
-  background: rgba(13, 45, 63, 0.9);
+  padding: 18px 60px;
+  background: rgba(245, 240, 230, 0.95);
   backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-.nav-left img {
-  height: 40px;
+.nav-logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--rooton-charcoal);
+  letter-spacing: -0.5px;
+}
+
+.nav-logo span {
+  color: var(--rooton-green);
 }
 
 .nav-right {
@@ -154,10 +87,10 @@ img {
 }
 
 .nav-right a {
-  color: var(--white);
+  color: var(--rooton-charcoal);
   font-size: 14px;
   font-weight: 500;
-  opacity: 0.85;
+  opacity: 0.8;
   transition: opacity 0.3s;
 }
 
@@ -165,8 +98,112 @@ img {
   opacity: 1;
 }
 
-.nav-right .nav-logo img {
-  height: 30px;
+.nav-cta {
+  padding: 10px 24px;
+  background: var(--rooton-green);
+  color: var(--white) !important;
+  border-radius: 50px;
+  font-weight: 600;
+  opacity: 1 !important;
+  transition: all 0.3s;
+}
+
+.nav-cta:hover {
+  background: var(--rooton-green-dark);
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 60px 80px;
+  background: linear-gradient(180deg, var(--beige) 0%, var(--cream) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--rooton-charcoal);
+  letter-spacing: -1.5px;
+  margin-bottom: 24px;
+}
+
+.hero-text h1 .highlight {
+  color: var(--rooton-green);
+}
+
+.hero-text .hero-sub {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--gray);
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-cta-primary {
+  display: inline-block;
+  padding: 16px 40px;
+  background: var(--rooton-green);
+  color: var(--white);
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.hero-cta-primary:hover {
+  background: var(--rooton-green-dark);
+  transform: translateY(-2px);
+}
+
+.hero-cta-outline {
+  display: inline-block;
+  padding: 16px 40px;
+  border: 1px solid var(--rooton-charcoal);
+  border-radius: 50px;
+  color: var(--rooton-charcoal);
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.hero-cta-outline:hover {
+  background: var(--rooton-charcoal);
+  color: var(--white);
+}
+
+.hero-image {
+  position: relative;
+}
+
+.hero-image img {
+  border-radius: 20px;
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.1);
 }
 
 /* ============================================================
@@ -180,11 +217,15 @@ img {
   background: var(--white);
 }
 
-.section-gray {
-  background: var(--light-gray);
+.section-sage {
+  background: var(--sage-light);
 }
 
-.section-dark {
+.section-beige {
+  background: var(--beige);
+}
+
+.section-navy {
   background: var(--navy);
   color: var(--white);
 }
@@ -199,19 +240,20 @@ img {
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--teal);
-  margin-bottom: 20px;
+  color: var(--rooton-green);
+  margin-bottom: 16px;
 }
 
 .section-title {
   font-size: 40px;
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1.3;
-  margin-bottom: 30px;
-  color: var(--navy);
+  margin-bottom: 24px;
+  color: var(--rooton-charcoal);
+  letter-spacing: -1px;
 }
 
-.section-dark .section-title {
+.section-navy .section-title {
   color: var(--white);
 }
 
@@ -220,387 +262,444 @@ img {
   color: var(--gray);
   max-width: 700px;
   margin-bottom: 50px;
+  line-height: 1.8;
 }
 
-.section-dark .section-desc {
+.section-navy .section-desc {
   color: rgba(255,255,255,0.8);
 }
 
 /* ============================================================
-   HEALTH BENEFITS (아이콘 타임라인)
+   PROBLEM SECTION (문제 제기)
    ============================================================ */
-.health-grid {
+.problem-section {
+  background: var(--white);
+}
+
+.problem-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   margin-top: 50px;
 }
 
-.health-card {
-  text-align: center;
-  padding: 30px 20px;
+.problem-card {
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all 0.3s;
 }
 
-.health-card .icon {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 20px;
-  border-radius: 50%;
-  background: var(--light-gray);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.problem-card:hover {
+  border-color: var(--rooton-green);
+  box-shadow: 0 8px 30px rgba(85, 190, 131, 0.1);
 }
 
-.health-card .icon img {
-  width: 60px;
-  height: 60px;
-}
-
-.health-card h3 {
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--navy);
-  margin-bottom: 12px;
-}
-
-.health-card p {
-  font-size: 14px;
-  color: var(--gray);
+.problem-card .num {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--rooton-green);
   margin-bottom: 15px;
 }
 
-.health-card .learn-more {
-  font-size: 14px;
+.problem-card h3 {
+  font-size: 20px;
   font-weight: 600;
-  color: var(--teal);
-  border-bottom: 1px solid var(--teal);
-  padding-bottom: 2px;
+  color: var(--rooton-charcoal);
+  margin-bottom: 12px;
+}
+
+.problem-card p {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.8;
 }
 
 /* ============================================================
-   WHY CHOOSE (이유 설명 섹션)
+   PRODUCT INTRO (제품 소개)
    ============================================================ */
-.why-section {
+.product-intro {
   background: var(--navy);
   color: var(--white);
 }
 
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-top: 50px;
-}
-
-.why-card {
-  padding: 30px;
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 8px;
-  transition: all 0.3s;
-}
-
-.why-card:hover {
-  border-color: var(--teal-light);
-  background: rgba(255,255,255,0.05);
-}
-
-.why-card .num {
-  font-size: 48px;
-  font-weight: 700;
-  color: var(--teal-light);
-  margin-bottom: 15px;
-}
-
-.why-card h3 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.why-card p {
-  font-size: 14px;
-  color: rgba(255,255,255,0.8);
-}
-
-/* ============================================================
-   STATS (통계 섹션)
-   ============================================================ */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 60px;
-  margin-top: 50px;
-}
-
-.stat-card {
-  position: relative;
-}
-
-.stat-card .stat-image {
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
-
-.stat-card .stat-image img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-}
-
-.stat-card .stat-number {
-  font-size: 72px;
-  font-weight: 700;
-  color: var(--navy);
-  line-height: 1;
-  margin-bottom: 10px;
-}
-
-.stat-card .stat-desc {
-  font-size: 15px;
-  color: var(--gray);
-}
-
-/* ============================================================
-   SCIENCE (과학적 근거)
-   ============================================================ */
-.science-section {
-  background: var(--light-gray);
-}
-
-.science-content {
+.product-intro-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
 }
 
-.science-content .science-image {
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.science-content .science-image img {
+.product-intro-image img {
+  border-radius: 16px;
   width: 100%;
-  height: 400px;
+  height: 500px;
   object-fit: cover;
 }
 
-.science-content .science-text h2 {
+.product-intro-text h2 {
   font-size: 36px;
-  font-weight: 300;
-  color: var(--navy);
-  margin-bottom: 20px;
-}
-
-.science-content .science-text p {
-  font-size: 15px;
-  color: var(--gray);
-  margin-bottom: 20px;
-}
-
-.science-content .science-text .big-num {
-  font-size: 80px;
   font-weight: 700;
-  color: var(--teal);
-  line-height: 1;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.product-intro-text p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.product-features {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.product-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 15px;
+  color: rgba(255,255,255,0.9);
+}
+
+.product-features li .check {
+  color: var(--rooton-green);
+  font-weight: 700;
+  flex-shrink: 0;
 }
 
 /* ============================================================
-   PRODUCTS (제품 카드)
+   INGREDIENT HIGHLIGHT (성분 강조)
    ============================================================ */
-.products-header {
+.ingredient-section {
+  background: var(--sage-light);
+  text-align: center;
+}
+
+.ingredient-big {
+  font-size: 72px;
+  font-weight: 700;
+  color: var(--rooton-charcoal);
+  letter-spacing: -2px;
+  margin: 30px 0;
+}
+
+.ingredient-big .dot {
+  color: var(--rooton-green);
+}
+
+.ingredient-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 800px;
+  margin: 50px auto 0;
+}
+
+.ingredient-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.ingredient-card .icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.ingredient-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--rooton-charcoal);
+  margin-bottom: 12px;
+}
+
+.ingredient-card p {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+/* ============================================================
+   CLINICAL DATA (임상 데이터)
+   ============================================================ */
+.clinical-section {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.clinical-header {
   text-align: center;
   margin-bottom: 60px;
 }
 
-.products-grid {
+.clinical-header h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.clinical-header p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.7);
+}
+
+.clinical-stats {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
 }
 
-.product-card {
-  border: 1px solid var(--border-gray);
+.clinical-stat {
+  text-align: center;
+  padding: 40px 20px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+}
+
+.clinical-stat .number {
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--rooton-green);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.clinical-stat .label {
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+}
+
+.clinical-chart {
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.clinical-chart h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.chart-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.chart-label {
+  width: 120px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+  text-align: right;
+}
+
+.chart-bar {
+  flex: 1;
+  height: 40px;
   border-radius: 8px;
-  overflow: hidden;
-  transition: all 0.3s;
-}
-
-.product-card:hover {
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-  transform: translateY(-4px);
-}
-
-.product-card .product-image {
+  background: rgba(255,255,255,0.1);
   position: relative;
   overflow: hidden;
 }
 
-.product-card .product-image img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-}
-
-.product-card .product-body {
-  padding: 30px;
-}
-
-.product-card .product-body h3 {
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--navy);
-  margin-bottom: 12px;
-}
-
-.product-card .product-body p {
+.chart-bar .fill {
+  height: 100%;
+  border-radius: 8px;
+  background: var(--rooton-green);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 15px;
   font-size: 14px;
-  color: var(--gray);
-  margin-bottom: 20px;
-}
-
-.product-card .product-cta {
-  display: inline-block;
-  padding: 10px 28px;
-  border: 1px solid var(--teal);
-  border-radius: 50px;
-  color: var(--teal);
   font-weight: 600;
-  font-size: 14px;
-  transition: all 0.3s;
-}
-
-.product-card .product-cta:hover {
-  background: var(--teal);
   color: var(--white);
 }
 
-/* ============================================================
-   INGREDIENT PORTFOLIO (원료 포트폴리오)
-   ============================================================ */
-.ingredients-row {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin-top: 40px;
+.chart-bar .fill.control {
+  background: rgba(255,255,255,0.3);
 }
 
-.ingredient-item {
+.clinical-note {
   text-align: center;
-  padding: 20px 30px;
-  border: 1px solid var(--border-gray);
-  border-radius: 8px;
-  min-width: 150px;
-  transition: all 0.3s;
-}
-
-.ingredient-item:hover {
-  border-color: var(--teal);
-  background: var(--light-gray);
-}
-
-.ingredient-item .ingredient-icon {
-  width: 50px;
-  height: 50px;
-  margin: 0 auto 10px;
-}
-
-.ingredient-item h4 {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--navy);
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  margin-top: 30px;
 }
 
 /* ============================================================
-   CONTACT (문의 CTA)
+   TRUST SECTION (신뢰/투명성)
    ============================================================ */
-.contact-section {
-  background: var(--navy);
+.trust-section {
+  background: var(--white);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  align-items: center;
+}
+
+.trust-image img {
+  border-radius: 16px;
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+
+.trust-list {
+  list-style: none;
+}
+
+.trust-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.trust-list li:last-child {
+  border-bottom: none;
+}
+
+.trust-list .check {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--rooton-green);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.trust-list h4 {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--rooton-charcoal);
+  margin-bottom: 4px;
+}
+
+.trust-list p {
+  font-size: 14px;
+  color: var(--gray);
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq-section {
+  background: var(--beige);
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--white);
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: 24px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--rooton-charcoal);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question .arrow {
+  transition: transform 0.3s;
+  color: var(--rooton-green);
+}
+
+.faq-item.open .faq-question .arrow {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 30px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+.faq-item.open .faq-answer {
+  padding: 0 30px 24px;
+  max-height: 500px;
+}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.final-cta {
+  background: linear-gradient(135deg, var(--rooton-green) 0%, var(--rooton-green-dark) 100%);
   color: var(--white);
   text-align: center;
   padding: 120px 60px;
 }
 
-.contact-section h2 {
+.final-cta h2 {
   font-size: 44px;
-  font-weight: 300;
+  font-weight: 700;
   margin-bottom: 20px;
+  letter-spacing: -1px;
 }
 
-.contact-section p {
+.final-cta p {
   font-size: 16px;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255,255,255,0.9);
   margin-bottom: 40px;
 }
 
-.contact-section .contact-btn {
+.final-cta .cta-btn {
   display: inline-block;
-  padding: 16px 48px;
-  background: var(--teal);
-  color: var(--white);
+  padding: 18px 56px;
+  background: var(--white);
+  color: var(--rooton-green-dark);
   border-radius: 50px;
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 17px;
   transition: all 0.3s;
 }
 
-.contact-section .contact-btn:hover {
-  background: var(--teal-light);
+.final-cta .cta-btn:hover {
   transform: translateY(-2px);
-}
-
-/* ============================================================
-   NEWS (뉴스 섹션)
-   ============================================================ */
-.news-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-top: 50px;
-}
-
-.news-card {
-  border: 1px solid var(--border-gray);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: all 0.3s;
-}
-
-.news-card:hover {
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-}
-
-.news-card .news-image img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.news-card .news-body {
-  padding: 20px;
-}
-
-.news-card .news-date {
-  font-size: 12px;
-  color: var(--gray);
-  margin-bottom: 8px;
-}
-
-.news-card .news-title {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--navy);
-  line-height: 1.4;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 /* ============================================================
    FOOTER
    ============================================================ */
 .footer {
-  background: var(--navy);
+  background: var(--rooton-charcoal);
   color: var(--white);
   padding: 60px;
 }
@@ -612,8 +711,13 @@ img {
   margin-bottom: 40px;
 }
 
-.footer-logo img {
-  height: 50px;
+.footer-logo {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.footer-logo span {
+  color: var(--rooton-green);
 }
 
 .footer-social {
@@ -624,7 +728,7 @@ img {
 .footer-social a {
   color: var(--white);
   font-size: 14px;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .footer-divider {
@@ -660,15 +764,18 @@ img {
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1024px) {
-  .health-grid,
-  .why-grid,
-  .products-grid {
+  .hero-content,
+  .product-intro-grid,
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+  .problem-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .news-grid {
+  .clinical-stats {
     grid-template-columns: repeat(2, 1fr);
   }
-  .science-content {
+  .ingredient-cards {
     grid-template-columns: 1fr;
   }
 }
@@ -680,15 +787,15 @@ img {
   .hero {
     padding: 100px 24px;
   }
-  .hero h1 {
+  .hero-text h1 {
     font-size: 36px;
   }
-  .health-grid,
-  .why-grid,
-  .products-grid,
-  .news-grid,
-  .stats-grid {
+  .problem-grid,
+  .clinical-stats {
     grid-template-columns: 1fr;
+  }
+  .ingredient-big {
+    font-size: 48px;
   }
   .nav {
     padding: 15px 24px;
@@ -699,6 +806,14 @@ img {
   .footer {
     padding: 40px 24px;
   }
+  .chart-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .chart-label {
+    width: auto;
+    text-align: left;
+  }
 }
 </style>
 </head>
@@ -708,19 +823,13 @@ img {
      NAVIGATION
      ============================================================ -->
 <nav class="nav">
-  <div class="nav-left">
-    <img src="images/logo-white.svg" alt="로고"> <!-- 🔴 로고 이미지 교체 -->
-  </div>
+  <div class="nav-logo">ROOT<span>ON</span></div>
   <div class="nav-right">
-    <a href="#about">About</a>
-    <a href="#health">Health Benefits</a>
-    <a href="#why">Why Us</a>
-    <a href="#science">Science</a>
-    <a href="#products">Products</a>
-    <a href="#contact">Contact</a>
-    <div class="nav-logo">
-      <img src="images/company-logo.svg" alt="회사 로고"> <!-- 🔴 회사 로고 교체 -->
-    </div>
+    <a href="#product">제품 소개</a>
+    <a href="#ingredient">성분</a>
+    <a href="#clinical">임상 데이터</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="nav-cta">제품 보러 가기</a>
   </div>
 </nav>
 
@@ -729,359 +838,276 @@ img {
      ============================================================ -->
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-logo">
-      <img src="images/logo-white.svg" alt="브랜드 로고"> <!-- 🔴 로고 교체 -->
+    <div class="hero-text">
+      <h1>
+        오늘의 작은 루틴,<br>
+        <span class="highlight">더 큰 내일.</span>
+      </h1>
+      <p class="hero-sub">
+        성장의 숫자보다, 성장의 조건을 먼저.<br>
+        ROOTON은 아이의 성장 환경을 생각합니다.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#product" class="hero-cta-primary">제품 자세히 보기</a>
+        <a href="#clinical" class="hero-cta-outline">임상 데이터 확인</a>
+      </div>
     </div>
-    <h1>
-      브랜드명<br>
-      <span class="light">메인 슬로건</span> <!-- 🔴 슬로건 교체 -->
-    </h1>
-    <p class="hero-subtitle">
-      브랜드 소개 문구를 여기에 작성합니다. 핵심 가치와 차별화 포인트를 간결하고 설득력 있게 전달합니다.
-    </p>
-    <a href="#contact" class="hero-cta">문의하기</a>
+    <div class="hero-image">
+      <!-- 🔴 히어로 이미지 교체: 아이 모델 또는 제품 이미지 -->
+      <img src="images/hero-bg.jpg" alt="ROOTON 제품 이미지">
+    </div>
   </div>
 </section>
 
 <!-- ============================================================
-     ABOUT SECTION
+     PROBLEM SECTION
      ============================================================ -->
-<section class="section section-white" id="about">
+<section class="section problem-section" id="problem">
   <div class="container">
-    <div class="section-label">About Us</div>
-    <h2 class="section-title">브랜드 소개 타이틀</h2>
+    <div class="section-label">Why ROOTON</div>
+    <h2 class="section-title">좋다는 말보다 먼저,<br>우리 아이가 먹을까?</h2>
     <p class="section-desc">
-      브랜드 소개 본문입니다. 회사의 비전, 미션, 핵심 가치를 설명합니다. 과학적 근거와 기술력을 강조하는 내용으로 작성합니다.
-    </p>
-  </div>
-</section>
-
-<!-- ============================================================
-     HEALTH BENEFITS
-     ============================================================ -->
-<section class="section section-gray" id="health">
-  <div class="container">
-    <div class="section-label">Health Benefits</div>
-    <h2 class="section-title">건강 기능성 혜택</h2>
-    <p class="section-desc">
-      핵심 기능성 혜택을 소개합니다. 각 카테고리별로 아이콘과 설명을 배치합니다.
+      아이를 위한 선택, 맛과 섭취 편의성부터 고민해야 합니다.
     </p>
 
-    <div class="health-grid">
-      <!-- 🔴 카드 1: 아이콘/텍스트 교체 -->
-      <div class="health-card">
-        <div class="icon">
-          <img src="images/icon-bone.svg" alt="뼈 건강"> <!-- 🔴 아이콘 교체 -->
-        </div>
-        <h3>뼈 건강</h3>
-        <p>뼈 건강 관련 설명 문구를 작성합니다.</p>
-        <a href="#" class="learn-more">자세히 보기</a>
+    <div class="problem-grid">
+      <!-- 🔴 카드 1 -->
+      <div class="problem-card">
+        <div class="num">01</div>
+        <h3>맛에 대한 고민</h3>
+        <p>아이가 거부감 없이 꾸준히 섭취할 수 있는 맛을 고민했습니다.</p>
       </div>
 
       <!-- 🔴 카드 2 -->
-      <div class="health-card">
-        <div class="icon">
-          <img src="images/icon-heart.svg" alt="심장 건강"> <!-- 🔴 아이콘 교체 -->
-        </div>
-        <h3>심장 건강</h3>
-        <p>심장 건강 관련 설명 문구를 작성합니다.</p>
-        <a href="#" class="learn-more">자세히 보기</a>
+      <div class="problem-card">
+        <div class="num">02</div>
+        <h3>섭취의 편의성</h3>
+        <p>바쁜 아침, 간편하게 챙길 수 있는 섭취 방식을 설계했습니다.</p>
       </div>
 
       <!-- 🔴 카드 3 -->
-      <div class="health-card">
-        <div class="icon">
-          <img src="images/icon-sports.svg" alt="스포츠"> <!-- 🔴 아이콘 교체 -->
-        </div>
-        <h3>스포츠 퍼포먼스</h3>
-        <p>운동/스포츠 관련 설명 문구를 작성합니다.</p>
-        <a href="#" class="learn-more">자세히 보기</a>
-      </div>
-
-      <!-- 🔴 카드 4 -->
-      <div class="health-card">
-        <div class="icon">
-          <img src="images/icon-brain.svg" alt="인지 건강"> <!-- 🔴 아이콘 교체 -->
-        </div>
-        <h3>인지 건강</h3>
-        <p>인지 기능 관련 설명 문구를 작성합니다.</p>
-        <a href="#" class="learn-more">자세히 보기</a>
-      </div>
-
-      <!-- 🔴 카드 5 -->
-      <div class="health-card">
-        <div class="icon">
-          <img src="images/icon-immune.svg" alt="면역 건강"> <!-- 🔴 아이콘 교체 -->
-        </div>
-        <h3>면역 건강</h3>
-        <p>면역 기능 관련 설명 문구를 작성합니다.</p>
-        <a href="#" class="learn-more">자세히 보기</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     WHY CHOOSE US
-     ============================================================ -->
-<section class="section why-section" id="why">
-  <div class="container">
-    <div class="section-label">Why Choose Us</div>
-    <h2 class="section-title">왜 우리를 선택해야 하는가?</h2>
-    <p class="section-desc">
-      차별화 포인트를 4가지 핵심 가치로 설명합니다.
-    </p>
-
-    <div class="why-grid">
-      <!-- 🔴 항목 1 -->
-      <div class="why-card">
-        <div class="num">01</div>
-        <h3>핵심 가치 1</h3>
-        <p>핵심 가치 1에 대한 설명 문구를 작성합니다.</p>
-      </div>
-
-      <!-- 🔴 항목 2 -->
-      <div class="why-card">
-        <div class="num">02</div>
-        <h3>핵심 가치 2</h3>
-        <p>핵심 가치 2에 대한 설명 문구를 작성합니다.</p>
-      </div>
-
-      <!-- 🔴 항목 3 -->
-      <div class="why-card">
+      <div class="problem-card">
         <div class="num">03</div>
-        <h3>핵심 가치 3</h3>
-        <p>핵심 가치 3에 대한 설명 문구를 작성합니다.</p>
-      </div>
-
-      <!-- 🔴 항목 4 -->
-      <div class="why-card">
-        <div class="num">04</div>
-        <h3>핵심 가치 4</h3>
-        <p>핵심 가치 4에 대한 설명 문구를 작성합니다.</p>
+        <h3>과학적 검증</h3>
+        <p>임상 연구를 통해 검증된 성분만을 사용합니다.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     STATS
+     PRODUCT INTRO
      ============================================================ -->
-<section class="section section-white">
+<section class="section product-intro" id="product">
   <div class="container">
-    <div class="section-label">Key Numbers</div>
-    <h2 class="section-title">핵심 수치</h2>
-
-    <div class="stats-grid">
-      <!-- 🔴 통계 1 -->
-      <div class="stat-card">
-        <div class="stat-image">
-          <img src="images/stats-1.jpg" alt="통계 이미지 1"> <!-- 🔴 이미지 교체 -->
-        </div>
-        <div class="stat-number">100%</div>
-        <p class="stat-desc">통계 수치에 대한 설명 문구를 작성합니다.</p>
+    <div class="product-intro-grid">
+      <div class="product-intro-image">
+        <!-- 🔴 제품 이미지 교체 -->
+        <img src="images/product-1.jpg" alt="ROOTON 제품">
       </div>
-
-      <!-- 🔴 통계 2 -->
-      <div class="stat-card">
-        <div class="stat-image">
-          <img src="images/stats-2.jpg" alt="통계 이미지 2"> <!-- 🔴 이미지 교체 -->
-        </div>
-        <div class="stat-number">50+</div>
-        <p class="stat-desc">통계 수치에 대한 설명 문구를 작성합니다.</p>
+      <div class="product-intro-text">
+        <div class="section-label">Product</div>
+        <h2>챙겨 주는 순간이<br>가벼워지도록</h2>
+        <p>
+          ROOTON은 총백귀리 혼합물을 활용한 키성장 제품입니다.
+          성장의 뿌리가 되는 영양 환경을 생각합니다.
+        </p>
+        <ul class="product-features">
+          <li><span class="check">✓</span> 총백귀리 혼합물(WCO31) 함유</li>
+          <li><span class="check">✓</span> 뼈·장 건강 기능성 원료</li>
+          <li><span class="check">✓</span> 아이가 좋아하는 섭취 방식</li>
+          <li><span class="check">✓</span> 임상 연구 기반 검증</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     SCIENCE
+     INGREDIENT HIGHLIGHT
      ============================================================ -->
-<section class="section science-section" id="science">
+<section class="section ingredient-section" id="ingredient">
   <div class="container">
-    <div class="science-content">
-      <div class="science-image">
-        <img src="images/science-image.jpg" alt="과학 이미지"> <!-- 🔴 이미지 교체 -->
+    <div class="section-label">Key Ingredients</div>
+    <h2 class="section-title">낯선 이름이라면, 더 분명하게</h2>
+    <p class="section-desc">핵심 성분을 정직하게 소개합니다.</p>
+
+    <div class="ingredient-big">총백<span class="dot">·</span>귀리</div>
+
+    <div class="ingredient-cards">
+      <!-- 🔴 성분 1 -->
+      <div class="ingredient-card">
+        <div class="icon">
+          <img src="images/icon-bone.svg" alt="총백 아이콘"> <!-- 🔴 아이콘 교체 -->
+        </div>
+        <h3>총백</h3>
+        <p>총백귀리 혼합물의 핵심 성분으로, 뼈 건강에 도움을 줄 수 있습니다.</p>
       </div>
-      <div class="science-text">
-        <div class="section-label">Science</div>
-        <h2>과학적 근거</h2>
-        <div class="big-num">160+</div>
-        <p>과학적 근거에 대한 설명 문구를 작성합니다. 연구 논문 수, 임상 시험 결과 등 신뢰성 있는 데이터를 강조합니다.</p>
-        <p>추가 설명 문구를 작성합니다.</p>
+
+      <!-- 🔴 성분 2 -->
+      <div class="ingredient-card">
+        <div class="icon">
+          <img src="images/icon-immune.svg" alt="귀리 아이콘"> <!-- 🔴 아이콘 교체 -->
+        </div>
+        <h3>귀리</h3>
+        <p>장 건강에 도움을 줄 수 있는 성분으로, 성장 환경을 지원합니다.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     PRODUCTS
+     CLINICAL DATA
      ============================================================ -->
-<section class="section section-white" id="products">
+<section class="section clinical-section" id="clinical">
   <div class="container">
-    <div class="products-header">
-      <div class="section-label">Products</div>
-      <h2 class="section-title">제품 소개</h2>
-      <p class="section-desc">주요 제품을 소개합니다. 각 제품의 이미지와 설명, CTA 버튼을 배치합니다.</p>
+    <div class="clinical-header">
+      <div class="section-label">Clinical Study</div>
+      <h2>수치에는 연구 조건을 함께</h2>
+      <p>임상 연구 결과를 투명하게 공개합니다.</p>
     </div>
 
-    <div class="products-grid">
-      <!-- 🔴 제품 1 -->
-      <div class="product-card">
-        <div class="product-image">
-          <img src="images/product-1.jpg" alt="제품 1"> <!-- 🔴 이미지 교체 -->
-        </div>
-        <div class="product-body">
-          <h3>제품명 1</h3>
-          <p>제품 1에 대한 설명 문구를 작성합니다. 핵심 기능과 장점을 강조합니다.</p>
-          <a href="#" class="product-cta">자세히 보기</a>
-        </div>
+    <div class="clinical-stats">
+      <!-- 🔴 임상 데이터 1 -->
+      <div class="clinical-stat">
+        <div class="number">160명</div>
+        <div class="label">임상시험 참여 인원</div>
       </div>
 
-      <!-- 🔴 제품 2 -->
-      <div class="product-card">
-        <div class="product-image">
-          <img src="images/product-2.jpg" alt="제품 2"> <!-- 🔴 이미지 교체 -->
-        </div>
-        <div class="product-body">
-          <h3>제품명 2</h3>
-          <p>제품 2에 대한 설명 문구를 작성합니다. 핵심 기능과 장점을 강조합니다.</p>
-          <a href="#" class="product-cta">자세히 보기</a>
-        </div>
+      <!-- 🔴 임상 데이터 2 -->
+      <div class="clinical-stat">
+        <div class="number">24주</div>
+        <div class="label">임상시험 기간</div>
       </div>
 
-      <!-- 🔴 제품 3 -->
-      <div class="product-card">
-        <div class="product-image">
-          <img src="images/product-3.jpg" alt="제품 3"> <!-- 🔴 이미지 교체 -->
-        </div>
-        <div class="product-body">
-          <h3>제품명 3</h3>
-          <p>제품 3에 대한 설명 문구를 작성합니다. 핵심 기능과 장점을 강조합니다.</p>
-          <a href="#" class="product-cta">자세히 보기</a>
-        </div>
+      <!-- 🔴 임상 데이터 3 -->
+      <div class="clinical-stat">
+        <div class="number">1.2g/일</div>
+        <div class="label">섭취 용량</div>
       </div>
 
-      <!-- 🔴 제품 4 -->
-      <div class="product-card">
-        <div class="product-image">
-          <img src="images/product-4.jpg" alt="제품 4"> <!-- 🔴 이미지 교체 -->
-        </div>
-        <div class="product-body">
-          <h3>제품명 4</h3>
-          <p>제품 4에 대한 설명 문구를 작성합니다. 핵심 기능과 장점을 강조합니다.</p>
-          <a href="#" class="product-cta">자세히 보기</a>
+      <!-- 🔴 임상 데이터 4 -->
+      <div class="clinical-stat">
+        <div class="number">6.74cm</div>
+        <div class="label">군간 평균 차이</div>
+      </div>
+    </div>
+
+    <div class="clinical-chart">
+      <h4>성장 관련 지표 변화</h4>
+      <div class="chart-row">
+        <div class="chart-label">ROOTON군</div>
+        <div class="chart-bar">
+          <div class="fill" style="width: 85%;">6.74cm</div>
         </div>
       </div>
+      <div class="chart-row">
+        <div class="chart-label">대조군</div>
+        <div class="chart-bar">
+          <div class="fill control" style="width: 65%;">5.00cm</div>
+        </div>
+      </div>
+      <p class="clinical-note">* 임상 연구 조건에 따라 수치가 달라질 수 있습니다.</p>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     INGREDIENTS
+     TRUST SECTION
      ============================================================ -->
-<section class="section section-gray">
+<section class="section trust-section">
   <div class="container">
-    <div class="section-label">Ingredient Portfolio</div>
-    <h2 class="section-title">원료 포트폴리오</h2>
-    <p class="section-desc">주요 원료를 소개합니다.</p>
-
-    <div class="ingredients-row">
-      <!-- 🔴 원료 1 -->
-      <div class="ingredient-item">
-        <div class="ingredient-icon">
-          <img src="images/ingredient-1.png" alt="원료 1"> <!-- 🔴 이미지 교체 -->
-        </div>
-        <h4>원료명 1</h4>
+    <div class="trust-grid">
+      <div class="trust-image">
+        <!-- 🔴 신뢰 이미지 교체 -->
+        <img src="images/science-image.jpg" alt="ROOTON 신뢰 이미지">
       </div>
-
-      <!-- 🔴 원료 2 -->
-      <div class="ingredient-item">
-        <div class="ingredient-icon">
-          <img src="images/ingredient-2.png" alt="원료 2"> <!-- 🔴 이미지 교체 -->
-        </div>
-        <h4>원료명 2</h4>
-      </div>
-
-      <!-- 🔴 원료 3 -->
-      <div class="ingredient-item">
-        <div class="ingredient-icon">
-          <img src="images/ingredient-3.png" alt="원료 3"> <!-- 🔴 이미지 교체 -->
-        </div>
-        <h4>원료명 3</h4>
-      </div>
-
-      <!-- 🔴 원료 4 -->
-      <div class="ingredient-item">
-        <div class="ingredient-icon">
-          <img src="images/ingredient-4.png" alt="원료 4"> <!-- 🔴 이미지 교체 -->
-        </div>
-        <h4>원료명 4</h4>
-      </div>
-
-      <!-- 🔴 원료 5 -->
-      <div class="ingredient-item">
-        <div class="ingredient-icon">
-          <img src="images/ingredient-5.png" alt="원료 5"> <!-- 🔴 이미지 교체 -->
-        </div>
-        <h4>원료명 5</h4>
+      <div>
+        <div class="section-label">Transparency</div>
+        <h2 class="section-title">선택 전에 필요한 정보,<br>숨기지 않고</h2>
+        <ul class="trust-list">
+          <!-- 🔴 항목 1 -->
+          <li>
+            <div class="check">✓</div>
+            <div>
+              <h4>원료 정보 투명 공개</h4>
+              <p>사용된 원료와 함량을 정확히 표기합니다.</p>
+            </div>
+          </li>
+          <!-- 🔴 항목 2 -->
+          <li>
+            <div class="check">✓</div>
+            <div>
+              <h4>임상 연구 결과 공개</h4>
+              <p>연구 조건과 수치를 그대로 공개합니다.</p>
+            </div>
+          </li>
+          <!-- 🔴 항목 3 -->
+          <li>
+            <div class="check">✓</div>
+            <div>
+              <h4>안전성 검증</h4>
+              <p>식약처 기준에 맞는 안전한 성분만 사용합니다.</p>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     CONTACT
+     FAQ
      ============================================================ -->
-<section class="contact-section" id="contact">
-  <h2>함께 협력해요</h2>
-  <p>문의 사항이 있으시면 언제든지 연락 주세요.</p>
-  <a href="#" class="contact-btn">문의하기</a>
-</section>
-
-<!-- ============================================================
-     NEWS
-     ============================================================ -->
-<section class="section section-white">
+<section class="section faq-section" id="faq">
   <div class="container">
-    <div class="section-label">News</div>
-    <h2 class="section-title">최신 소식</h2>
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">궁금한 점을 먼저 확인하세요</h2>
 
-    <div class="news-grid">
-      <!-- 🔴 뉴스 1 -->
-      <div class="news-card">
-        <div class="news-image">
-          <img src="images/news-1.jpg" alt="뉴스 1"> <!-- 🔴 이미지 교체 -->
+    <div class="faq-list">
+      <!-- 🔴 FAQ 1 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          ROOTON은 어떤 제품인가요?
+          <span class="arrow">▼</span>
         </div>
-        <div class="news-body">
-          <div class="news-date">2026. 10. 01</div>
-          <div class="news-title">뉴스 제목 1</div>
+        <div class="faq-answer">
+          ROOTON은 총백귀리 혼합물을 활용한 키성장 제품입니다. 성장 환경을 위한 영양을 생각합니다.
         </div>
       </div>
 
-      <!-- 🔴 뉴스 2 -->
-      <div class="news-card">
-        <div class="news-image">
-          <img src="images/news-2.jpg" alt="뉴스 2"> <!-- 🔴 이미지 교체 -->
+      <!-- 🔴 FAQ 2 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          섭취 방법은 어떻게 되나요?
+          <span class="arrow">▼</span>
         </div>
-        <div class="news-body">
-          <div class="news-date">2026. 09. 15</div>
-          <div class="news-title">뉴스 제목 2</div>
+        <div class="faq-answer">
+          제품 설명서에 안내된 섭취 방법을 따라주세요. 꾸준한 섭취가 중요합니다.
         </div>
       </div>
 
-      <!-- 🔴 뉴스 3 -->
-      <div class="news-card">
-        <div class="news-image">
-          <img src="images/news-3.jpg" alt="뉴스 3"> <!-- 🔴 이미지 교체 -->
+      <!-- 🔴 FAQ 3 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          임상 연구 결과는 신뢰할 수 있나요?
+          <span class="arrow">▼</span>
         </div>
-        <div class="news-body">
-          <div class="news-date">2026. 08. 20</div>
-          <div class="news-title">뉴스 제목 3</div>
+        <div class="faq-answer">
+          임상 연구 결과는 투명하게 공개하고 있습니다. 연구 조건과 수치를 함께 확인하실 수 있습니다.
         </div>
       </div>
     </div>
   </div>
+</section>
+
+<!-- ============================================================
+     FINAL CTA
+     ============================================================ -->
+<section class="final-cta" id="contact">
+  <h2>아이의 오늘에 닿는 선택,<br>정보부터 꼼꼼하게.</h2>
+  <p>ROOTON과 함께 성장의 뿌리를 키워보세요.</p>
+  <a href="#" class="cta-btn">공식몰 가격 확인하기</a>
 </section>
 
 <!-- ============================================================
@@ -1089,33 +1115,45 @@ img {
      ============================================================ -->
 <footer class="footer">
   <div class="footer-top">
-    <div class="footer-logo">
-      <img src="images/logo-white.svg" alt="로고"> <!-- 🔴 로고 교체 -->
-    </div>
+    <div class="footer-logo">ROOT<span>ON</span></div>
     <div class="footer-social">
-      <a href="#">LinkedIn</a>
-      <a href="#">Facebook</a>
-      <a href="#">Instagram</a>
+      <a href="#">인스타그램</a>
+      <a href="#">유튜브</a>
+      <a href="#">블로그</a>
     </div>
   </div>
 
   <div class="footer-divider"></div>
 
   <p class="footer-disclaimer">
-    *본 제품은 질병의 진단, 치료, 예방을 목적으로 하지 않습니다.
+    * 본 제품은 질병의 예방 및 치료를 위한 의약품이 아닙니다. 개별 인정형 원료에 대한 기능성 정보입니다.
   </p>
 
   <div class="footer-links">
     <a href="#">개인정보처리방침</a>
     <a href="#">이용약관</a>
-    <a href="#">쿠키 정책</a>
+    <a href="#">고객센터</a>
     <a href="#">사이트맵</a>
   </div>
 
   <p class="footer-copyright">
-    © 2026 브랜드명. All rights reserved.
+    © 2026 ROOTON. All rights reserved.
   </p>
 </footer>
+
+<script>
+// FAQ 아코디언
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    // 모든 항목 닫기
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    // 클릭한 항목 열기
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+</script>
 
 </body>
 </html>

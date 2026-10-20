@@ -64,26 +64,31 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 60px;
-  background: rgba(255,255,255,0.95);
+  padding: 24px 60px;
+  background: transparent;
+  transition: all 0.4s ease;
+}
+
+.nav.scrolled {
+  background: rgba(27, 39, 64, 0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding: 14px 60px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
 }
 
 .nav-logo {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--rooton-charcoal);
-  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
 }
 
 .nav-logo img {
-  height: 40px;
+  height: 44px;
   width: auto;
+  transition: height 0.4s ease;
 }
 
-.nav-logo span {
-  color: var(--rooton-green);
+.nav.scrolled .nav-logo img {
+  height: 36px;
 }
 
 .nav-right {
@@ -93,14 +98,30 @@ img {
 }
 
 .nav-right a {
-  color: var(--rooton-charcoal);
+  color: var(--white);
   font-size: 14px;
   font-weight: 500;
-  opacity: 0.8;
+  opacity: 0.85;
   transition: opacity 0.3s;
 }
 
 .nav-right a:hover {
+  opacity: 1;
+}
+
+.nav-ercohs {
+  display: flex;
+  align-items: center;
+}
+
+.nav-ercohs img {
+  height: 30px;
+  width: auto;
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+
+.nav-ercohs:hover img {
   opacity: 1;
 }
 
@@ -157,14 +178,6 @@ img {
   margin-bottom: 30px;
 }
 
-.hero-logo img {
-  height: 80px;
-  width: auto;
-  background: var(--white);
-  border-radius: 8px;
-  padding: 8px 12px;
-}
-
 .hero h2 {
   font-size: 56px;
   font-weight: 300;
@@ -177,6 +190,13 @@ img {
 .hero h2 strong {
   font-weight: 700;
   color: var(--rooton-green);
+}
+
+.hero h2 .hero-sub2 {
+  font-size: 28px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0;
 }
 
 .hero .hero-subtitle {
@@ -345,6 +365,22 @@ img {
   margin-bottom: 0;
 }
 
+.section-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--rooton-green);
+  border-bottom: 1px solid var(--rooton-green);
+  padding-bottom: 2px;
+  transition: all 0.3s;
+}
+
+.section-link:hover {
+  color: var(--rooton-green-dark);
+  border-color: var(--rooton-green-dark);
+}
+
 /* ============================================================
    INGREDIENT CARDS (원료 카드 - 총백/귀리)
    ============================================================ */
@@ -449,6 +485,16 @@ img {
 
 .synergy-section .section-desc {
   color: rgba(255,255,255,0.7);
+}
+
+.synergy-section .section-link {
+  color: var(--rooton-green);
+  border-color: var(--rooton-green);
+}
+
+.synergy-section .section-link:hover {
+  color: var(--sage-text);
+  border-color: var(--sage-text);
 }
 
 .synergy-grid {
@@ -560,6 +606,16 @@ img {
 .clinical-section {
   background: var(--navy);
   color: var(--white);
+}
+
+.clinical-section .section-link {
+  color: var(--rooton-green);
+  border-color: var(--rooton-green);
+}
+
+.clinical-section .section-link:hover {
+  color: var(--sage-text);
+  border-color: var(--sage-text);
 }
 
 .clinical-header {
@@ -1031,18 +1087,21 @@ img {
 <!-- ============================================================
      NAVIGATION
      ============================================================ -->
-<nav class="nav">
+<nav class="nav" id="mainNav">
   <div class="nav-logo">
-    <img src="images/rooton-logo.jpg" alt="ROOTON 로고"> <!-- 🔴 로고 이미지 교체 -->
+    <img src="images/rooton-logo.jpg" alt="ROOTON 로고"> <!-- 🔴 루톤 로고 (누끼) -->
   </div>
   <div class="nav-right">
-    <a href="#ingredient">원료 소개</a>
-    <a href="#synergy">시너지</a>
-    <a href="#science">과학적 근거</a>
-    <a href="#clinical">임상 데이터</a>
-    <a href="#traditional">전통식치</a>
-    <a href="#safety">안전성</a>
-    <a href="#faq">FAQ</a>
+    <a href="ingredient.html">원료 소개</a>
+    <a href="synergy.html">시너지</a>
+    <a href="science.html">과학적 근거</a>
+    <a href="clinical.html">임상 데이터</a>
+    <a href="traditional.html">전통식치</a>
+    <a href="safety.html">안전성</a>
+    <a href="faq.html">FAQ</a>
+    <a href="https://ercohs.com" class="nav-ercohs" target="_blank">
+      <img src="images/logo_ercohs.svg" alt="에르코스 로고"> <!-- 🔴 에르코스 로고 -->
+    </a>
   </div>
 </nav>
 
@@ -1051,12 +1110,9 @@ img {
      ============================================================ -->
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-logo">
-      <img src="images/rooton-logo.jpg" alt="ROOTON 로고"> <!-- 🔴 로고 이미지 교체 -->
-    </div>
     <h2>
-      성장의 뿌리,<br>
-      <strong>총백귀리혼합물 WCO31</strong>
+      <strong>루톤</strong>, 성장의 뿌리<br>
+      <span class="hero-sub2">총백귀리혼합물 WCO31</span>
     </h2>
     <p class="hero-subtitle">
       전통식치의 지혜와 현대 과학의 검증이 만난 원료.<br>
@@ -1081,7 +1137,7 @@ img {
       </div>
       <div class="ingredient-intro-text">
         <div class="section-label">Ingredient</div>
-        <h2>총백귀리혼합물<br>WCO31</h2>
+        <h2><a href="ingredient.html" style="color: inherit;">총백귀리혼합물<br>WCO31</a></h2>
         <p>
           WCO31은 <strong>총백(蔥白, 파뿌리 흰 부분)</strong>과 <strong>귀리(Oat)</strong>를
           최적의 비율로 배합한 원료입니다. 전통식치(食治)에서 오랫동안 사용되어 온
@@ -1098,6 +1154,7 @@ img {
             어린이 성장을 위한 식약동원(食藥同源) 조합
           </p>
         </div>
+        <a href="ingredient.html" class="section-link">원료 자세히 보기 →</a>
       </div>
     </div>
   </div>
@@ -1170,9 +1227,10 @@ img {
 <section class="section synergy-section" id="synergy">
   <div class="container">
     <div class="section-label">Synergy Effect</div>
-    <h2 class="section-title">총백 + 귀리, 시너지의 과학</h2>
+    <h2 class="section-title"><a href="synergy.html" style="color: inherit;">총백 + 귀리, 시너지의 과학</a></h2>
     <p class="section-desc">
       두 원료의 결합은 단순한 영양 보충을 넘어 상호 보완적 시너지를 만들어냅니다.
+      <a href="synergy.html" class="section-link">시너지 자세히 보기 →</a>
     </p>
 
     <div class="synergy-grid">
@@ -1216,9 +1274,10 @@ img {
 <section class="section science-section" id="science">
   <div class="container">
     <div class="section-label">Scientific Evidence</div>
-    <h2 class="section-title">과학적 근거</h2>
+    <h2 class="section-title"><a href="science.html" style="color: inherit;">과학적 근거</a></h2>
     <p class="section-desc">
       전통식치의 지혜를 현대 과학으로 검증했습니다.
+      <a href="science.html" class="section-link">과학적 근거 자세히 보기 →</a>
     </p>
 
     <div class="science-grid">
@@ -1280,8 +1339,10 @@ img {
   <div class="container">
     <div class="clinical-header">
       <div class="section-label">Clinical Study</div>
-      <h2>임상 연구 데이터</h2>
-      <p>수치에는 연구 조건을 함께, 투명하게 공개합니다.</p>
+      <h2><a href="clinical.html" style="color: inherit;">임상 연구 데이터</a></h2>
+      <p>수치에는 연구 조건을 함께, 투명하게 공개합니다.
+        <a href="clinical.html" class="section-link" style="display: block; margin-top: 15px;">임상 데이터 자세히 보기 →</a>
+      </p>
     </div>
 
     <div class="clinical-stats">
@@ -1349,7 +1410,7 @@ img {
       </div>
       <div class="traditional-text">
         <div class="section-label">Traditional Food Therapy</div>
-        <h2>전통식치(食治)의 지혜</h2>
+        <h2><a href="traditional.html" style="color: inherit;">전통식치(食治)의 지혜</a></h2>
         <p>
           식치(食治)는 음식으로 질병을 예방하고 치료하는 전통 식이요법입니다.
           총백은 단순 채소가 아닌 '약용 음식(Food-Medicine)'으로 분류되어,
@@ -1364,6 +1425,7 @@ img {
           높은 빈도(37회)로 사용되었습니다. 태동불안, 임신 중 감기 등 가장 민감한
           계층에게도 안심하고 사용할 수 있는 안전성을 지닌 천연 약재입니다.
         </p>
+        <a href="traditional.html" class="section-link">전통식치 자세히 보기 →</a>
       </div>
     </div>
   </div>
@@ -1375,9 +1437,10 @@ img {
 <section class="section safety-section" id="safety">
   <div class="container">
     <div class="section-label">Safety</div>
-    <h2 class="section-title">안전성 검증</h2>
+    <h2 class="section-title"><a href="safety.html" style="color: inherit;">안전성 검증</a></h2>
     <p class="section-desc">
       아이에게 안심하고 먹일 수 있는 원료인지, 철저히 검증했습니다.
+      <a href="safety.html" class="section-link">안전성 자세히 보기 →</a>
     </p>
 
     <div class="safety-grid">
@@ -1470,7 +1533,10 @@ img {
 <section class="section faq-section" id="faq">
   <div class="container">
     <div class="section-label">FAQ</div>
-    <h2 class="section-title">원료에 대한 궁금증</h2>
+    <h2 class="section-title"><a href="faq.html" style="color: inherit;">원료에 대한 궁금증</a></h2>
+    <p class="section-desc" style="margin-bottom: 30px;">
+      <a href="faq.html" class="section-link">FAQ 전체 보기 →</a>
+    </p>
 
     <div class="faq-list">
       <!-- 🔴 FAQ 1 -->
@@ -1579,6 +1645,18 @@ document.querySelectorAll('.faq-question').forEach(q => {
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
     if (!wasOpen) item.classList.add('open');
   });
+});
+
+// 스크롤 시 네비게이션 변화
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('mainNav');
+  if (nav) {
+    if (window.scrollY > 80) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  }
 });
 </script>
 

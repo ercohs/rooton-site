@@ -3,16 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ROOTON — 매일, 성장의 뿌리부터 ON</title>
+<title>루톤랩 — 총백귀리혼합물 WCO31 원료 소개</title>
 <style>
 /* ============================================================
-   ROOTON 랜딩페이지 (Albion Minerals 스타일 기반)
+   루톤랩 원료 소개 페이지
+   (Albion Minerals 구조 기반 - 원료 중심)
    - 이미지 교체: <img> 태그의 src 속성만 변경
    - 텍스트 교체: 각 섹션의 텍스트만 변경
    - 색상 변경: :root 변수에서 수정
    ============================================================ */
 :root {
-  /* ROOTON BI 컬러 */
+  /* 루톤랩 BI 컬러 */
   --rooton-green: #55BE83;
   --rooton-green-dark: #3D9E6A;
   --rooton-charcoal: #3F3F3F;
@@ -64,13 +65,13 @@ img {
   justify-content: space-between;
   align-items: center;
   padding: 18px 60px;
-  background: rgba(245, 240, 230, 0.95);
+  background: rgba(255,255,255,0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .nav-logo {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--rooton-charcoal);
   letter-spacing: -0.5px;
@@ -83,7 +84,7 @@ img {
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 28px;
 }
 
 .nav-right a {
@@ -113,7 +114,7 @@ img {
 }
 
 /* ============================================================
-   HERO SECTION
+   HERO SECTION (원료 히어로)
    ============================================================ */
 .hero {
   min-height: 100vh;
@@ -121,38 +122,65 @@ img {
   flex-direction: column;
   justify-content: center;
   padding: 120px 60px 80px;
-  background: linear-gradient(180deg, var(--beige) 0%, var(--cream) 100%);
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 60%, #2A4A6B 100%);
+  color: var(--white);
   position: relative;
   overflow: hidden;
 }
 
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('images/hero-bg.jpg'); /* 🔴 히어로 배경 이미지 교체 */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  z-index: 0;
+}
+
 .hero-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
 }
 
-.hero-text h1 {
-  font-size: 52px;
+.hero-logo {
+  margin-bottom: 30px;
+}
+
+.hero-logo h1 {
+  font-size: 42px;
   font-weight: 700;
-  line-height: 1.25;
-  color: var(--rooton-charcoal);
-  letter-spacing: -1.5px;
-  margin-bottom: 24px;
+  letter-spacing: -1px;
 }
 
-.hero-text h1 .highlight {
+.hero-logo h1 span {
   color: var(--rooton-green);
 }
 
-.hero-text .hero-sub {
+.hero h2 {
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 1.25;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.hero h2 strong {
+  font-weight: 700;
+  color: var(--rooton-green);
+}
+
+.hero .hero-subtitle {
   font-size: 18px;
   font-weight: 300;
-  color: var(--gray);
+  color: rgba(255,255,255,0.85);
   margin-bottom: 40px;
+  max-width: 700px;
   line-height: 1.8;
 }
 
@@ -181,29 +209,17 @@ img {
 .hero-cta-outline {
   display: inline-block;
   padding: 16px 40px;
-  border: 1px solid var(--rooton-charcoal);
+  border: 1px solid var(--white);
   border-radius: 50px;
-  color: var(--rooton-charcoal);
+  color: var(--white);
   font-weight: 600;
   font-size: 16px;
   transition: all 0.3s;
 }
 
 .hero-cta-outline:hover {
-  background: var(--rooton-charcoal);
-  color: var(--white);
-}
-
-.hero-image {
-  position: relative;
-}
-
-.hero-image img {
-  border-radius: 20px;
-  width: 100%;
-  height: 600px;
-  object-fit: cover;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+  background: var(--white);
+  color: var(--navy);
 }
 
 /* ============================================================
@@ -270,160 +286,259 @@ img {
 }
 
 /* ============================================================
-   PROBLEM SECTION (문제 제기)
+   INGREDIENT INTRO (원료 소개)
    ============================================================ */
-.problem-section {
+.ingredient-intro {
   background: var(--white);
 }
 
-.problem-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-top: 50px;
-}
-
-.problem-card {
-  padding: 30px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  transition: all 0.3s;
-}
-
-.problem-card:hover {
-  border-color: var(--rooton-green);
-  box-shadow: 0 8px 30px rgba(85, 190, 131, 0.1);
-}
-
-.problem-card .num {
-  font-size: 36px;
-  font-weight: 700;
-  color: var(--rooton-green);
-  margin-bottom: 15px;
-}
-
-.problem-card h3 {
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--rooton-charcoal);
-  margin-bottom: 12px;
-}
-
-.problem-card p {
-  font-size: 14px;
-  color: var(--gray);
-  line-height: 1.8;
-}
-
-/* ============================================================
-   PRODUCT INTRO (제품 소개)
-   ============================================================ */
-.product-intro {
-  background: var(--navy);
-  color: var(--white);
-}
-
-.product-intro-grid {
+.ingredient-intro-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
 }
 
-.product-intro-image img {
+.ingredient-intro-image img {
   border-radius: 16px;
   width: 100%;
   height: 500px;
   object-fit: cover;
 }
 
-.product-intro-text h2 {
+.ingredient-intro-text h2 {
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 20px;
   line-height: 1.3;
 }
 
-.product-intro-text p {
+.ingredient-intro-text p {
   font-size: 15px;
-  color: rgba(255,255,255,0.8);
-  margin-bottom: 30px;
+  color: var(--gray);
+  margin-bottom: 16px;
   line-height: 1.8;
 }
 
-.product-features {
-  list-style: none;
-  margin-top: 20px;
+.ingredient-intro-text .highlight-box {
+  background: var(--sage-light);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 24px;
+  border-left: 4px solid var(--rooton-green);
 }
 
-.product-features li {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 16px;
-  font-size: 15px;
-  color: rgba(255,255,255,0.9);
+.ingredient-intro-text .highlight-box h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--rooton-charcoal);
+  margin-bottom: 8px;
 }
 
-.product-features li .check {
-  color: var(--rooton-green);
-  font-weight: 700;
-  flex-shrink: 0;
+.ingredient-intro-text .highlight-box p {
+  font-size: 14px;
+  color: var(--dark-gray);
+  margin-bottom: 0;
 }
 
 /* ============================================================
-   INGREDIENT HIGHLIGHT (성분 강조)
+   INGREDIENT CARDS (원료 카드 - 총백/귀리)
    ============================================================ */
-.ingredient-section {
+.ingredient-cards-section {
   background: var(--sage-light);
-  text-align: center;
-}
-
-.ingredient-big {
-  font-size: 72px;
-  font-weight: 700;
-  color: var(--rooton-charcoal);
-  letter-spacing: -2px;
-  margin: 30px 0;
-}
-
-.ingredient-big .dot {
-  color: var(--rooton-green);
 }
 
 .ingredient-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
-  max-width: 800px;
-  margin: 50px auto 0;
+  margin-top: 50px;
 }
 
 .ingredient-card {
   background: var(--white);
   border-radius: 16px;
   padding: 40px;
-  text-align: left;
   box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: all 0.3s;
 }
 
-.ingredient-card .icon {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 20px;
+.ingredient-card:hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+}
+
+.ingredient-card .card-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.ingredient-card .card-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--sage-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ingredient-card .card-icon img {
+  width: 36px;
+  height: 36px;
 }
 
 .ingredient-card h3 {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   color: var(--rooton-charcoal);
-  margin-bottom: 12px;
 }
 
-.ingredient-card p {
+.ingredient-card .card-sub {
+  font-size: 13px;
+  color: var(--gray);
+  margin-top: 4px;
+}
+
+.ingredient-card .card-desc {
   font-size: 14px;
   color: var(--gray);
   line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.ingredient-card .card-features {
+  list-style: none;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+
+.ingredient-card .card-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: var(--dark-gray);
+}
+
+.ingredient-card .card-features li .check {
+  color: var(--rooton-green);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   SYNERGY (시너지 효과)
+   ============================================================ */
+.synergy-section {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.synergy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.synergy-card {
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+
+.synergy-card:hover {
+  border-color: var(--rooton-green);
+  background: rgba(255,255,255,0.05);
+}
+
+.synergy-card .num {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--rooton-green);
+  margin-bottom: 15px;
+}
+
+.synergy-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.synergy-card p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.8;
+}
+
+/* ============================================================
+   SCIENCE (과학적 근거)
+   ============================================================ */
+.science-section {
+  background: var(--white);
+}
+
+.science-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.science-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.science-card:hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+}
+
+.science-card .card-body {
+  padding: 30px;
+}
+
+.science-card .card-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--sage-light);
+  color: var(--rooton-green-dark);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.science-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--rooton-charcoal);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.science-card p {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+.science-card .card-ref {
+  font-size: 12px;
+  color: var(--gray);
+  border-top: 1px solid var(--border);
+  margin-top: 16px;
+  padding-top: 12px;
+  font-style: italic;
 }
 
 /* ============================================================
@@ -465,7 +580,7 @@ img {
 }
 
 .clinical-stat .number {
-  font-size: 56px;
+  font-size: 52px;
   font-weight: 700;
   color: var(--rooton-green);
   line-height: 1;
@@ -477,136 +592,221 @@ img {
   color: rgba(255,255,255,0.8);
 }
 
-.clinical-chart {
-  background: rgba(255,255,255,0.05);
-  border-radius: 16px;
-  padding: 40px;
-  max-width: 800px;
+.clinical-detail {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
-.clinical-chart h4 {
-  font-size: 18px;
+.clinical-detail-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 30px;
+}
+
+.clinical-detail-card h4 {
+  font-size: 16px;
   font-weight: 600;
-  margin-bottom: 30px;
-  text-align: center;
+  margin-bottom: 15px;
+  color: var(--rooton-green);
 }
 
-.chart-row {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-
-.chart-label {
-  width: 120px;
+.clinical-detail-card p {
   font-size: 14px;
   color: rgba(255,255,255,0.8);
-  text-align: right;
-}
-
-.chart-bar {
-  flex: 1;
-  height: 40px;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.1);
-  position: relative;
-  overflow: hidden;
-}
-
-.chart-bar .fill {
-  height: 100%;
-  border-radius: 8px;
-  background: var(--rooton-green);
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 15px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--white);
-}
-
-.chart-bar .fill.control {
-  background: rgba(255,255,255,0.3);
+  line-height: 1.8;
 }
 
 .clinical-note {
   text-align: center;
   font-size: 13px;
   color: rgba(255,255,255,0.6);
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 /* ============================================================
-   TRUST SECTION (신뢰/투명성)
+   TRADITIONAL MEDICINE (전통식치)
    ============================================================ */
-.trust-section {
-  background: var(--white);
+.traditional-section {
+  background: var(--beige);
 }
 
-.trust-grid {
+.traditional-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
 }
 
-.trust-image img {
+.traditional-image img {
   border-radius: 16px;
   width: 100%;
   height: 450px;
   object-fit: cover;
 }
 
-.trust-list {
-  list-style: none;
+.traditional-text h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.3;
 }
 
-.trust-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  padding: 20px 0;
-  border-bottom: 1px solid var(--border);
+.traditional-text p {
+  font-size: 15px;
+  color: var(--gray);
+  margin-bottom: 16px;
+  line-height: 1.8;
 }
 
-.trust-list li:last-child {
-  border-bottom: none;
+.traditional-quote {
+  background: var(--white);
+  border-left: 4px solid var(--rooton-green);
+  border-radius: 0 12px 12px 0;
+  padding: 24px;
+  margin: 24px 0;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--dark-gray);
+  line-height: 1.8;
 }
 
-.trust-list .check {
-  width: 28px;
-  height: 28px;
+.traditional-quote .source {
+  display: block;
+  margin-top: 12px;
+  font-style: normal;
+  font-size: 13px;
+  color: var(--gray);
+}
+
+/* ============================================================
+   SAFETY (안전성)
+   ============================================================ */
+.safety-section {
+  background: var(--white);
+}
+
+.safety-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.safety-card {
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.safety-card:hover {
+  border-color: var(--rooton-green);
+  box-shadow: 0 8px 30px rgba(85, 190, 131, 0.1);
+}
+
+.safety-card .icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
   border-radius: 50%;
-  background: var(--rooton-green);
-  color: var(--white);
+  background: var(--sage-light);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
-  flex-shrink: 0;
-  margin-top: 3px;
 }
 
-.trust-list h4 {
-  font-size: 17px;
+.safety-card .icon img {
+  width: 30px;
+  height: 30px;
+}
+
+.safety-card h3 {
+  font-size: 18px;
   font-weight: 600;
   color: var(--rooton-charcoal);
-  margin-bottom: 4px;
+  margin-bottom: 12px;
 }
 
-.trust-list p {
+.safety-card p {
   font-size: 14px;
   color: var(--gray);
+  line-height: 1.8;
+}
+
+/* ============================================================
+   PATENT (특허)
+   ============================================================ */
+.patent-section {
+  background: var(--sage-light);
+}
+
+.patent-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.patent-image img {
+  border-radius: 16px;
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  background: var(--white);
+  padding: 20px;
+}
+
+.patent-text h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.patent-text p {
+  font-size: 15px;
+  color: var(--gray);
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.patent-info {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 20px;
+}
+
+.patent-info .patent-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.patent-info .patent-item:last-child {
+  border-bottom: none;
+}
+
+.patent-info .patent-item .label {
+  color: var(--gray);
+}
+
+.patent-info .patent-item .value {
+  font-weight: 600;
+  color: var(--rooton-charcoal);
 }
 
 /* ============================================================
    FAQ
    ============================================================ */
 .faq-section {
-  background: var(--beige);
+  background: var(--white);
 }
 
 .faq-list {
@@ -615,7 +815,7 @@ img {
 }
 
 .faq-item {
-  background: var(--white);
+  border: 1px solid var(--border);
   border-radius: 12px;
   margin-bottom: 16px;
   overflow: hidden;
@@ -764,18 +964,23 @@ img {
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1024px) {
-  .hero-content,
-  .product-intro-grid,
-  .trust-grid {
+  .ingredient-intro-grid,
+  .traditional-grid,
+  .patent-grid {
     grid-template-columns: 1fr;
   }
-  .problem-grid {
+  .ingredient-cards {
+    grid-template-columns: 1fr;
+  }
+  .synergy-grid,
+  .science-grid,
+  .safety-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .clinical-stats {
     grid-template-columns: repeat(2, 1fr);
   }
-  .ingredient-cards {
+  .clinical-detail {
     grid-template-columns: 1fr;
   }
 }
@@ -787,15 +992,14 @@ img {
   .hero {
     padding: 100px 24px;
   }
-  .hero-text h1 {
+  .hero h2 {
     font-size: 36px;
   }
-  .problem-grid,
+  .synergy-grid,
+  .science-grid,
+  .safety-grid,
   .clinical-stats {
     grid-template-columns: 1fr;
-  }
-  .ingredient-big {
-    font-size: 48px;
   }
   .nav {
     padding: 15px 24px;
@@ -806,14 +1010,6 @@ img {
   .footer {
     padding: 40px 24px;
   }
-  .chart-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .chart-label {
-    width: auto;
-    text-align: left;
-  }
 }
 </style>
 </head>
@@ -823,13 +1019,15 @@ img {
      NAVIGATION
      ============================================================ -->
 <nav class="nav">
-  <div class="nav-logo">ROOT<span>ON</span></div>
+  <div class="nav-logo">루톤<span>랩</span></div>
   <div class="nav-right">
-    <a href="#product">제품 소개</a>
-    <a href="#ingredient">성분</a>
+    <a href="#ingredient">원료 소개</a>
+    <a href="#synergy">시너지</a>
+    <a href="#science">과학적 근거</a>
     <a href="#clinical">임상 데이터</a>
+    <a href="#traditional">전통식치</a>
+    <a href="#safety">안전성</a>
     <a href="#faq">FAQ</a>
-    <a href="#contact" class="nav-cta">제품 보러 가기</a>
   </div>
 </nav>
 
@@ -838,85 +1036,113 @@ img {
      ============================================================ -->
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-text">
-      <h1>
-        오늘의 작은 루틴,<br>
-        <span class="highlight">더 큰 내일.</span>
-      </h1>
-      <p class="hero-sub">
-        성장의 숫자보다, 성장의 조건을 먼저.<br>
-        ROOTON은 아이의 성장 환경을 생각합니다.
-      </p>
-      <div class="hero-cta-group">
-        <a href="#product" class="hero-cta-primary">제품 자세히 보기</a>
-        <a href="#clinical" class="hero-cta-outline">임상 데이터 확인</a>
-      </div>
+    <div class="hero-logo">
+      <h1>루톤<span>랩</span></h1>
     </div>
-    <div class="hero-image">
-      <!-- 🔴 히어로 이미지 교체: 아이 모델 또는 제품 이미지 -->
-      <img src="images/hero-bg.jpg" alt="ROOTON 제품 이미지">
+    <h2>
+      성장의 뿌리,<br>
+      <strong>총백귀리혼합물 WCO31</strong>
+    </h2>
+    <p class="hero-subtitle">
+      전통식치의 지혜와 현대 과학의 검증이 만난 원료.<br>
+      총백(파뿌리)과 귀리의 시너지로 아이의 성장 환경을 생각합니다.
+    </p>
+    <div class="hero-cta-group">
+      <a href="#ingredient" class="hero-cta-primary">원료 자세히 보기</a>
+      <a href="#science" class="hero-cta-outline">과학적 근거 확인</a>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     PROBLEM SECTION
+     INGREDIENT INTRO (원료 소개)
      ============================================================ -->
-<section class="section problem-section" id="problem">
+<section class="section ingredient-intro" id="ingredient">
   <div class="container">
-    <div class="section-label">Why ROOTON</div>
-    <h2 class="section-title">좋다는 말보다 먼저,<br>우리 아이가 먹을까?</h2>
+    <div class="ingredient-intro-grid">
+      <div class="ingredient-intro-image">
+        <!-- 🔴 원료 이미지 교체 -->
+        <img src="images/science-image.jpg" alt="총백귀리혼합물 원료">
+      </div>
+      <div class="ingredient-intro-text">
+        <div class="section-label">Ingredient</div>
+        <h2>총백귀리혼합물<br>WCO31</h2>
+        <p>
+          WCO31은 <strong>총백(蔥白, 파뿌리 흰 부분)</strong>과 <strong>귀리(Oat)</strong>를
+          최적의 비율로 배합한 원료입니다. 전통식치(食治)에서 오랫동안 사용되어 온
+          두 식재료를 현대 과학으로 검증했습니다.
+        </p>
+        <p>
+          총백은 동의보감에서 단방(單方)으로 가장 빈번하게 활용된 핵심 약재이며,
+          귀리는 타임지 선정 10대 슈퍼푸드로 성장에 필요한 영양소가 풍부합니다.
+        </p>
+        <div class="highlight-box">
+          <h4>핵심 포인트</h4>
+          <p>
+            총백의 따뜻한 기운(발산) + 귀리의 보익(영양 보충) =<br>
+            어린이 성장을 위한 식약동원(食藥同源) 조합
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     INGREDIENT CARDS (총백/귀리 상세)
+     ============================================================ -->
+<section class="section ingredient-cards-section">
+  <div class="container">
+    <div class="section-label">Key Ingredients</div>
+    <h2 class="section-title">두 가지 원료의 만남</h2>
     <p class="section-desc">
-      아이를 위한 선택, 맛과 섭취 편의성부터 고민해야 합니다.
+      각 원료의 특성과 가치를 정직하게 소개합니다.
     </p>
 
-    <div class="problem-grid">
-      <!-- 🔴 카드 1 -->
-      <div class="problem-card">
-        <div class="num">01</div>
-        <h3>맛에 대한 고민</h3>
-        <p>아이가 거부감 없이 꾸준히 섭취할 수 있는 맛을 고민했습니다.</p>
-      </div>
-
-      <!-- 🔴 카드 2 -->
-      <div class="problem-card">
-        <div class="num">02</div>
-        <h3>섭취의 편의성</h3>
-        <p>바쁜 아침, 간편하게 챙길 수 있는 섭취 방식을 설계했습니다.</p>
-      </div>
-
-      <!-- 🔴 카드 3 -->
-      <div class="problem-card">
-        <div class="num">03</div>
-        <h3>과학적 검증</h3>
-        <p>임상 연구를 통해 검증된 성분만을 사용합니다.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     PRODUCT INTRO
-     ============================================================ -->
-<section class="section product-intro" id="product">
-  <div class="container">
-    <div class="product-intro-grid">
-      <div class="product-intro-image">
-        <!-- 🔴 제품 이미지 교체 -->
-        <img src="images/product-1.jpg" alt="ROOTON 제품">
-      </div>
-      <div class="product-intro-text">
-        <div class="section-label">Product</div>
-        <h2>챙겨 주는 순간이<br>가벼워지도록</h2>
-        <p>
-          ROOTON은 총백귀리 혼합물을 활용한 키성장 제품입니다.
-          성장의 뿌리가 되는 영양 환경을 생각합니다.
+    <div class="ingredient-cards">
+      <!-- 🔴 총백 카드 -->
+      <div class="ingredient-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <img src="images/icon-bone.svg" alt="총백 아이콘"> <!-- 🔴 아이콘 교체 -->
+          </div>
+          <div>
+            <h3>총백 (蔥白)</h3>
+            <div class="card-sub">Allium fistulosum L. Root</div>
+          </div>
+        </div>
+        <p class="card-desc">
+          파의 뿌리 흰 부분으로, 동의보감에서 단방으로 가장 많이 활용된 약재입니다.
+          따뜻한 성질(溫)과 매운맛(辛)으로 발한해표 작용을 하며, 기혈 순환을 돕습니다.
         </p>
-        <ul class="product-features">
-          <li><span class="check">✓</span> 총백귀리 혼합물(WCO31) 함유</li>
-          <li><span class="check">✓</span> 뼈·장 건강 기능성 원료</li>
-          <li><span class="check">✓</span> 아이가 좋아하는 섭취 방식</li>
-          <li><span class="check">✓</span> 임상 연구 기반 검증</li>
+        <ul class="card-features">
+          <li><span class="check">✓</span> 발한해표(發汗解表) — 초기 감기 완화</li>
+          <li><span class="check">✓</span> 항균·항염 작용 (알리신, 플라보노이드)</li>
+          <li><span class="check">✓</span> 소화 촉진 — 위액 분비 및 연동 운동</li>
+          <li><span class="check">✓</span> 동의보감 227회 처방, 단방 최다 활용</li>
+        </ul>
+      </div>
+
+      <!-- 🔴 귀리 카드 -->
+      <div class="ingredient-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <img src="images/icon-immune.svg" alt="귀리 아이콘"> <!-- 🔴 아이콘 교체 -->
+          </div>
+          <div>
+            <h3>귀리 (燕麥)</h3>
+            <div class="card-sub">Avena sativa L. Oat</div>
+          </div>
+        </div>
+        <p class="card-desc">
+          타임지 선정 10대 슈퍼푸드로, 복합 탄수화물·고단백·필수 미네랄이 풍부합니다.
+          베타글루칸(β-glucan)은 FDA와 EFSA가 인정한 건강기능식품 원료입니다.
+        </p>
+        <ul class="card-features">
+          <li><span class="check">✓</span> 뼈 성장 필수 미네랄 (Ca, Mg, Zn) 풍부</li>
+          <li><span class="check">✓</span> 베타글루칸 — 혈당 안정화, 장내 면역 강화</li>
+          <li><span class="check">✓</span> 단백질 함량 13-15%, 필수아미노산 풍부</li>
+          <li><span class="check">✓</span> FDA(1997)·EFSA(2010) 건강기능성 인정</li>
         </ul>
       </div>
     </div>
@@ -924,53 +1150,129 @@ img {
 </section>
 
 <!-- ============================================================
-     INGREDIENT HIGHLIGHT
+     SYNERGY (시너지 효과)
      ============================================================ -->
-<section class="section ingredient-section" id="ingredient">
+<section class="section synergy-section" id="synergy">
   <div class="container">
-    <div class="section-label">Key Ingredients</div>
-    <h2 class="section-title">낯선 이름이라면, 더 분명하게</h2>
-    <p class="section-desc">핵심 성분을 정직하게 소개합니다.</p>
+    <div class="section-label">Synergy Effect</div>
+    <h2 class="section-title">총백 + 귀리, 시너지의 과학</h2>
+    <p class="section-desc">
+      두 원료의 결합은 단순한 영양 보충을 넘어 상호 보완적 시너지를 만들어냅니다.
+    </p>
 
-    <div class="ingredient-big">총백<span class="dot">·</span>귀리</div>
-
-    <div class="ingredient-cards">
-      <!-- 🔴 성분 1 -->
-      <div class="ingredient-card">
-        <div class="icon">
-          <img src="images/icon-bone.svg" alt="총백 아이콘"> <!-- 🔴 아이콘 교체 -->
-        </div>
-        <h3>총백</h3>
-        <p>총백귀리 혼합물의 핵심 성분으로, 뼈 건강에 도움을 줄 수 있습니다.</p>
+    <div class="synergy-grid">
+      <!-- 🔴 시너지 1 -->
+      <div class="synergy-card">
+        <div class="num">01</div>
+        <h3>면역력 이중 방어막</h3>
+        <p>
+          총백의 알리신이 외부 병원균을 직접 타격(항균)하는 동안,
+          귀리의 베타글루칸이 장내 면역 환경을 강화합니다.
+          '직접 방어 + 근본 면역 강화'의 이중 구조입니다.
+        </p>
       </div>
 
-      <!-- 🔴 성분 2 -->
-      <div class="ingredient-card">
-        <div class="icon">
-          <img src="images/icon-immune.svg" alt="귀리 아이콘"> <!-- 🔴 아이콘 교체 -->
-        </div>
-        <h3>귀리</h3>
-        <p>장 건강에 도움을 줄 수 있는 성분으로, 성장 환경을 지원합니다.</p>
+      <!-- 🔴 시너지 2 -->
+      <div class="synergy-card">
+        <div class="num">02</div>
+        <h3>영양 흡수율 극대화</h3>
+        <p>
+          총백의 알리신이 귀리의 비타민 B1과 결합하면 '알리티아민'으로 변환됩니다.
+          이는 체내 흡수율이 일반 비타민 B1보다 10~20배 높아집니다.
+        </p>
+      </div>
+
+      <!-- 🔴 시너지 3 -->
+      <div class="synergy-card">
+        <div class="num">03</div>
+        <h3>소화 흡수 보완</h3>
+        <p>
+          귀리의 풍부한 영양소(단백질·미네랄)가 소화·흡수되도록
+          총백이 천연 소화제 역할을 하는 상호 보완 관계를 형성합니다.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     CLINICAL DATA
+     SCIENCE (과학적 근거)
+     ============================================================ -->
+<section class="section science-section" id="science">
+  <div class="container">
+    <div class="section-label">Scientific Evidence</div>
+    <h2 class="section-title">과학적 근거</h2>
+    <p class="section-desc">
+      전통식치의 지혜를 현대 과학으로 검증했습니다.
+    </p>
+
+    <div class="science-grid">
+      <!-- 🔴 근거 1: 임상시험 -->
+      <div class="science-card">
+        <div class="card-body">
+          <span class="card-tag">인체적용시험</span>
+          <h3>어린이 키 성장 임상시험</h3>
+          <p>
+            만 6~8세 어린이 150명 대상, 다기관 무작위배정 이중맹검 위약대조 임상시험.
+            WCO31(1.2g/일) 24주 섭취 결과, 키·성장률·키 SDS 모든 항목에서
+            통계적으로 유의한 우수성 확인 (p &lt; 0.001).
+          </p>
+          <div class="card-ref">
+            Kim et al. Nutrients 2026;18:1326
+          </div>
+        </div>
+      </div>
+
+      <!-- 🔴 근거 2: 동물실험 -->
+      <div class="science-card">
+        <div class="card-body">
+          <span class="card-tag">전임상 연구</span>
+          <h3>종적 골성장 촉진 확인</h3>
+          <p>
+            이유기 쥐 대상 동물실험에서, 고용량 WCO31 섭취군의 대퇴골·경골 길이가
+            성장호르몬 투여군과 유사한 수준으로 증가했습니다.
+            성장판 증식대·비대대 활성 촉진 및 장내미생물 개선 효과 확인.
+          </p>
+          <div class="card-ref">
+            Wu et al. J Functional Foods 2023;105:105567
+          </div>
+        </div>
+      </div>
+
+      <!-- 🔴 근거 3: 분자적 기전 -->
+      <div class="science-card">
+        <div class="card-body">
+          <span class="card-tag">분자적 분석</span>
+          <h3>성장 관련 수용체 결합</h3>
+          <p>
+            총백의 Fistuloside A/B/C와 귀리의 Avenacoside A 성분이
+            성장분화인자 GDF5 및 IGF1R 수용체와 강하게 결합(-9 kcal/mol 이하)하여
+            성장호르몬 분비를 촉진하는 기전을 확인했습니다.
+          </p>
+          <div class="card-ref">
+            Wu et al. J Functional Foods 2023;105:105567
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CLINICAL DATA (임상 데이터)
      ============================================================ -->
 <section class="section clinical-section" id="clinical">
   <div class="container">
     <div class="clinical-header">
       <div class="section-label">Clinical Study</div>
-      <h2>수치에는 연구 조건을 함께</h2>
-      <p>임상 연구 결과를 투명하게 공개합니다.</p>
+      <h2>임상 연구 데이터</h2>
+      <p>수치에는 연구 조건을 함께, 투명하게 공개합니다.</p>
     </div>
 
     <div class="clinical-stats">
       <!-- 🔴 임상 데이터 1 -->
       <div class="clinical-stat">
-        <div class="number">160명</div>
+        <div class="number">150명</div>
         <div class="label">임상시험 참여 인원</div>
       </div>
 
@@ -988,69 +1290,160 @@ img {
 
       <!-- 🔴 임상 데이터 4 -->
       <div class="clinical-stat">
-        <div class="number">6.74cm</div>
-        <div class="label">군간 평균 차이</div>
+        <div class="number">p &lt; 0.001</div>
+        <div class="label">통계적 유의성</div>
       </div>
     </div>
 
-    <div class="clinical-chart">
-      <h4>성장 관련 지표 변화</h4>
-      <div class="chart-row">
-        <div class="chart-label">ROOTON군</div>
-        <div class="chart-bar">
-          <div class="fill" style="width: 85%;">6.74cm</div>
-        </div>
+    <div class="clinical-detail">
+      <div class="clinical-detail-card">
+        <h4>연구 설계</h4>
+        <p>
+          • 다기관, 무작위배정, 이중맹검, 위약대조<br>
+          • 대상: 만 6~8세 어린이 150명 (남 75명, 여 75명)<br>
+          • 한국 소아청소년 성장도표 3~50 백분위수<br>
+          • 2차 성징 미발현 아동
+        </p>
       </div>
-      <div class="chart-row">
-        <div class="chart-label">대조군</div>
-        <div class="chart-bar">
-          <div class="fill control" style="width: 65%;">5.00cm</div>
-        </div>
+      <div class="clinical-detail-card">
+        <h4>주요 결과</h4>
+        <p>
+          • 키, 성장률, 성장률 SDS, 키 SDS, 연령별 키 Z-score<br>
+          • 모든 항목에서 위약군 대비 통계적으로 유의한 우수성<br>
+          • 이상반응 없음 — 우수한 안전성 프로파일 확인
+        </p>
       </div>
-      <p class="clinical-note">* 임상 연구 조건에 따라 수치가 달라질 수 있습니다.</p>
+    </div>
+
+    <p class="clinical-note">
+      * 임상 연구 조건에 따라 결과가 달라질 수 있습니다.<br>
+      출처: Kim et al. Nutrients 2026;18:1326
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     TRADITIONAL MEDICINE (전통식치)
+     ============================================================ -->
+<section class="section traditional-section" id="traditional">
+  <div class="container">
+    <div class="traditional-grid">
+      <div class="traditional-image">
+        <!-- 🔴 전통식치 이미지 교체 -->
+        <img src="images/stats-1.jpg" alt="전통식치 이미지">
+      </div>
+      <div class="traditional-text">
+        <div class="section-label">Traditional Food Therapy</div>
+        <h2>전통식치(食治)의 지혜</h2>
+        <p>
+          식치(食治)는 음식으로 질병을 예방하고 치료하는 전통 식이요법입니다.
+          총백은 단순 채소가 아닌 '약용 음식(Food-Medicine)'으로 분류되어,
+          동의보감에서 단방(單方)으로 가장 빈번하게 활용되었습니다.
+        </p>
+        <div class="traditional-quote">
+          "性平(一云溫) 味辛... 蔥白 治傷寒 初覺 頭痛 體强 宜煮 蔥白湯 飮之"
+          <span class="source">— 『동의보감(東醫寶鑑)』 탕액편 권3 채부 - 파(蔥)</span>
+        </div>
+        <p>
+          총백은 동의보감 전체에서 227회 처방되었으며, 부인과(婦人門) 질환에 가장
+          높은 빈도(37회)로 사용되었습니다. 태동불안, 임신 중 감기 등 가장 민감한
+          계층에게도 안심하고 사용할 수 있는 안전성을 지닌 천연 약재입니다.
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     TRUST SECTION
+     SAFETY (안전성)
      ============================================================ -->
-<section class="section trust-section">
+<section class="section safety-section" id="safety">
   <div class="container">
-    <div class="trust-grid">
-      <div class="trust-image">
-        <!-- 🔴 신뢰 이미지 교체 -->
-        <img src="images/science-image.jpg" alt="ROOTON 신뢰 이미지">
+    <div class="section-label">Safety</div>
+    <h2 class="section-title">안전성 검증</h2>
+    <p class="section-desc">
+      아이에게 안심하고 먹일 수 있는 원료인지, 철저히 검증했습니다.
+    </p>
+
+    <div class="safety-grid">
+      <!-- 🔴 안전성 1 -->
+      <div class="safety-card">
+        <div class="icon">
+          <img src="images/icon-immune.svg" alt="무독성 아이콘"> <!-- 🔴 아이콘 교체 -->
+        </div>
+        <h3>무독성 확인</h3>
+        <p>
+          총백 추출물은 인간 정상 세포에 유의미한 세포 독성을 나타내지 않으며,
+          오히려 항산화 및 항염증 작용으로 세포를 보호합니다.
+        </p>
       </div>
-      <div>
-        <div class="section-label">Transparency</div>
-        <h2 class="section-title">선택 전에 필요한 정보,<br>숨기지 않고</h2>
-        <ul class="trust-list">
-          <!-- 🔴 항목 1 -->
-          <li>
-            <div class="check">✓</div>
-            <div>
-              <h4>원료 정보 투명 공개</h4>
-              <p>사용된 원료와 함량을 정확히 표기합니다.</p>
-            </div>
-          </li>
-          <!-- 🔴 항목 2 -->
-          <li>
-            <div class="check">✓</div>
-            <div>
-              <h4>임상 연구 결과 공개</h4>
-              <p>연구 조건과 수치를 그대로 공개합니다.</p>
-            </div>
-          </li>
-          <!-- 🔴 항목 3 -->
-          <li>
-            <div class="check">✓</div>
-            <div>
-              <h4>안전성 검증</h4>
-              <p>식약처 기준에 맞는 안전한 성분만 사용합니다.</p>
-            </div>
-          </li>
-        </ul>
+
+      <!-- 🔴 안전성 2 -->
+      <div class="safety-card">
+        <div class="icon">
+          <img src="images/icon-bone.svg" alt="FDA 인정 아이콘"> <!-- 🔴 아이콘 교체 -->
+        </div>
+        <h3>국제기관 인정</h3>
+        <p>
+          파(Allium 속)는 미국 FDA가 전통 식용 경험을 바탕으로 안전한 식품(GRAS)으로
+          인정했습니다. 귀리 베타글루칸은 FDA(1997)와 EFSA(2010)가 건강기능성을 인정했습니다.
+        </p>
+      </div>
+
+      <!-- 🔴 안전성 3 -->
+      <div class="safety-card">
+        <div class="icon">
+          <img src="images/icon-heart.svg" alt="열수추출 아이콘"> <!-- 🔴 아이콘 교체 -->
+        </div>
+        <h3>열수 추출 공법</h3>
+        <p>
+          화학 유기 용매를 배제하고 순수한 물과 열만 사용하는 열수 추출 공법으로,
+          잔류 용매 걱정이 없습니다. 전통 탕전 방식을 현대화한 안전한 공법입니다.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PATENT (특허)
+     ============================================================ -->
+<section class="section patent-section">
+  <div class="container">
+    <div class="patent-grid">
+      <div class="patent-text">
+        <div class="section-label">Patent</div>
+        <h2>기술 보호, 특허 등록</h2>
+        <p>
+          총백 및 귀리 추출물을 포함하는 조성물의 키 성장 촉진 효능은
+          대한민국 특허청에 등록되어 기술적 우수성을 인정받았습니다.
+        </p>
+        <div class="patent-info">
+          <div class="patent-item">
+            <span class="label">특허번호</span>
+            <span class="value">제 10-2572487호</span>
+          </div>
+          <div class="patent-item">
+            <span class="label">발명의 명칭</span>
+            <span class="value">총백 및 귀리 추출물을 포함하는 어린이 및 청소년 키 성장 촉진용 조성물 및 그 제조방법</span>
+          </div>
+          <div class="patent-item">
+            <span class="label">출원일</span>
+            <span class="value">2023년 03월 31일</span>
+          </div>
+          <div class="patent-item">
+            <span class="label">등록일</span>
+            <span class="value">2023년 08월 25일</span>
+          </div>
+          <div class="patent-item">
+            <span class="label">특허권자</span>
+            <span class="value">주식회사 웰레스트</span>
+          </div>
+        </div>
+      </div>
+      <div class="patent-image">
+        <!-- 🔴 특허증 이미지 교체 -->
+        <img src="images/product-3.jpg" alt="특허증 이미지">
       </div>
     </div>
   </div>
@@ -1062,39 +1455,58 @@ img {
 <section class="section faq-section" id="faq">
   <div class="container">
     <div class="section-label">FAQ</div>
-    <h2 class="section-title">궁금한 점을 먼저 확인하세요</h2>
+    <h2 class="section-title">원료에 대한 궁금증</h2>
 
     <div class="faq-list">
       <!-- 🔴 FAQ 1 -->
       <div class="faq-item">
         <div class="faq-question">
-          ROOTON은 어떤 제품인가요?
+          WCO31은 무엇인가요?
           <span class="arrow">▼</span>
         </div>
         <div class="faq-answer">
-          ROOTON은 총백귀리 혼합물을 활용한 키성장 제품입니다. 성장 환경을 위한 영양을 생각합니다.
+          WCO31은 총백(파뿌리 흰 부분)과 귀리를 최적의 비율로 배합한 혼합물입니다.
+          전통식치에서 오랫동안 사용되어 온 두 식재료를 현대 과학으로 검증한 원료입니다.
         </div>
       </div>
 
       <!-- 🔴 FAQ 2 -->
       <div class="faq-item">
         <div class="faq-question">
-          섭취 방법은 어떻게 되나요?
+          임상 연구 결과는 신뢰할 수 있나요?
           <span class="arrow">▼</span>
         </div>
         <div class="faq-answer">
-          제품 설명서에 안내된 섭취 방법을 따라주세요. 꾸준한 섭취가 중요합니다.
+          WCO31은 다기관, 무작위배정, 이중맹검, 위약대조 방식의 인체적용시험을 통해
+          검증되었습니다. 만 6~8세 어린이 150명을 대상으로 24주간 진행되었으며,
+          키 성장 관련 모든 항목에서 통계적으로 유의한 결과(p &lt; 0.001)를 확인했습니다.
         </div>
       </div>
 
       <!-- 🔴 FAQ 3 -->
       <div class="faq-item">
         <div class="faq-question">
-          임상 연구 결과는 신뢰할 수 있나요?
+          안전한 원료인가요?
           <span class="arrow">▼</span>
         </div>
         <div class="faq-answer">
-          임상 연구 결과는 투명하게 공개하고 있습니다. 연구 조건과 수치를 함께 확인하실 수 있습니다.
+          총백과 귀리는 오랜 기간 인류의 식단에 포함되어 온 천연 식재료입니다.
+          미국 FDA가 안전한 식품(GRAS)으로 인정했으며, 열수 추출 공법으로
+          잔류 용매 걱정이 없습니다. 임상시험에서도 이상반응이 확인되지 않았습니다.
+        </div>
+      </div>
+
+      <!-- 🔴 FAQ 4 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          전통식치와 어떤 관련이 있나요?
+          <span class="arrow">▼</span>
+        </div>
+        <div class="faq-answer">
+          총백은 동의보감에서 단방으로 가장 빈번하게 활용된 핵심 약재입니다.
+          식치(食治) 카테고리에서 '약용 음식(Food-Medicine)'으로 분류되며,
+          귀리와 함께 죽 형태로 섭취하면 위장을 보호하면서 약효를 나타내는
+          식약동원(食藥同源) 효과를 냅니다.
         </div>
       </div>
     </div>
@@ -1105,9 +1517,9 @@ img {
      FINAL CTA
      ============================================================ -->
 <section class="final-cta" id="contact">
-  <h2>아이의 오늘에 닿는 선택,<br>정보부터 꼼꼼하게.</h2>
-  <p>ROOTON과 함께 성장의 뿌리를 키워보세요.</p>
-  <a href="#" class="cta-btn">공식몰 가격 확인하기</a>
+  <h2>성장의 뿌리를 생각하는 원료,<br>총백귀리혼합물 WCO31</h2>
+  <p>루톤랩의 원료 연구와 제품을 확인해보세요.</p>
+  <a href="#" class="cta-btn">루톤랩 제품 보러 가기</a>
 </section>
 
 <!-- ============================================================
@@ -1115,7 +1527,7 @@ img {
      ============================================================ -->
 <footer class="footer">
   <div class="footer-top">
-    <div class="footer-logo">ROOT<span>ON</span></div>
+    <div class="footer-logo">루톤<span>랩</span></div>
     <div class="footer-social">
       <a href="#">인스타그램</a>
       <a href="#">유튜브</a>
@@ -1137,7 +1549,7 @@ img {
   </div>
 
   <p class="footer-copyright">
-    © 2026 ROOTON. All rights reserved.
+    © 2026 루톤랩. All rights reserved.
   </p>
 </footer>
 
@@ -1147,9 +1559,7 @@ document.querySelectorAll('.faq-question').forEach(q => {
   q.addEventListener('click', () => {
     const item = q.parentElement;
     const wasOpen = item.classList.contains('open');
-    // 모든 항목 닫기
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-    // 클릭한 항목 열기
     if (!wasOpen) item.classList.add('open');
   });
 });

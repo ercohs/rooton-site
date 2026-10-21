@@ -91,37 +91,37 @@ img {
   height: 36px;
 }
 
-/* 중앙 삼지창(햄버거) 메뉴 버튼 */
+/* 중앙 삼지창(햄버거) 메뉴 버튼 - 오른쪽 정렬, 동그라미 없음 */
 .nav-menu-toggle {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 6px;
-  width: 44px;
-  height: 44px;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.3);
-  border-radius: 50%;
+  background: transparent;
+  border: none;
+  padding: 0;
   transition: all 0.3s;
 }
 
 .nav-menu-toggle span {
   display: block;
-  width: 20px;
+  width: 22px;
   height: 2px;
   background: var(--white);
   border-radius: 2px;
   transition: all 0.3s;
 }
 
-.nav-menu-toggle:hover {
-  background: rgba(255,255,255,0.25);
+.nav-menu-toggle:hover span {
+  background: var(--rooton-green);
 }
 
 .nav-menu-toggle.active span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+  transform: translateY(7px) rotate(45deg);
 }
 
 .nav-menu-toggle.active span:nth-child(2) {
@@ -129,41 +129,45 @@ img {
 }
 
 .nav-menu-toggle.active span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-7px) rotate(-45deg);
 }
 
-.nav-right {
+/* PC 텍스트 메뉴 */
+.nav-menu-links {
   display: flex;
   align-items: center;
+  gap: 28px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.nav-right a {
+.nav-menu-links a {
   color: var(--white);
   font-size: 14px;
   font-weight: 500;
   opacity: 0.85;
-  transition: opacity 0.3s;
+  text-decoration: none;
+  transition: all 0.3s;
+  white-space: nowrap;
 }
 
-.nav-right a:hover {
+.nav-menu-links a:hover,
+.nav-menu-links a.active {
+  color: var(--rooton-green);
   opacity: 1;
 }
 
-.nav-ercohs {
-  display: flex;
-  align-items: center;
-}
 
-.nav-ercohs img {
-  height: 30px;
-  width: auto;
-  opacity: 0.9;
-  transition: opacity 0.3s;
-}
 
-.nav-ercohs:hover img {
-  opacity: 1;
-}
+
+
+
+
+
+
+
+
+
 
 /* 전체 메뉴 드롭다운 */
 .nav-fullmenu {
@@ -1157,8 +1161,13 @@ img {
   .nav {
     padding: 15px 24px;
   }
-  .nav-right a {
+  /* 모바일: 텍스트 메뉴 숨기고 삼지창 표시 */
+  .nav-menu-links {
     display: none;
+  }
+  .nav-menu-toggle {
+    display: flex;
+    margin-left: auto;
   }
   .footer {
     padding: 40px 24px;
@@ -1173,19 +1182,24 @@ img {
      ============================================================ -->
 <nav class="nav" id="mainNav">
   <div class="nav-logo">
-    <img src="images/rooton-logo.png" alt="ROOTON 로고"> <!-- 🔴 루톤 로고 (투명 배경) -->
+    <a href="index.html"><img src="images/rooton-logo.png" alt="ROOTON 로고"></a>
+  </div>
+  <div class="nav-menu-links" id="navMenuLinks">
+    <a href="index.html">메인</a>
+    <a href="ingredient.html">원료 소개</a>
+    <a href="synergy.html">시너지</a>
+    <a href="science.html">과학적 근거</a>
+    <a href="clinical.html">임상 데이터</a>
+    <a href="traditional.html">전통식치</a>
+    <a href="safety.html">안전성</a>
+    <a href="faq.html">FAQ</a>
   </div>
   <div class="nav-menu-toggle" id="navMenuToggle" aria-label="메뉴 열기">
     <span></span><span></span><span></span>
   </div>
-  <div class="nav-right">
-    <a href="https://ercohs.com" class="nav-ercohs" target="_blank">
-      <img src="images/logo_ercohs.svg" alt="에르코스 로고"> <!-- 🔴 에르코스 로고 -->
-    </a>
-  </div>
 </nav>
 
-<!-- 전체 메뉴 드롭다운 -->
+<!-- 전체 메뉴 드롭다운 (모바일) -->
 <div class="nav-fullmenu" id="navFullMenu">
   <div class="nav-fullmenu-inner">
     <a href="index.html">메인</a>
@@ -1703,7 +1717,9 @@ img {
 <footer class="footer">
   <div class="footer-top">
     <div class="footer-logo">
-      <img src="images/rooton-logo.jpg" alt="ROOTON 로고"> <!-- 🔴 로고 이미지 교체 -->
+      <a href="https://ercohs.com" target="_blank">
+        <img src="images/logo_ercohs.svg" alt="에르코스 로고">
+      </a>
     </div>
     <div class="footer-social">
       <a href="#">인스타그램</a>

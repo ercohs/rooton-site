@@ -336,7 +336,7 @@ img { max-width: 100%; display: block; }
   .page-hero h1 { font-size: 32px; }
   .info-grid { grid-template-columns: 1fr; }
   .nav { padding: 15px 24px; }
-  .nav-right a { display: none; }
+  .nav-right a:not(.nav-ercohs) { display: none; }
   .footer { padding: 40px 24px; }
 }
 </style>
@@ -344,11 +344,23 @@ img { max-width: 100%; display: block; }
 <body>
 
 <!-- NAVIGATION -->
-<nav class="nav">
+<nav class="nav" id="mainNav">
   <div class="nav-logo">
-    <a href="index.html"><img src="images/rooton-logo.jpg" alt="ROOTON 로고"></a>
+    <a href="index.html"><img src="images/rooton-logo.png" alt="ROOTON 로고"></a>
+  </div>
+  <div class="nav-menu-toggle" id="navMenuToggle" aria-label="메뉴 열기">
+    <span></span><span></span><span></span>
   </div>
   <div class="nav-right">
+    <a href="https://ercohs.com" class="nav-ercohs" target="_blank">
+      <img src="images/logo_ercohs.svg" alt="에르코스 로고">
+    </a>
+  </div>
+</nav>
+
+<!-- 전체 메뉴 드롭다운 -->
+<div class="nav-fullmenu" id="navFullMenu">
+  <div class="nav-fullmenu-inner">
     <a href="index.html">메인</a>
     <a href="ingredient.html" class="active">원료 소개</a>
     <a href="synergy.html">시너지</a>
@@ -357,11 +369,8 @@ img { max-width: 100%; display: block; }
     <a href="traditional.html">전통식치</a>
     <a href="safety.html">안전성</a>
     <a href="faq.html">FAQ</a>
-    <a href="https://ercohs.com" class="nav-ercohs" target="_blank">
-      <img src="images/logo_ercohs.svg" alt="에르코스 로고">
-    </a>
   </div>
-</nav>
+</div>
 
 <!-- PAGE HERO -->
 <section class="page-hero">

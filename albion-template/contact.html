@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>상담/문의 — 루톤랩</title>
+<style>
+:root {
+  --rooton-green: #55BE83;
+  --rooton-green-dark: #3D9E6A;
+  --rooton-charcoal: #3F3F3F;
+  --sage: #A3B18A;
+  --sage-light: #E8EDD8;
+  --beige: #F5F0E6;
+  --cream: #FAF7F0;
+  --navy: #1B2740;
+  --navy-light: #24365A;
+  --white: #FFFFFF;
+  --gray: #8A8A8A;
+  --dark-gray: #2B2B2B;
+  --border: #E0E0E0;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+  color: var(--dark-gray);
+  line-height: 1.7;
+  background: var(--white);
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 60px;
+  background: rgba(27, 39, 64, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.nav-logo img { height: 36px; width: auto; }
+
+.page-hero .container { max-width: 1200px; margin: 0 auto; }
+.page-hero .breadcrumb { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
+.page-hero .breadcrumb a { color: rgba(255,255,255,0.7); }
+.page-hero .breadcrumb a:hover { color: var(--rooton-green); }
+.page-hero h1 { font-size: 48px; font-weight: 700; margin-bottom: 16px; letter-spacing: -1px; }
+.page-hero p { font-size: 16px; color: rgba(255,255,255,0.7); max-width: 700px; }
+.section { padding: 80px 60px; }
+.section-white { background: var(--white); }
+.section-beige { background: var(--beige); }
+.container { max-width: 1200px; margin: 0 auto; }
+.section-label { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rooton-green); margin-bottom: 16px; }
+.section-title { font-size: 36px; font-weight: 700; line-height: 1.3; margin-bottom: 24px; color: var(--rooton-charcoal); letter-spacing: -1px; }
+.section-desc { font-size: 16px; color: var(--gray); max-width: 700px; margin-bottom: 40px; line-height: 1.8; }
+
+/* 상담/문의 스타일 */
+.contact-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+.contact-intro .highlight {
+  color: var(--rooton-green);
+  font-weight: 700;
+}
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+.contact-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  transition: all 0.3s;
+}
+.contact-card:hover {
+  border-color: var(--rooton-green);
+  box-shadow: 0 8px 30px rgba(85, 190, 131, 0.1);
+}
+.contact-card .icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: var(--sage-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+.contact-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--rooton-charcoal);
+  margin-bottom: 8px;
+}
+.contact-card p {
+  font-size: 14px;
+  color: var(--gray);
+  margin-bottom: 16px;
+}
+.contact-card .contact-value {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--rooton-charcoal);
+}
+
+/* 문의 폼 */
+.inquiry-form {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.inquiry-form .form-group {
+  margin-bottom: 24px;
+}
+.inquiry-form .form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--rooton-charcoal);
+  margin-bottom: 10px;
+}
+.inquiry-form .form-group input,
+.inquiry-form .form-group select,
+.inquiry-form .form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+.inquiry-form .form-group input:focus,
+.inquiry-form .form-group select:focus,
+.inquiry-form .form-group textarea:focus {
+  outline: none;
+  border-color: var(--rooton-green);
+}
+.inquiry-form .form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+.inquiry-form .form-group .agree {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--gray);
+}
+.inquiry-form .form-group .agree input {
+  width: auto;
+}
+.inquiry-form .submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--rooton-green) 0%, var(--rooton-green-dark) 100%);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.inquiry-form .submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(85, 190, 131, 0.3);
+}
+
+.back-cta { display: inline-block; padding: 14px 36px; border: 1px solid var(--rooton-green); border-radius: 50px; color: var(--rooton-green); font-weight: 600; font-size: 15px; transition: all 0.3s; }
+.back-cta:hover { background: var(--rooton-green); color: var(--white); }
+.footer { background: var(--rooton-charcoal); color: var(--white); padding: 60px; }
+.footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
+.footer-logo img { height: 50px; width: auto; background: var(--white); border-radius: 6px; padding: 6px 10px; }
+.footer-divider { border-top: 1px solid rgba(255,255,255,0.15); margin: 30px 0; }
+.footer-disclaimer { font-size: 13px; font-style: italic; color: rgba(255,255,255,0.6); margin-bottom: 30px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,0.7); }
+.footer-copyright { font-size: 13px; color: rgba(255,255,255,0.5); }
+.footer-social { display: flex; gap: 20px; }
+.footer-social a { color: var(--white); font-size: 14px; opacity: 0.7; }
+
+/* 중앙 삼지창(햄버거) 메뉴 버튼 - 오른쪽 정렬, 동그라미 없음 */
+.nav-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  transition: all 0.3s;
+}
+.nav-menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.nav-menu-toggle:hover span { background: var(--rooton-green); }
+.nav-menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-menu-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* PC 텍스트 메뉴 */
+.nav-menu-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.nav-menu-links a {
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.85;
+  text-decoration: none;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+.nav-menu-links a:hover,
+.nav-menu-links a.active {
+  color: var(--rooton-green);
+  opacity: 1;
+}
+/* 상담/문의 CTA 버튼 */
+.nav-cta {
+  display: inline-block;
+  padding: 10px 24px;
+  background: var(--rooton-green);
+  color: var(--white) !important;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+  opacity: 1 !important;
+  transition: all 0.3s;
+}
+.nav-cta:hover {
+  background: var(--rooton-green-dark);
+  color: var(--white) !important;
+}
+
+/* 전체 메뉴 드롭다운 (모바일) */
+.nav-fullmenu {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 100vh;
+  background: rgba(27, 39, 64, 0.97);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+.nav-fullmenu.open { opacity: 1; visibility: visible; }
+.nav-fullmenu-inner { display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.nav-fullmenu-inner a { color: var(--white); font-size: 24px; font-weight: 600; opacity: 0.85; transition: all 0.3s; }
+.nav-fullmenu-inner a:hover { color: var(--rooton-green); opacity: 1; transform: translateX(8px); }
+
+@media (max-width: 1024px) { .contact-methods { grid-template-columns: 1fr; } }
+@media (max-width: 768px) {
+  .section { padding: 60px 24px; }
+  .page-hero { padding: 120px 24px 60px; }
+  .page-hero h1 { font-size: 32px; }
+  .nav { padding: 15px 24px; }
+  .nav-menu-links { display: none; }
+  .nav-menu-toggle { display: flex; margin-left: auto; }
+  .footer { padding: 40px 24px; }
+  .inquiry-form { padding: 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-logo">
+    <a href="index.html"><img src="images/rooton-logo.png" alt="ROOTON 로고"></a>
+  </div>
+  <div class="nav-menu-links" id="navMenuLinks">
+    <a href="index.html">메인</a>
+    <a href="ingredient.html">원료 소개</a>
+    <a href="synergy.html">시너지</a>
+    <a href="science.html">과학적 근거</a>
+    <a href="clinical.html">임상 데이터</a>
+    <a href="traditional.html">전통식치</a>
+    <a href="safety.html">안전성</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html" class="nav-cta">상담/문의</a>
+  </div>
+  <div class="nav-menu-toggle" id="navMenuToggle" aria-label="메뉴 열기">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- 전체 메뉴 드롭다운 (모바일) -->
+<div class="nav-fullmenu" id="navFullMenu">
+  <div class="nav-fullmenu-inner">
+    <a href="index.html">메인</a>
+    <a href="ingredient.html">원료 소개</a>
+    <a href="synergy.html">시너지</a>
+    <a href="science.html">과학적 근거</a>
+    <a href="clinical.html">임상 데이터</a>
+    <a href="traditional.html">전통식치</a>
+    <a href="safety.html">안전성</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">상담/문의</a>
+  </div>
+</div>
+
+<section class="page-hero" style="background: linear-gradient(135deg, #1B2740 0%, #24365A 100%); padding: 160px 60px 80px;">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">메인</a> / 상담/문의</div>
+    <h1>상담/문의</h1>
+    <p>루톤랩의 원료와 제품에 대해 궁금하신 점을 남겨주세요.</p>
+  </div>
+</section>
+
+<section class="section section-white">
+  <div class="container">
+    <div class="contact-intro">
+      <div class="section-label">Ingredient Inquiry</div>
+      <h2 class="section-title">원료 문의</h2>
+      <p class="section-desc">
+        루톤의 핵심 원료 <span class="highlight">WCO31</span>에 대해 궁금하신 점을 남겨주세요.
+        원료의 기원, 연구 근거, 안전성에 대해 정직하게 답변드립니다.
+        WCO31은 성장에 관한 인체연구를 가진 핵심 원료로, 연구 근거를 투명하게 공개합니다.
+      </p>
+    </div>
+
+    <div class="contact-methods">
+      <div class="contact-card">
+        <div class="icon">📞</div>
+        <h3>전화 문의</h3>
+        <p>평일 09:00 - 18:00</p>
+        <div class="contact-value">0000-0000</div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">✉️</div>
+        <h3>이메일 문의</h3>
+        <p>24시간 접수 가능</p>
+        <div class="contact-value">help@rooton.co.kr</div>
+      </div>
+    </div>
+
+    <div class="inquiry-form">
+      <div class="section-label" style="text-align: center;">Ingredient Inquiry</div>
+      <h2 class="section-title" style="text-align: center;">원료 문의하기</h2>
+      <p class="section-desc" style="text-align: center; margin-bottom: 30px;">
+        WCO31 원료에 대해 궁금하신 점을 남겨주세요.
+      </p>
+
+      <form id="inquiryForm">
+        <div class="form-group">
+          <label for="name">이름</label>
+          <input type="text" id="name" placeholder="성함을 입력해주세요" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">연락처</label>
+          <input type="tel" id="phone" placeholder="010-0000-0000" required>
+        </div>
+        <div class="form-group">
+          <label for="email">이메일</label>
+          <input type="email" id="email" placeholder="example@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="type">문의 유형</label>
+          <select id="type">
+            <option value="">선택해주세요</option>
+            <option value="ingredient">원료 문의</option>
+            <option value="product">제품 문의</option>
+            <option value="partnership">제휴/입점 문의</option>
+            <option value="etc">기타 문의</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">문의 내용</label>
+          <textarea id="message" placeholder="문의 내용을 입력해주세요"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="agree">
+            <input type="checkbox" required>
+            개인정보 수집 및 이용에 동의합니다.
+          </label>
+        </div>
+        <button type="submit" class="submit-btn">문의 보내기</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-logo">
+      <a href="https://ercohs.com" target="_blank">
+        <img src="images/logo_ercohs.svg" alt="에르코스 로고">
+      </a>
+    </div>
+    <div class="footer-social">
+      <a href="#">인스타그램</a><a href="#">유튜브</a><a href="#">블로그</a>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <p class="footer-disclaimer">* 본 제품은 질병의 예방 및 치료를 위한 의약품이 아닙니다. 개별 인정형 원료에 대한 기능성 정보입니다.</p>
+  <div class="footer-links">
+    <a href="#">개인정보처리방침</a><a href="#">이용약관</a><a href="#">고객센터</a><a href="#">사이트맵</a>
+  </div>
+  <p class="footer-copyright">© 2026 루톤랩. All rights reserved.</p>
+</footer>
+
+<script>
+// 중앙 삼지창(햄버거) 메뉴 토글
+const menuToggle = document.getElementById('navMenuToggle');
+const fullMenu = document.getElementById('navFullMenu');
+if (menuToggle && fullMenu) {
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menuToggle.classList.toggle('active');
+    fullMenu.classList.toggle('open');
+  });
+  fullMenu.addEventListener('click', (e) => {
+    if (e.target === fullMenu) {
+      menuToggle.classList.remove('active');
+      fullMenu.classList.remove('open');
+    }
+  });
+  fullMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      fullMenu.classList.remove('open');
+    });
+  });
+}
+
+// 문의 폼 제출
+document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('문의가 접수되었습니다. 빠른 시일 내에 답변드리겠습니다.');
+  this.reset();
+});
+</script>
+
+</body>
+</html>

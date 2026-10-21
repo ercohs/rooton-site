@@ -148,6 +148,24 @@ img { max-width: 100%; display: block; }
   opacity: 1;
 }
 
+
+/* 상담/문의 CTA 버튼 */
+.nav-cta {
+  display: inline-block;
+  padding: 10px 24px;
+  background: var(--rooton-green);
+  color: var(--white) !important;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+  opacity: 1 !important;
+  transition: all 0.3s;
+}
+.nav-cta:hover {
+  background: var(--rooton-green-dark);
+  color: var(--white) !important;
+}
+
 </style>
 </head>
 <body>
@@ -165,6 +183,7 @@ img { max-width: 100%; display: block; }
     <a href="traditional.html" class="active">전통식치</a>
     <a href="safety.html">안전성</a>
     <a href="faq.html">FAQ</a>
+    <a href="contact.html" class="nav-cta">상담/문의</a>
   </div>
   <div class="nav-menu-toggle" id="navMenuToggle" aria-label="메뉴 열기">
     <span></span><span></span><span></span>
@@ -182,6 +201,7 @@ img { max-width: 100%; display: block; }
     <a href="traditional.html">전통식치</a>
     <a href="safety.html">안전성</a>
     <a href="faq.html">FAQ</a>
+    <a href="contact.html" class="nav-cta">상담/문의</a>
   </div>
 </div>
 
@@ -196,6 +216,7 @@ img { max-width: 100%; display: block; }
     <a href="traditional.html" class="active">전통식치</a>
     <a href="safety.html">안전성</a>
     <a href="faq.html">FAQ</a>
+    <a href="contact.html" class="nav-cta">상담/문의</a>
   </div>
 </div>
 
@@ -216,6 +237,7 @@ img { max-width: 100%; display: block; }
         <p>
           식치(食治)는 음식으로 질병을 예방하고 치료하는 전통 식이요법입니다.
           총백은 단순 채소가 아닌 '약용 음식(Food-Medicine)'으로 분류되어,
+          <sup>[3]</sup>
           동의보감에서 단방(單方)으로 가장 빈번하게 활용되었습니다.
         </p>
         <p>
@@ -240,6 +262,7 @@ img { max-width: 100%; display: block; }
     <h2 class="section-title">동의보감 속 총백</h2>
     <p class="section-desc">
       총백은 동의보감 전체에서 227회 처방되었으며, 단방 부문에서 가장 빈번하게 활용된 핵심 약재입니다.
+          <sup>[3]</sup>
     </p>
 
     <div class="info-grid">
@@ -301,6 +324,21 @@ img { max-width: 100%; display: block; }
     <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
       <a href="safety.html" class="back-cta">안전성 보기</a>
       <a href="index.html" class="back-cta" style="border-color: var(--navy); color: var(--navy);">메인으로</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="section section-beige">
+  <div class="container">
+    <div class="section-label">References</div>
+    <h2 class="section-title">출처</h2>
+    <div style="font-size: 13px; color: var(--gray); line-height: 2;">
+      <p>[1] Kim et al. Effects of Allium fistulosum L. (Green Onion) Root and Avena sativa L. (Oat) Mixtures (WCO31) on the Height of Children: A Multi-Center, Randomized, Double-Blind, Placebo-Controlled Clinical Trial. <em>Nutrients</em> 2026;18:1326. DOI: 10.3390/nu18091326</p>
+      <p>[2] Wu et al. Promotion of longitudinal bone growth by the intake of oat and green onion root water extracts in weaning rats through stimulating growth hormone secretion and elevating gut microbiota related to nervous system-related pathway. <em>Journal of Functional Foods</em> 2023;105:105567. DOI: 10.1016/j.jff.2023.105567</p>
+      <p>[3] 허준. 『동의보감(東醫寶鑑)』 탕액편. 파(蔥) 관련 처방 기록.</p>
+      <p>[4] FDA GRAS 인정. 귀리(Avena sativa L.) 베타글루칸.</p>
+      <p>[5] 알리티아민(Allithiamine) 관련 문헌. Fujiwara et al.</p>
     </div>
   </div>
 </section>

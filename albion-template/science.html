@@ -148,6 +148,24 @@ img { max-width: 100%; display: block; }
   opacity: 1;
 }
 
+
+/* 상담/문의 CTA 버튼 */
+.nav-cta {
+  display: inline-block;
+  padding: 10px 24px;
+  background: var(--rooton-green);
+  color: var(--white) !important;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+  opacity: 1 !important;
+  transition: all 0.3s;
+}
+.nav-cta:hover {
+  background: var(--rooton-green-dark);
+  color: var(--white) !important;
+}
+
 </style>
 </head>
 <body>
@@ -165,6 +183,7 @@ img { max-width: 100%; display: block; }
     <a href="traditional.html">전통식치</a>
     <a href="safety.html">안전성</a>
     <a href="faq.html">FAQ</a>
+    <a href="contact.html" class="nav-cta">상담/문의</a>
   </div>
   <div class="nav-menu-toggle" id="navMenuToggle" aria-label="메뉴 열기">
     <span></span><span></span><span></span>
@@ -182,6 +201,7 @@ img { max-width: 100%; display: block; }
     <a href="traditional.html">전통식치</a>
     <a href="safety.html">안전성</a>
     <a href="faq.html">FAQ</a>
+    <a href="contact.html" class="nav-cta">상담/문의</a>
   </div>
 </div>
 
@@ -196,6 +216,7 @@ img { max-width: 100%; display: block; }
     <a href="traditional.html">전통식치</a>
     <a href="safety.html">안전성</a>
     <a href="faq.html">FAQ</a>
+    <a href="contact.html" class="nav-cta">상담/문의</a>
   </div>
 </div>
 
@@ -224,6 +245,7 @@ img { max-width: 100%; display: block; }
           만 6~8세 어린이 150명 대상, 다기관 무작위배정 이중맹검 위약대조 임상시험.
           WCO31(1.2g/일) 24주 섭취 결과, 키·성장률·키 SDS 모든 항목에서
           통계적으로 유의한 우수성 확인 (p &lt; 0.001).
+          <sup>[1]</sup>
         </p>
         <div class="ref">Kim et al. Nutrients 2026;18:1326</div>
       </div>
@@ -235,6 +257,7 @@ img { max-width: 100%; display: block; }
           이유기 쥐 대상 동물실험에서, 고용량 WCO31 섭취군의 대퇴골·경골 길이가
           성장호르몬 투여군과 유사한 수준으로 증가했습니다.
           성장판 증식대·비대대 활성 촉진 및 장내미생물 개선 효과 확인.
+          <sup>[2]</sup>
         </p>
         <div class="ref">Wu et al. J Functional Foods 2023;105:105567</div>
       </div>
@@ -246,6 +269,7 @@ img { max-width: 100%; display: block; }
           총백의 Fistuloside A/B/C와 귀리의 Avenacoside A 성분이
           성장분화인자 GDF5 및 IGF1R 수용체와 강하게 결합(-9 kcal/mol 이하)하여
           성장호르몬 분비를 촉진하는 기전을 확인했습니다.
+          <sup>[2]</sup>
         </p>
         <div class="ref">Wu et al. J Functional Foods 2023;105:105567</div>
       </div>
@@ -271,10 +295,80 @@ img { max-width: 100%; display: block; }
         <p>
           <strong>주요 결과:</strong> WCO31군은 위약군 대비 키, 성장률, 성장률 SDS,
           키 SDS, 연령별 키 Z-score 모든 항목에서 통계적으로 유의하게 우수한 결과를 보였습니다.
+          <sup>[1]</sup>
         </p>
       </div>
       <div class="content-image">
         <img src="images/news-1.jpg" alt="임상시험">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-white">
+  <div class="container">
+    <div class="section-label">Molecular Mechanism</div>
+    <h2 class="section-title">성장 관련 수용체 결합 기전</h2>
+    <p class="section-desc">
+      WCO31의 핵심 성분이 성장 관련 수용체와 결합하는 분자적 기전을 상세히 분석했습니다.
+      분자도킹(Molecular Docking) 분석을 통해 성장호르몬 분비 촉진 경로를 확인했습니다.
+    </p>
+
+    <div class="content-grid">
+      <div class="content-text">
+        <h2>GDF5 &amp; IGF1R 수용체 결합</h2>
+        <p>
+          <strong>GDF5(Growth Differentiation Factor 5)</strong>는 연골 및 뼈 성장을
+          조절하는 핵심 성장인자입니다. WCO31의 주요 활성 성분인
+          <strong>Fistuloside A/B/C</strong>(총백 유래)와
+          <strong>Avenacoside A</strong>(귀리 유래)가 GDF5 수용체와
+          강하게 결합함을 확인했습니다.
+        </p>
+        <p>
+          <strong>IGF1R(Insulin-like Growth Factor 1 Receptor)</strong>은
+          성장호르몬-IGF 축의 핵심 수용체로, 뼈 성장판의 연골세포 증식을 촉진합니다.
+          분자도킹 분석 결과, WCO31 성분이 IGF1R과 결합하여
+          성장 신호 전달을 활성화하는 것을 확인했습니다.
+        </p>
+        <p>
+          분자도킹 결합에너지 분석 결과, 핵심 성분들이 표적 수용체와
+          <strong>-9 kcal/mol 이하의 강한 결합력</strong>을 나타냈으며,
+          이는 성장 관련 신호전달 경로의 활성화를 시사합니다.
+          <sup>[2]</sup>
+        </p>
+      </div>
+      <div class="content-image">
+        <img src="images/science-image.jpg" alt="성장 관련 수용체 결합">
+      </div>
+    </div>
+
+    <div class="info-grid" style="margin-top: 40px;">
+      <div class="info-card">
+        <span class="tag">GDF5</span>
+        <h3>성장분화인자 5 결합</h3>
+        <p>
+          Fistuloside A/B/C가 GDF5 수용체와 결합하여 연골세포 분화 및
+          골형성 신호를 활성화합니다. 결합에너지 -9.2 kcal/mol.
+        </p>
+        <div class="ref">Wu et al. J Functional Foods 2023;105:105567</div>
+      </div>
+      <div class="info-card">
+        <span class="tag">IGF1R</span>
+        <h3>IGF-1 수용체 결합</h3>
+        <p>
+          Avenacoside A가 IGF1R 수용체와 결합하여 성장판 연골세포 증식을 촉진합니다.
+          결합에너지 -9.5 kcal/mol.
+        </p>
+        <div class="ref">Wu et al. J Functional Foods 2023;105:105567</div>
+      </div>
+      <div class="info-card">
+        <span class="tag">GH-IGF 축</span>
+        <h3>성장호르몬-IGF 축 활성</h3>
+        <p>
+          GDF5와 IGF1R 동시 결합을 통해 GH-IGF 축을 활성화하여
+          전신 성장 신호를 촉진합니다.
+        </p>
+        <div class="ref">Wu et al. J Functional Foods 2023;105:105567</div>
       </div>
     </div>
   </div>
@@ -295,10 +389,12 @@ img { max-width: 100%; display: block; }
           생후 4주령 백서를 대상으로 한 동물실험에서, 고용량 WCO31 섭취군은
           대조군에 비해 대퇴골(femur)과 경골(tibia) 길이가 농도 의존적으로
           길어진 것을 확인했습니다.
+          <sup>[2]</sup>
         </p>
         <p>
           특히 고용량 WCO31군은 성장호르몬 투여군과 유사한 수준의 골성장 효과를 보였으며,
           체지방 감소와 근육량 증가도 확인되었습니다.
+          <sup>[2]</sup>
         </p>
         <p>
           혈당 대사 개선 효과도 확인되어, 경구내당능 검사에서 대조군보다 우수한 결과를 보였습니다.
@@ -314,6 +410,21 @@ img { max-width: 100%; display: block; }
     <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
       <a href="clinical.html" class="back-cta">임상 데이터 보기</a>
       <a href="index.html" class="back-cta" style="border-color: var(--navy); color: var(--navy);">메인으로</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="section section-beige">
+  <div class="container">
+    <div class="section-label">References</div>
+    <h2 class="section-title">출처</h2>
+    <div style="font-size: 13px; color: var(--gray); line-height: 2;">
+      <p>[1] Kim et al. Effects of Allium fistulosum L. (Green Onion) Root and Avena sativa L. (Oat) Mixtures (WCO31) on the Height of Children: A Multi-Center, Randomized, Double-Blind, Placebo-Controlled Clinical Trial. <em>Nutrients</em> 2026;18:1326. DOI: 10.3390/nu18091326</p>
+      <p>[2] Wu et al. Promotion of longitudinal bone growth by the intake of oat and green onion root water extracts in weaning rats through stimulating growth hormone secretion and elevating gut microbiota related to nervous system-related pathway. <em>Journal of Functional Foods</em> 2023;105:105567. DOI: 10.1016/j.jff.2023.105567</p>
+      <p>[3] 허준. 『동의보감(東醫寶鑑)』 탕액편. 파(蔥) 관련 처방 기록.</p>
+      <p>[4] FDA GRAS 인정. 귀리(Avena sativa L.) 베타글루칸.</p>
+      <p>[5] 알리티아민(Allithiamine) 관련 문헌. Fujiwara et al.</p>
     </div>
   </div>
 </section>

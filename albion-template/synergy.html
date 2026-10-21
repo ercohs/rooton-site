@@ -284,6 +284,117 @@ img { max-width: 100%; display: block; }
   .nav-menu-links { display: none; }
   .nav-menu-toggle { display: flex; margin-left: auto; }
   
+  
+}
+
+/* PC 텍스트 메뉴 */
+.nav-menu-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-menu-links a {
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.85;
+  text-decoration: none;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.nav-menu-links a:hover,
+.nav-menu-links a.active {
+  color: var(--rooton-green);
+  opacity: 1;
+}
+
+/* 중앙 삼지창(햄버거) 메뉴 버튼 - 오른쪽 정렬, 동그라미 없음 */
+.nav-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  transition: all 0.3s;
+}
+
+.nav-menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.nav-menu-toggle:hover span {
+  background: var(--rooton-green);
+}
+
+.nav-menu-toggle.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-menu-toggle.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* 전체 메뉴 드롭다운 (모바일) */
+.nav-fullmenu {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 100vh;
+  background: rgba(27, 39, 64, 0.97);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+
+.nav-fullmenu.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-fullmenu-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-fullmenu-inner a {
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 600;
+  opacity: 0.85;
+  transition: all 0.3s;
+}
+
+.nav-fullmenu-inner a:hover {
+  color: var(--rooton-green);
+  opacity: 1;
+  transform: translateX(8px);
+}
+
 </style>
 </head>
 <body>
@@ -323,18 +434,7 @@ img { max-width: 100%; display: block; }
 </div>
 
 <!-- 전체 메뉴 드롭다운 -->
-<div class="nav-fullmenu" id="navFullMenu">
-  <div class="nav-fullmenu-inner">
-    <a href="index.html">메인</a>
-    <a href="ingredient.html">원료 소개</a>
-    <a href="synergy.html" class="active">시너지</a>
-    <a href="science.html">과학적 근거</a>
-    <a href="clinical.html">임상 데이터</a>
-    <a href="traditional.html">전통식치</a>
-    <a href="safety.html">안전성</a>
-    <a href="faq.html">FAQ</a>
-  </div>
-</div>
+
 
 <!-- PAGE HERO -->
 <section class="page-hero">

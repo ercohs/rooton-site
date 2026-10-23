@@ -3,17 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>루톤랩 — 총백귀리혼합물 WCO31 원료 소개</title>
+<title>루톤 — 총백귀리혼합물 WCO31 원료 소개</title>
+<meta name="description" content="ROOTON® 총백귀리혼합물 WCO31 원료 소개. 전통식치의 지혜와 현대 과학의 검증이 만난 원료.">
 <style>
 /* ============================================================
-   루톤랩 원료 소개 페이지
+   루톤 원료 소개 페이지
    (Albion Minerals 구조 기반 - 원료 중심)
    - 이미지 교체: <img> 태그의 src 속성만 변경
    - 텍스트 교체: 각 섹션의 텍스트만 변경
    - 색상 변경: :root 변수에서 수정
    ============================================================ */
 :root {
-  /* 루톤랩 BI 컬러 */
+  /* 루톤 BI 컬러 */
   --rooton-green: #55BE83;
   --rooton-green-dark: #3D9E6A;
   --rooton-charcoal: #3F3F3F;
@@ -254,6 +255,39 @@ img {
   background-position: center;
   opacity: 0.25;
   z-index: 0;
+}
+
+/* 계단 상승 그래픽 (성장 이미지) */
+.hero::after {
+  content: '';
+  position: absolute;
+  right: 8%;
+  bottom: 10%;
+  width: 320px;
+  height: 280px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%);
+  clip-path: polygon(0% 100%, 25% 100%, 25% 75%, 50% 75%, 50% 50%, 75% 50%, 75% 25%, 100% 25%, 100% 0%, 75% 0%, 75% 25%, 50% 25%, 50% 50%, 25% 50%, 25% 75%, 0% 75%);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 8px;
+  z-index: 0;
+  opacity: 0.7;
+  box-shadow: 0 0 40px rgba(255,255,255,0.1);
+}
+
+/* 계단 위 상승 화살표 */
+.hero .hero-stairs-arrow {
+  position: absolute;
+  right: 12%;
+  bottom: 38%;
+  width: 60px;
+  height: 60px;
+  z-index: 1;
+  opacity: 0.8;
+}
+.hero .hero-stairs-arrow svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
 }
 
 .hero-content {
@@ -504,8 +538,8 @@ img {
 }
 
 .ingredient-card .card-icon {
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background: var(--sage-light);
   display: flex;
@@ -515,8 +549,8 @@ img {
 }
 
 .ingredient-card .card-icon img {
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
 }
 
 .ingredient-card h3 {
@@ -1149,8 +1183,37 @@ img {
   .hero {
     padding: 100px 24px;
   }
+  .hero::before {
+    background-position: center bottom;
+  }
+  /* 계단 상승 이미지가 모바일에서 잘 보이도록 */
+  .hero::after {
+    right: 5%;
+    bottom: 5%;
+    width: 220px;
+    height: 200px;
+    opacity: 0.9;
+  }
+  .hero .hero-stairs-arrow {
+    right: 10%;
+    bottom: 32%;
+    width: 45px;
+    height: 45px;
+  }
+  /* 텍스트 오른쪽 이동 + 20% 크기 증가 */
   .hero h2 {
-    font-size: 36px;
+    font-size: 43px;
+    text-align: right;
+    margin-right: 10px;
+  }
+  .hero .hero-subtitle {
+    text-align: right;
+    margin-right: 10px;
+    font-size: 21px;
+  }
+  .hero-cta-group {
+    justify-content: flex-end;
+    margin-right: 10px;
   }
   .synergy-grid,
   .science-grid,
@@ -1219,6 +1282,11 @@ img {
      HERO SECTION
      ============================================================ -->
 <section class="hero">
+  <div class="hero-stairs-arrow">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#55BE83" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </div>
   <div class="hero-content">
     <h2>
       <strong>루톤</strong>, 성장의 뿌리 ON<br>
@@ -1226,7 +1294,7 @@ img {
     </h2>
     <p class="hero-subtitle">
       전통식치의 지혜와 현대 과학의 검증이 만난 원료.<br>
-      총백(파뿌리)과 귀리의 시너지로 아이의 성장 환경을 생각합니다.
+      총백(파뿌리)과 귀리를 최적 비율로 배합한 원료입니다.
     </p>
     <div class="hero-cta-group">
       <a href="#ingredient" class="hero-cta-primary">원료 자세히 보기</a>
@@ -1298,11 +1366,11 @@ img {
           따뜻한 성질(溫)과 매운맛(辛)으로 발한해표 작용을 하며, 기혈 순환을 돕습니다.
         </p>
         <ul class="card-features">
-          <li><span class="check">✓</span> 발한해표(發汗解表) — 초기 감기 완화</li>
-          <li><span class="check">✓</span> 항균·항염 작용 (알리신, 플라보노이드)</li>
-          <li><span class="check">✓</span> 소화 촉진 — 위액 분비 및 연동 운동</li>
-          <li><span class="check">✓</span> 동의보감 227회 처방, 단방 최다 활용</li>
+          <li><span class="check">✓</span> 동의보감 탕액편에 수록된 전통 식재료</li>
         </ul>
+        <div style="font-size: 12px; color: var(--gray); border-top: 1px solid var(--border); margin-top: 16px; padding-top: 12px; font-style: italic;">
+          출처: 『동의보감』 탕액편 파(蔥) 관련 기록
+        </div>
       </div>
 
       <!-- 🔴 귀리 카드 -->
@@ -1318,61 +1386,15 @@ img {
         </div>
         <p class="card-desc">
           타임지 선정 10대 슈퍼푸드로, 복합 탄수화물·고단백·필수 미네랄이 풍부합니다.
-          베타글루칸(β-glucan)은 FDA와 EFSA가 인정한 건강기능식품 원료입니다.
+          단백질과 뼈 성장 필수 미네랄을 풍부하게 함유한 곡물입니다.
         </p>
         <ul class="card-features">
-          <li><span class="check">✓</span> 뼈 성장 필수 미네랄 (Ca, Mg, Zn) 풍부</li>
-          <li><span class="check">✓</span> 베타글루칸 — 혈당 안정화, 장내 면역 강화</li>
           <li><span class="check">✓</span> 단백질 함량 13-15%, 필수아미노산 풍부</li>
-          <li><span class="check">✓</span> FDA(1997)·EFSA(2010) 건강기능성 인정</li>
+          <li><span class="check">✓</span> 뼈 성장 필수 미네랄 (Ca, Mg, Zn) 풍부</li>
         </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     SYNERGY (시너지 효과)
-     ============================================================ -->
-<section class="section synergy-section" id="synergy">
-  <div class="container">
-    <div class="section-label">Synergy Effect</div>
-    <h2 class="section-title"><a href="synergy.html" style="color: inherit;">총백 + 귀리, 시너지의 과학</a></h2>
-    <p class="section-desc">
-      두 원료의 결합은 단순한 영양 보충을 넘어 상호 보완적 시너지를 만들어냅니다.
-      <a href="synergy.html" class="section-link">시너지 자세히 보기 →</a>
-    </p>
-
-    <div class="synergy-grid">
-      <!-- 🔴 시너지 1 -->
-      <div class="synergy-card">
-        <div class="num">01</div>
-        <h3>면역력 이중 방어막</h3>
-        <p>
-          총백의 알리신이 외부 병원균을 직접 타격(항균)하는 동안,
-          귀리의 베타글루칸이 장내 면역 환경을 강화합니다.
-          '직접 방어 + 근본 면역 강화'의 이중 구조입니다.
-        </p>
-      </div>
-
-      <!-- 🔴 시너지 2 -->
-      <div class="synergy-card">
-        <div class="num">02</div>
-        <h3>영양 흡수율 극대화</h3>
-        <p>
-          총백의 알리신이 귀리의 비타민 B1과 결합하면 '알리티아민'으로 변환됩니다.
-          이는 체내 흡수율이 일반 비타민 B1보다 10~20배 높아집니다.
-        </p>
-      </div>
-
-      <!-- 🔴 시너지 3 -->
-      <div class="synergy-card">
-        <div class="num">03</div>
-        <h3>소화 흡수 보완</h3>
-        <p>
-          귀리의 풍부한 영양소(단백질·미네랄)가 소화·흡수되도록
-          총백이 천연 소화제 역할을 하는 상호 보완 관계를 형성합니다.
-        </p>
+        <div style="font-size: 12px; color: var(--gray); border-top: 1px solid var(--border); margin-top: 16px; padding-top: 12px; font-style: italic;">
+          출처: USDA FoodData Central (귀리 영양성분)
+        </div>
       </div>
     </div>
   </div>
@@ -1397,7 +1419,7 @@ img {
           <span class="card-tag">인체적용시험</span>
           <h3>어린이 키 성장 임상시험</h3>
           <p>
-            만 6~8세 어린이 150명 대상, 다기관 무작위배정 이중맹검 위약대조 임상시험.
+            만 6~8세 어린이 160명 등록(150명 분석) 대상, 다기관 무작위배정 이중맹검 위약대조 임상시험.
             WCO31(1.2g/일) 24주 섭취 결과, 키·성장률·키 SDS 모든 항목에서
             통계적으로 유의한 우수성 확인 (p &lt; 0.001).
           </p>
@@ -1414,7 +1436,7 @@ img {
           <h3>종적 골성장 촉진 확인</h3>
           <p>
             이유기 쥐 대상 동물실험에서, 고용량 WCO31 섭취군의 대퇴골·경골 길이가
-            성장호르몬 투여군과 유사한 수준으로 증가했습니다.
+            동물모델에서 대퇴골·경골 길이 증가가 관찰되었습니다.
             성장판 증식대·비대대 활성 촉진 및 장내미생물 개선 효과 확인.
           </p>
           <div class="card-ref">
@@ -1431,7 +1453,7 @@ img {
           <p>
             총백의 Fistuloside A/B/C와 귀리의 Avenacoside A 성분이
             성장분화인자 GDF5 및 IGF1R 수용체와 강하게 결합(-9 kcal/mol 이하)하여
-            성장호르몬 분비를 촉진하는 기전을 확인했습니다.
+            성장 관련 수용체(GDF5, IGF1R)와의 결합을 확인했습니다.
           </p>
           <div class="card-ref">
             Wu et al. J Functional Foods 2023;105:105567
@@ -1458,8 +1480,8 @@ img {
     <div class="clinical-stats">
       <!-- 🔴 임상 데이터 1 -->
       <div class="clinical-stat">
-        <div class="number">150명</div>
-        <div class="label">임상시험 참여 인원</div>
+        <div class="number">160명 등록</div>
+        <div class="label">임상시험 참여 인원 (150명 분석)</div>
       </div>
 
       <!-- 🔴 임상 데이터 2 -->
@@ -1486,7 +1508,7 @@ img {
         <h4>연구 설계</h4>
         <p>
           • 다기관, 무작위배정, 이중맹검, 위약대조<br>
-          • 대상: 만 6~8세 어린이 150명 (남 75명, 여 75명)<br>
+          • 대상: 건강한 만 6~8세, 키 3~50 백분위 아동 160명 등록 (150명 분석)<br>
           • 한국 소아청소년 성장도표 3~50 백분위수<br>
           • 2차 성징 미발현 아동
         </p>
@@ -1496,13 +1518,15 @@ img {
         <p>
           • 키, 성장률, 성장률 SDS, 키 SDS, 연령별 키 Z-score<br>
           • 모든 항목에서 위약군 대비 통계적으로 유의한 우수성<br>
-          • 이상반응 없음 — 우수한 안전성 프로파일 확인
+          • 24주 키 증가: WCO31군 3.12±0.92cm vs 위약군 2.38±0.82cm (차이 0.74cm)<br>
+          • 섭취와 관련된 이상반응은 보고되지 않음 — 우수한 안전성 프로파일 확인
         </p>
       </div>
     </div>
 
     <p class="clinical-note">
       * 임상 연구 조건에 따라 결과가 달라질 수 있습니다.<br>
+      * 1차 분석(PP) 기준, ITT 분석에서는 통계적 유의성 미도달<br>
       출처: Kim et al. Nutrients 2026;18:1326
     </p>
   </div>
@@ -1524,16 +1548,7 @@ img {
         <p>
           식치(食治)는 음식으로 질병을 예방하고 치료하는 전통 식이요법입니다.
           총백은 단순 채소가 아닌 '약용 음식(Food-Medicine)'으로 분류되어,
-          동의보감에서 단방(單方)으로 가장 빈번하게 활용되었습니다.
-        </p>
-        <div class="traditional-quote">
-          "性平(一云溫) 味辛... 蔥白 治傷寒 初覺 頭痛 體强 宜煮 蔥白湯 飮之"
-          <span class="source">— 『동의보감(東醫寶鑑)』 탕액편 권3 채부 - 파(蔥)</span>
-        </div>
-        <p>
-          총백은 동의보감 전체에서 227회 처방되었으며, 부인과(婦人門) 질환에 가장
-          높은 빈도(37회)로 사용되었습니다. 태동불안, 임신 중 감기 등 가장 민감한
-          계층에게도 안심하고 사용할 수 있는 안전성을 지닌 천연 약재입니다.
+          동의보감 탕액편에 총백이 수록된 전통 식재료입니다.
         </p>
         <a href="traditional.html" class="section-link">전통식치 자세히 보기 →</a>
       </div>
@@ -1562,7 +1577,7 @@ img {
         <h3>무독성 확인</h3>
         <p>
           총백 추출물은 인간 정상 세포에 유의미한 세포 독성을 나타내지 않으며,
-          오히려 항산화 및 항염증 작용으로 세포를 보호합니다.
+          세포독성 시험 결과 유의한 독성은 관찰되지 않았습니다.
         </p>
       </div>
 
@@ -1573,8 +1588,7 @@ img {
         </div>
         <h3>국제기관 인정</h3>
         <p>
-          파(Allium 속)는 미국 FDA가 전통 식용 경험을 바탕으로 안전한 식품(GRAS)으로
-          인정했습니다. 귀리 베타글루칸은 FDA(1997)와 EFSA(2010)가 건강기능성을 인정했습니다.
+          파(Allium 속)는 오랜 기간 인류의 식단에 포함되어 온 전통 식재료입니다. 귀리는 영양가 높은 곡물로 널리 소비되어 왔습니다.
         </p>
       </div>
 
@@ -1613,7 +1627,7 @@ img {
           </div>
           <div class="patent-item">
             <span class="label">발명의 명칭</span>
-            <span class="value">총백 및 귀리 추출물을 포함하는 어린이 및 청소년 키 성장 촉진용 조성물 및 그 제조방법</span>
+            <span class="value">등록번호 제10-2572487호 (2023.08.25 등록)</span>
           </div>
           <div class="patent-item">
             <span class="label">출원일</span>
@@ -1669,7 +1683,7 @@ img {
         </div>
         <div class="faq-answer">
           WCO31은 다기관, 무작위배정, 이중맹검, 위약대조 방식의 인체적용시험을 통해
-          검증되었습니다. 만 6~8세 어린이 150명을 대상으로 24주간 진행되었으며,
+          검증되었습니다. 만 6~8세 어린이 160명 등록(150명 분석)을 대상으로 24주간 진행되었으며,
           키 성장 관련 모든 항목에서 통계적으로 유의한 결과(p &lt; 0.001)를 확인했습니다.
         </div>
       </div>
@@ -1682,8 +1696,8 @@ img {
         </div>
         <div class="faq-answer">
           총백과 귀리는 오랜 기간 인류의 식단에 포함되어 온 천연 식재료입니다.
-          미국 FDA가 안전한 식품(GRAS)으로 인정했으며, 열수 추출 공법으로
-          잔류 용매 걱정이 없습니다. 임상시험에서도 이상반응이 확인되지 않았습니다.
+          열수 추출 공법으로 잔류 용매 걱정이 없습니다. 임상시험에서도 섭취와 관련된
+          이상반응은 보고되지 않았습니다.
         </div>
       </div>
 
@@ -1709,8 +1723,8 @@ img {
      ============================================================ -->
 <section class="final-cta" id="contact">
   <h2>성장의 뿌리를 생각하는 원료,<br>ROOTON®의 총백귀리혼합물 WCO31</h2>
-  <p>루톤랩의 원료 연구와 제품을 확인해보세요.</p>
-  <a href="#" class="cta-btn">루톤랩 제품 보러 가기</a>
+  <p>루톤의 원료 연구와 제품을 확인해보세요.</p>
+  <a href="#" class="cta-btn">루톤 제품 보러 가기</a>
 </section>
 
 <!-- ============================================================
@@ -1723,28 +1737,24 @@ img {
         <img src="images/logo_ercohs.svg" alt="에르코스 로고">
       </a>
     </div>
-    <div class="footer-social">
-      <a href="#">인스타그램</a>
-      <a href="#">유튜브</a>
-      <a href="#">블로그</a>
-    </div>
   </div>
 
   <div class="footer-divider"></div>
 
   <p class="footer-disclaimer">
-    * 본 제품은 질병의 예방 및 치료를 위한 의약품이 아닙니다. 개별 인정형 원료에 대한 기능성 정보입니다.
+    * 본 사이트는 건강기능식품 원료 WCO31(총백귀리혼합물)에 대한 정보를 제공합니다. 개별 인정형 원료에 대한 기능성 정보입니다.
+  </p>
+
+  <p class="footer-disclaimer" style="font-style: normal;">
+    상호: 주식회사 에르코스
   </p>
 
   <div class="footer-links">
-    <a href="#">개인정보처리방침</a>
-    <a href="#">이용약관</a>
-    <a href="#">고객센터</a>
-    <a href="#">사이트맵</a>
+    <a href="privacy.html">개인정보처리방침</a>
   </div>
 
   <p class="footer-copyright">
-    © 2026 루톤랩. All rights reserved.
+    © 2026 루톤. All rights reserved.
   </p>
 </footer>
 

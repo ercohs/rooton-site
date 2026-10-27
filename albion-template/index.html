@@ -1155,7 +1155,7 @@ img {
   .hero::before {
     background-position: right center;
     background-size: cover;
-    opacity: 0.35;
+    opacity: 0.5;
   }
   /* 모바일: 텍스트 좌측 정렬, 배경 이미지(총백귀리+계단 화살표)가 우측에 보이도록 */
   .hero-content {
@@ -1175,19 +1175,13 @@ img {
   .hero .hero-subtitle {
     text-align: left;
     margin-right: 0;
-    font-size: 15px;
-    max-width: 60%;
-  }
-  .hero-cta-group {
-    justify-content: flex-start;
-    margin-right: 0;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  .hero-cta-primary,
-  .hero-cta-outline {
-    padding: 14px 24px;
     font-size: 14px;
+    max-width: 55%;
+    line-height: 1.5;
+  }
+  /* 모바일: 버튼 숨겨서 배경 이미지가 더 잘 보이도록 */
+  .hero-cta-group {
+    display: none;
   }
   .synergy-grid,
   .science-grid,
@@ -1256,8 +1250,7 @@ img {
       <span class="hero-sub2">ROOTON®의 총백귀리혼합물 WCO31</span>
     </h2>
     <p class="hero-subtitle">
-      전통식치의 지혜와 현대 과학의 검증이 만난 원료.<br>
-      총백(파뿌리)과 귀리를 최적 비율로 배합한 원료입니다.
+      전통식치의 지혜와 현대 과학의 검증이 만난 원료.
     </p>
     <div class="hero-cta-group">
       <a href="#ingredient" class="hero-cta-primary">원료 자세히 보기</a>

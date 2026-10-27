@@ -1154,38 +1154,21 @@ img {
   .hero::before {
     background-position: center bottom;
   }
-  /* 모바일: 모든 텍스트가 화면에 보이도록 왼쪽 정렬 + 크기 축소 */
+  /* 계단 상승 이미지가 모바일에서 잘 보이도록 */
+  /* 텍스트 오른쪽 이동 + 20% 크기 증가 */
   .hero h2 {
-    font-size: 32px;
-    text-align: left;
-    margin-right: 0;
-    word-break: keep-all;
-  }
-  .hero h2 .hero-sub2 {
-    font-size: 18px;
-    display: block;
-    margin-top: 8px;
-    word-break: keep-all;
+    font-size: 43px;
+    text-align: right;
+    margin-right: 10px;
   }
   .hero .hero-subtitle {
-    text-align: left;
-    margin-right: 0;
-    font-size: 15px;
-    word-break: keep-all;
+    text-align: right;
+    margin-right: 10px;
+    font-size: 21px;
   }
   .hero-cta-group {
-    justify-content: flex-start;
-    margin-right: 0;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  .hero-cta-primary,
-  .hero-cta-outline {
-    width: 100%;
-    text-align: center;
-    padding: 14px 20px;
-    font-size: 15px;
+    justify-content: flex-end;
+    margin-right: 10px;
   }
   .synergy-grid,
   .science-grid,

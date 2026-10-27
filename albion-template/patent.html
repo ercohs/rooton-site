@@ -3,8 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>안전성 — 루톤</title>
-<meta name="description" content="루톤 안전성 관련 정보. 총백귀리혼합물 WCO31 원료에 대한 상세 정보를 제공합니다.">
+<title>특허받은 제조기술 — 루톤</title>
+<meta name="description" content="루톤의 특허받은 제조기술. 총백귀리혼합물 WCO31의 특허 등록 내용과 제조 기술을 소개합니다.">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>과학적 근거 — 루톤</title>
+<meta name="description" content="루톤 과학적 근거 관련 정보. 총백귀리혼합물 WCO31 원료에 대한 상세 정보를 제공합니다.">
 <style>
 :root {
   --rooton-green: #55BE83;
@@ -62,12 +67,12 @@ img { max-width: 100%; display: block; }
 .content-text h2 { font-size: 32px; font-weight: 700; margin-bottom: 20px; line-height: 1.3; }
 .content-text p { font-size: 15px; color: var(--gray); margin-bottom: 16px; line-height: 1.8; }
 .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
-.info-card { padding: 30px; border: 1px solid var(--border); border-radius: 12px; text-align: center; transition: all 0.3s; }
+.info-card { padding: 30px; border: 1px solid var(--border); border-radius: 12px; transition: all 0.3s; }
 .info-card:hover { border-color: var(--rooton-green); box-shadow: 0 8px 30px rgba(85, 190, 131, 0.1); }
-.info-card .icon { width: 56px; height: 56px; margin: 0 auto 16px; border-radius: 50%; background: var(--sage-light); display: flex; align-items: center; justify-content: center; }
-.info-card .icon img { width: 30px; height: 30px; }
+.info-card .tag { display: inline-block; padding: 4px 12px; background: var(--sage-light); color: var(--rooton-green-dark); border-radius: 50px; font-size: 12px; font-weight: 600; margin-bottom: 15px; }
 .info-card h3 { font-size: 18px; font-weight: 600; color: var(--rooton-charcoal); margin-bottom: 12px; }
 .info-card p { font-size: 14px; color: var(--gray); line-height: 1.8; }
+.info-card .ref { font-size: 12px; color: var(--gray); border-top: 1px solid var(--border); margin-top: 16px; padding-top: 12px; font-style: italic; }
 .back-cta { display: inline-block; padding: 14px 36px; border: 1px solid var(--rooton-green); border-radius: 50px; color: var(--rooton-green); font-weight: 600; font-size: 15px; transition: all 0.3s; }
 .back-cta:hover { background: var(--rooton-green); color: var(--white); }
 .footer { background: var(--rooton-charcoal); color: var(--white); padding: 60px; }
@@ -168,21 +173,18 @@ img { max-width: 100%; display: block; }
 }
 
 </style>
+
 </head>
 <body>
-
 <nav class="nav" id="mainNav">
   <div class="nav-logo">
     <a href="index.html"><img src="images/rooton-logo.png" alt="ROOTON 로고"></a>
   </div>
   <div class="nav-menu-links" id="navMenuLinks">
-    <a href="index.html">메인</a>
     <a href="ingredient.html">원료 소개</a>
-    <a href="synergy.html">시너지</a>
-    <a href="science.html">과학적 근거</a>
-    <a href="clinical.html">임상 데이터</a>
+    <a href="verification.html">과학적 검증</a>
+    <a href="patent.html" class="active">특허받은 제조기술</a>
     <a href="traditional.html">전통식치</a>
-    <a href="safety.html" class="active">안전성</a>
     <a href="faq.html">FAQ</a>
     <a href="contact.html" class="nav-cta">상담/문의</a>
   </div>
@@ -194,61 +196,46 @@ img { max-width: 100%; display: block; }
 <!-- 전체 메뉴 드롭다운 (모바일) -->
 <div class="nav-fullmenu" id="navFullMenu">
   <div class="nav-fullmenu-inner">
-    <a href="index.html">메인</a>
     <a href="ingredient.html">원료 소개</a>
-    <a href="synergy.html">시너지</a>
-    <a href="science.html">과학적 근거</a>
-    <a href="clinical.html">임상 데이터</a>
+    <a href="verification.html">과학적 검증</a>
+    <a href="patent.html">특허받은 제조기술</a>
     <a href="traditional.html">전통식치</a>
-    <a href="safety.html">안전성</a>
     <a href="faq.html">FAQ</a>
     <a href="contact.html" class="nav-cta">상담/문의</a>
   </div>
 </div>
 
-<!-- 전체 메뉴 드롭다운 -->
-
-
 <section class="page-hero" style="padding-top: 160px; background: linear-gradient(135deg, #1B2740 0%, #24365A 100%);">
   <div class="container">
-    <div class="breadcrumb"><a href="index.html">홈</a> &gt; <span>안전성</span></div>
-    <h1>안전성 검증</h1>
-    <p>아이에게 안심하고 먹일 수 있는 원료인지, 철저히 검증했습니다.</p>
+    <div class="breadcrumb"><a href="index.html">홈</a> &gt; <span>특허받은 제조기술</span></div>
+    <h1>특허받은 제조기술</h1>
+    <p>대한민국 특허청에 등록된 WCO31(총백귀리혼합물)의 제조 기술과 조성물을 소개합니다.</p>
   </div>
 </section>
 
 <section class="section section-white">
   <div class="container">
-    <div class="section-label">Safety</div>
-    <h2 class="section-title">안전성 검증 항목</h2>
+    <div class="section-label">Patent Technology</div>
+    <h2 class="section-title">특허 등록 정보</h2>
     <p class="section-desc">
-      총백과 귀리는 오랜 기간 인류의 식단에 포함되어 온 천연 식재료로,
-      현대 과학을 통해서도 그 안전성이 입증되었습니다.
+      WCO31(총백귀리혼합물)은 대한민국 특허청에 등록된 특허로 기술적 우수성을 공식적으로 인정받았습니다.
     </p>
 
     <div class="info-grid">
       <div class="info-card">
-        <div class="icon"><img src="images/icon-immune.svg" alt="무독성"></div>
-        <h3>무독성 확인</h3>
-        <p>
-          세포독성 시험 결과, 총백 추출물은 인간 정상 세포에 유의한 독성을 나타내지 않았습니다.
-        </p>
+        <div class="tag">특허번호</div>
+        <h3>제10-2572487호</h3>
+        <p>대한민국 특허청 등록 특허</p>
       </div>
       <div class="info-card">
-        <div class="icon"><img src="images/icon-bone.svg" alt="FDA 인정"></div>
-        <h3>국제기관 인정</h3>
-        <p>
-          파(Allium 속)는 오랜 기간 인류의 식단에 포함되어 온 전통 식재료입니다.
-          귀리는 영양가 높은 곡물로 널리 소비되어 왔습니다.
-        </p>
+        <div class="tag">발명의 명칭</div>
+        <h3>총백 및 귀리 추출물을 포함하는 어린이 및 청소년 키 성장 촉진용 조성물 및 그 제조방법</h3>
+        <p>성장기 어린이와 청소년의 키 성장을 촉진하는 조성물과 그 제조 방법</p>
       </div>
       <div class="info-card">
-        <div class="icon"><img src="images/icon-heart.svg" alt="열수추출"></div>
-        <h3>열수 추출 공법</h3>
-        <p>
-          화학 유기 용매를 배제하고 순수한 물과 열만 사용하는 열수 추출 공법으로,
-          잔류 용매 걱정이 없습니다. 전통 탕전 방식을 현대화한 안전한 공법입니다.
-        </p>
+        <div class="tag">특허권자</div>
+        <h3>주식회사 에르코스</h3>
+        <p>특허권을 보유한 기업</p>
       </div>
     </div>
   </div>
@@ -256,97 +243,106 @@ img { max-width: 100%; display: block; }
 
 <section class="section section-sage">
   <div class="container">
-    <div class="section-label">Clinical Safety</div>
-    <h2 class="section-title">임상 안전성</h2>
-
+    <div class="section-label">Patent Details</div>
+    <h2 class="section-title">특허 상세 정보</h2>
     <div class="content-grid">
       <div class="content-text">
-        <h2>인체적용시험 안전성 결과</h2>
-        <p>
-          만 6~8세 어린이 150명을 대상으로 한 24주 인체적용시험에서,
-          WCO31 섭취군은 이상반응이 전혀 확인되지 않았습니다. <sup>[1]</sup>
-        </p>
-        <p>
-          성호르몬 수치나 골연령 진행에 영향을 주지 않아
-          <strong>영유아 섭취 시 성조숙증 우려가 없는 안전한 소재</strong>임이 입증되었습니다.
-        </p>
-        <p>
-          임상시험 결과, 우수한 안전성 프로파일을 확인했습니다. <sup>[1]</sup>
-        </p>
+        <h2>등록 정보</h2>
+        <p><strong>출원일:</strong> 2023년 3월 31일</p>
+        <p><strong>등록일:</strong> 2023년 8월 25일</p>
+        <p><strong>특허권자:</strong> 주식회사 에르코스</p>
+        <p><strong>발명의 명칭:</strong> 총백 및 귀리 추출물을 포함하는 어린이 및 청소년 키 성장 촉진용 조성물 및 그 제조방법</p>
       </div>
       <div class="content-image">
-        <img src="images/news-3.jpg" alt="임상 안전성">
+        <img src="images/stats-2.jpg" alt="특허 등록 정보">
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section-beige" style="text-align: center;">
+<section class="section section-white">
   <div class="container">
-    <h2 class="section-title" style="text-align: center;">전통식치 확인하기</h2>
-    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-      <a href="traditional.html" class="back-cta">전통식치 보기</a>
-      <a href="index.html" class="back-cta" style="border-color: var(--navy); color: var(--navy);">메인으로</a>
+    <div class="section-label">Manufacturing Technology</div>
+    <h2 class="section-title">제조 기술의 핵심</h2>
+    <p class="section-desc">
+      WCO31은 전통 탕전 방식의 지혜를 현대 과학 기술로 구현한 특허받은 제조 공법으로 생산됩니다.
+    </p>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="tag">핵심 기술</div>
+        <h3>열수 추출 공법</h3>
+        <p>화학 용매를 사용하지 않는 열수 추출 방식으로, 원료의 유효 성분을 안전하게 추출합니다.</p>
+      </div>
+      <div class="info-card">
+        <div class="tag">원료 배합</div>
+        <h3>총백 + 귀리 최적 비율</h3>
+        <p>동의보감에 수록된 전통 식재료인 총백과 귀리를 과학적으로 검증된 최적 비율로 배합합니다.</p>
+      </div>
+      <div class="info-card">
+        <div class="tag">품질 관리</div>
+        <h3>표준화 공정</h3>
+        <p>일관된 품질을 위한 표준화된 제조 공정을 통해 균일한 원료를 생산합니다.</p>
+      </div>
     </div>
   </div>
 </section>
 
+<section class="section section-navy">
+  <div class="container">
+    <div class="section-label">Why Patented Technology</div>
+    <h2 class="section-title">특허받은 제조기술의 가치</h2>
+    <p class="section-desc" style="color: rgba(255,255,255,0.8);">
+      특허 등록은 단순한 기술 보호가 아닙니다. WCO31의 제조 공법과 조성물이 과학적으로 검증되었으며,
+      그 기술적 우수성이 공식적으로 인정받았음을 의미합니다.
+    </p>
+    <div class="info-grid">
+      <div class="info-card" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">
+        <div class="tag" style="background: rgba(255,255,255,0.15); color: var(--rooton-green);">기술 보호</div>
+        <h3 style="color: var(--white);">독점적 기술력</h3>
+        <p style="color: rgba(255,255,255,0.8);">특허 등록을 통해 WCO31의 제조 공법과 조성물이 독점적으로 보호됩니다.</p>
+      </div>
+      <div class="info-card" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">
+        <div class="tag" style="background: rgba(255,255,255,0.15); color: var(--rooton-green);">공식 인증</div>
+        <h3 style="color: var(--white);">기술 우수성 인정</h3>
+        <p style="color: rgba(255,255,255,0.8);">대한민국 특허청의 엄격한 심사를 통과한 기술적 우수성.</p>
+      </div>
+      <div class="info-card" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">
+        <div class="tag" style="background: rgba(255,255,255,0.15); color: var(--rooton-green);">신뢰 확보</div>
+        <h3 style="color: var(--white);">소비자 신뢰</h3>
+        <p style="color: rgba(255,255,255,0.8);">특허받은 기술로 생산된 원료에 대한 소비자의 신뢰를 확보합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section section-beige">
   <div class="container">
-    <div class="section-label">References</div>
-    <h2 class="section-title">출처</h2>
-    <div style="font-size: 13px; color: var(--gray); line-height: 2;">
-      <p>[1] Kim et al. Effects of Allium fistulosum L. (Green Onion) Root and Avena sativa L. (Oat) Mixtures (WCO31) on the Height of Children: A Multi-Center, Randomized, Double-Blind, Placebo-Controlled Clinical Trial. <em>Nutrients</em> 2026;18:1326. DOI: 10.3390/nu18091326</p>
-      <p>[2] Wu et al. Promotion of longitudinal bone growth by the intake of oat and green onion root water extracts in weaning rats through stimulating growth hormone secretion and elevating gut microbiota related to nervous system-related pathway. <em>Journal of Functional Foods</em> 2023;105:105567. DOI: 10.1016/j.jff.2023.105567</p>
-      <p>[3] 허준. 『동의보감(東醫寶鑑)』 탕액편. 파(蔥) 관련 처방 기록.</p>
-      <p>[4] FDA GRAS 인정. 귀리(Avena sativa L.) 베타글루칸.</p>
-      <p>[5] 알리티아민(Allithiamine) 관련 문헌. Fujiwara et al.</p>
+    <div class="section-label">More Information</div>
+    <h2 class="section-title">더 알아보기</h2>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+      <a href="ingredient.html" class="back-cta">원료 소개 보기 →</a>
+      <a href="verification.html" class="back-cta">과학적 검증 보기 →</a>
+      <a href="contact.html" class="back-cta">상담/문의 →</a>
     </div>
   </div>
 </section>
 
 <footer class="footer">
-  <div class="footer-top">
-    <div class="footer-logo">
-      <a href="https://ercohs.com" target="_blank">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-logo">
         <img src="images/logo_ercohs.svg" alt="에르코스 로고">
-      </a>
+      </div>
     </div>
+    <div class="footer-divider"></div>
+    <p class="footer-disclaimer">* 본 사이트는 건강기능식품 원료 WCO31(총백귀리혼합물)에 대한 정보를 제공합니다. 개별 인정형 원료에 대한 기능성 정보입니다.</p>
+    <div class="footer-links">
+      <a href="privacy.html">개인정보처리방침</a>
+    </div>
+    <p class="footer-copyright">© 2026 주식회사 에르코스. All rights reserved.</p>
   </div>
-  <div class="footer-divider"></div>
-  <p class="footer-disclaimer">* 본 사이트는 건강기능식품 원료 WCO31(총백귀리혼합물)에 대한 정보를 제공합니다. 개별 인정형 원료에 대한 기능성 정보입니다.</p>
-  <div class="footer-links">
-    <a href="privacy.html">개인정보처리방침</a>
-  </div>
-  <p class="footer-copyright">© 2026 루톤. All rights reserved.</p>
 </footer>
-
-
-<script>
-// 중앙 삼지창(햄버거) 메뉴 토글
-const menuToggle = document.getElementById('navMenuToggle');
-const fullMenu = document.getElementById('navFullMenu');
-if (menuToggle && fullMenu) {
-  menuToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    menuToggle.classList.toggle('active');
-    fullMenu.classList.toggle('open');
-  });
-  fullMenu.addEventListener('click', (e) => {
-    if (e.target === fullMenu) {
-      menuToggle.classList.remove('active');
-      fullMenu.classList.remove('open');
-    }
-  });
-  fullMenu.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      menuToggle.classList.remove('active');
-      fullMenu.classList.remove('open');
-    });
-  });
-}
-</script>
 
 </body>
 </html>

@@ -64,7 +64,7 @@ img { max-width: 100%; display: block; }
 .quote-box { background: var(--white); border-left: 4px solid var(--rooton-green); border-radius: 0 12px 12px 0; padding: 24px; margin: 24px 0; font-style: italic; font-size: 14px; color: var(--dark-gray); line-height: 1.8; }
 .quote-box .source { display: block; margin-top: 12px; font-style: normal; font-size: 13px; color: var(--gray); }
 .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
-.info-card { padding: 30px; border: 1px solid var(--border); border-radius: 12px; transition: all 0.3s; }
+.info-card { padding: 30px; border: 2px solid var(--rooton-green); border-radius: 12px; transition: all 0.3s; box-shadow: 0 2px 8px rgba(85, 190, 131, 0.15); }
 .info-card:hover { border-color: var(--rooton-green); box-shadow: 0 8px 30px rgba(85, 190, 131, 0.1); }
 .info-card h3 { font-size: 18px; font-weight: 600; color: var(--rooton-charcoal); margin-bottom: 12px; }
 .info-card p { font-size: 14px; color: var(--gray); line-height: 1.8; }
@@ -176,13 +176,10 @@ img { max-width: 100%; display: block; }
     <a href="index.html"><img src="images/rooton-logo.png" alt="ROOTON 로고"></a>
   </div>
   <div class="nav-menu-links" id="navMenuLinks">
-    <a href="index.html">메인</a>
     <a href="ingredient.html">원료 소개</a>
-    <a href="synergy.html">시너지</a>
-    <a href="science.html">과학적 근거</a>
-    <a href="clinical.html">임상 데이터</a>
+    <a href="verification.html">과학적 검증</a>
+    <a href="patent.html">특허받은 제조기술</a>
     <a href="traditional.html" class="active">전통식치</a>
-    <a href="safety.html">안전성</a>
     <a href="faq.html">FAQ</a>
     <a href="contact.html" class="nav-cta">상담/문의</a>
   </div>
@@ -194,13 +191,10 @@ img { max-width: 100%; display: block; }
 <!-- 전체 메뉴 드롭다운 (모바일) -->
 <div class="nav-fullmenu" id="navFullMenu">
   <div class="nav-fullmenu-inner">
-    <a href="index.html">메인</a>
     <a href="ingredient.html">원료 소개</a>
-    <a href="synergy.html">시너지</a>
-    <a href="science.html">과학적 근거</a>
-    <a href="clinical.html">임상 데이터</a>
+    <a href="verification.html">과학적 검증</a>
+    <a href="patent.html">특허받은 제조기술</a>
     <a href="traditional.html">전통식치</a>
-    <a href="safety.html">안전성</a>
     <a href="faq.html">FAQ</a>
     <a href="contact.html" class="nav-cta">상담/문의</a>
   </div>
@@ -290,14 +284,22 @@ img { max-width: 100%; display: block; }
       <div class="content-text">
         <h2>소아 성장 관점에서의 비교</h2>
         <p>
-          <strong>기존 총백죽 (쌀 베이스):</strong> 백미는 소화가 매우 빨라 급성기 질환 시
-          즉각적인 에너지 공급원으로 우수합니다. 그러나 정제 탄수화물 위주의 식사는
-          식후 혈당을 급격히 높여 야간 수면 시 성장 호르몬 분비를 저해할 수 있습니다.
+          <strong>귀리총백죽 (귀리 베이스):</strong> 귀리는 단백질과 뼈 성장에 필수적인
+          미네랄이 풍부하며, 복합 탄수화물과 식이섬유가 혈당을 서서히 올려 인슐린
+          스파이크를 방지합니다. 수면 중 성장 호르몬이 원활하게 분비될 수 있는
+          환경을 조성합니다.
         </p>
         <p>
-          <strong>귀리총백죽 (귀리 베이스):</strong> 단백질과 뼈 성장에 필수적인 미네랄이
-          풍부하며, 복합 탄수화물과 식이섬유가 혈당을 서서히 올려 인슐린 스파이크를
-          방지합니다. 수면 중 성장 호르몬이 원활하게 분비될 수 있는 환경을 조성합니다.
+          <strong>타사 총백귀리 제품과의 비교:</strong> 시중에 유통되는 일부 총백귀리
+          제품은 주로 보리를 베이스로 사용합니다. 그러나 보리 대비 귀리는 베타글루칸
+          함량이 높아 혈당 조절과 장 건강에 더 유리하며, 성장기 어린이에게 필요한
+          단백질과 미네랄 공급 측면에서도 우수합니다. 루톤의 귀리총백죽은 성장기
+          어린이를 고려한 원료 선택으로 차별화됩니다.
+        </p>
+        <p>
+          <em style="color: var(--gray); font-size: 14px;">※ 쌀 베이스 제품도 루톤에서
+          별도로 판매 중이며, 급성기 질환 시 즉각적인 에너지 공급이 필요한 경우
+          활용할 수 있습니다.</em>
         </p>
       </div>
       <div class="content-image">
@@ -311,7 +313,7 @@ img { max-width: 100%; display: block; }
   <div class="container">
     <h2 class="section-title" style="text-align: center;">안전성 확인하기</h2>
     <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-      <a href="safety.html" class="back-cta">안전성 보기</a>
+      <a href="verification.html" class="back-cta">안전성 보기</a>
       <a href="index.html" class="back-cta" style="border-color: var(--navy); color: var(--navy);">메인으로</a>
     </div>
   </div>

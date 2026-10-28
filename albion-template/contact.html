@@ -280,7 +280,7 @@ img { max-width: 100%; display: block; }
 @media (max-width: 1024px) { .contact-methods { grid-template-columns: 1fr; } }
 @media (max-width: 768px) {
   .section { padding: 60px 24px; }
-  .page-hero { padding: 120px 24px 60px; }
+  .page-hero { padding: 60px 24px 30px; }
   .page-hero h1 { font-size: 32px; }
   .nav { padding: 15px 24px; }
   .nav-menu-links { display: none !important; }
@@ -288,6 +288,13 @@ img { max-width: 100%; display: block; }
   .footer { padding: 40px 24px; }
   .inquiry-form { padding: 24px; }
 }
+
+/* 텍스트 한줄 처리 및 아래 여백 확보 */
+p { margin-bottom: 16px; }
+.content-text p { margin-bottom: 16px; }
+.section-desc { margin-bottom: 32px; }
+.info-card p { margin-bottom: 8px; }
+.faq-answer { margin-bottom: 0; }
 </style>
 </head>
 <body>
@@ -321,7 +328,7 @@ img { max-width: 100%; display: block; }
   </div>
 </div>
 
-<section class="page-hero" style="background: linear-gradient(135deg, #1B2740 0%, #24365A 100%); padding: 160px 60px 80px;">
+<section class="page-hero" style="background: linear-gradient(135deg, #1B2740 0%, #24365A 100%); padding: 80px 60px 40px;">
   <div class="container">
     <div class="breadcrumb"><a href="index.html">메인</a> / 상담/문의</div>
     <h1 style="color: var(--white);">상담/문의</h1>
@@ -412,10 +419,7 @@ img { max-width: 100%; display: block; }
   </div>
   <div class="footer-divider"></div>
   <p class="footer-disclaimer">* 본 사이트는 건강기능식품 원료 WCO31(총백귀리혼합물)에 대한 정보를 제공합니다. 개별 인정형 원료에 대한 기능성 정보입니다.</p>
-  <div class="footer-links">
-    <a href="#">개인정보처리방침</a>
-  </div>
-  <p class="footer-copyright">© 2026 루톤. All rights reserved.</p>
+<p class="footer-copyright">© 2026 루톤. All rights reserved.</p>
 </footer>
 
 <script>

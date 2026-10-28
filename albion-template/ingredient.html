@@ -320,7 +320,7 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 768px) {
   .section { padding: 60px 24px; }
-  .page-hero { padding: 120px 24px 60px; }
+  .page-hero { padding: 60px 24px 30px; }
   .page-hero h1 { font-size: 32px; }
   .info-grid { grid-template-columns: 1fr; }
   .nav { padding: 15px 24px; }
@@ -456,6 +456,13 @@ img { max-width: 100%; display: block; }
   color: var(--white) !important;
 }
 
+
+/* 텍스트 한줄 처리 및 아래 여백 확보 */
+p { margin-bottom: 16px; }
+.content-text p { margin-bottom: 16px; }
+.section-desc { margin-bottom: 32px; }
+.info-card p { margin-bottom: 8px; }
+.faq-answer { margin-bottom: 0; }
 </style>
 </head>
 <body>
@@ -493,7 +500,7 @@ img { max-width: 100%; display: block; }
 
 
 <!-- PAGE HERO -->
-<section class="page-hero" style="padding-top: 160px; background: linear-gradient(135deg, #1B2740 0%, #24365A 100%);">
+<section class="page-hero" style="padding-top: 80px; background: linear-gradient(135deg, #1B2740 0%, #24365A 100%);">
   <div class="container">
     <div class="breadcrumb">
       <a href="index.html">홈</a> &gt; <span>원료 소개</span>
@@ -506,20 +513,20 @@ img { max-width: 100%; display: block; }
 <!-- 원료 개요 -->
 <section class="section section-white">
   <div class="container">
-    <div class="content-grid">
-      <div class="content-image">
-        <img src="images/science-image.jpg" alt="총백귀리혼합물">
+    <div class="content-grid" style="gap: 30px; align-items: center;">
+      <div class="content-image" style="max-width: 480px;">
+        <img src="images/img04.jpg" alt="총백귀리혼합물" style="height: 320px;">
       </div>
       <div class="content-text">
         <div class="section-label">Ingredient Overview</div>
-        <h2>WCO31이란?</h2>
-        <p>
+        <h2 style="margin-bottom: 14px;">WCO31이란?</h2>
+        <p style="margin-bottom: 12px;">
           WCO31은 <strong>총백(蔥白, 파뿌리 흰 부분)</strong>과 <strong>귀리(Oat)</strong>를
           최적의 비율로 배합한 혼합물입니다. 전통식치(食治)에서 오랫동안 사용되어 온
           두 식재료를 현대 과학으로 검증했습니다.
           <sup>[1]</sup>
         </p>
-        <p>
+        <p style="margin-bottom: 0;">
           총백은 동의보감에서 단방(單方)으로 가장 빈번하게 활용된 핵심 약재이며,
           귀리는 타임지 선정 10대 슈퍼푸드로 성장에 필요한 영양소가 풍부합니다.
         </p>
@@ -741,21 +748,6 @@ img { max-width: 100%; display: block; }
   </div>
 </section>
 
-<!-- CTA -->
-<section class="section section-beige" style="text-align: center;">
-  <div class="container">
-    <h2 class="section-title" style="text-align: center;">원료에 대해 더 알아보기</h2>
-    <p class="section-desc" style="margin-left: auto; margin-right: auto; text-align: center;">
-      시너지 효과, 과학적 근거, 임상 데이터 등 더 자세한 정보를 확인해보세요.
-    </p>
-    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-      <a href="verification.html" class="back-cta">과학적 검증 보기</a>
-      <a href="patent.html" class="back-cta">특허받은 제조기술 보기</a>
-      <a href="index.html" class="back-cta" style="border-color: var(--navy); color: var(--navy);">메인으로</a>
-    </div>
-  </div>
-</section>
-
 <!-- FOOTER -->
 
 <section class="section section-beige">
@@ -784,10 +776,7 @@ img { max-width: 100%; display: block; }
   <p class="footer-disclaimer">
     * 본 사이트는 건강기능식품 원료 WCO31(총백귀리혼합물)에 대한 정보를 제공합니다. 개별 인정형 원료에 대한 기능성 정보입니다.
   </p>
-  <div class="footer-links">
-    <a href="#">개인정보처리방침</a>
-  </div>
-  <p class="footer-copyright">© 2026 루톤. All rights reserved.</p>
+<p class="footer-copyright">© 2026 루톤. All rights reserved.</p>
 </footer>
 
 

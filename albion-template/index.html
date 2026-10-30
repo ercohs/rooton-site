@@ -273,13 +273,14 @@ img {
   .hero::before { display: none; }
 }
 @media (max-width: 768px) {
-  /* 모바일: 영상을 세로 배너로 표시 (현재 이미지와 동일 높이, 좌우는 크롭) */
+  /* 모바일: 영상 배너 — 조금 더 작게(짧게), 우측 화살표가 보이도록 프레이밍 */
   .hero-video {
     position: relative;
     display: block;
     height: auto;
-    aspect-ratio: 1024 / 1280;
-    opacity: 1;
+    aspect-ratio: 4 / 3;
+    object-position: 66% 28%;
+    opacity: 0.5; /* 남색 레이어 데스크톱과 동일하게 */
   }
 }
 

@@ -257,6 +257,25 @@ img {
   opacity: 0.25;
   z-index: 0;
 }
+/* 메인 비주얼 영상 (데스크톱) — 기존 이미지와 동일한 영역·투명도로 재생 */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.25;
+  z-index: 0;
+}
+@media (min-width: 769px) {
+  /* 데스크톱: 영상이 배경 이미지를 대체 */
+  .hero::before { display: none; }
+}
+@media (max-width: 768px) {
+  /* 모바일: 세로 배너 이미지 유지, 영상 숨김 */
+  .hero-video { display: none; }
+}
 
 /* 계단 상승 그래픽 (성장 이미지) */
 .hero-content {
@@ -1305,6 +1324,9 @@ img {
      HERO SECTION
      ============================================================ -->
 <section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="images/hero-bg.jpg">
+    <source src="videos/hero.mp4" type="video/mp4">
+  </video>
   <div class="hero-content">
     <h2>
       <strong>루톤</strong> 성장의 뿌리 ON<br>

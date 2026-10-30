@@ -734,17 +734,18 @@ img {
 }
 
 .clinical-stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  display: flex;
+  justify-content: center;
   margin-bottom: 60px;
 }
 
 .clinical-stat {
   text-align: center;
-  padding: 40px 20px;
+  padding: 40px 32px;
   border: 1px solid rgba(255,255,255,0.15);
   border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
 }
 
 .clinical-stat .number {
@@ -1181,13 +1182,12 @@ img {
     position: relative;
     display: block;
     width: 100%;
-    height: 55vh;
-    min-height: 380px;
+    height: auto;
+    aspect-ratio: 1024 / 1280;
     background-image: url('images/hero-bg-mobile.jpg');
     background-position: center center;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-color: var(--navy);
     opacity: 0.85;
     z-index: 0;
   }
@@ -1540,7 +1540,10 @@ img {
     <div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 30px; margin-top: 40px;">
       <h3 style="font-size: 18px; font-weight: 600; color: var(--white); margin-bottom: 20px; text-align: center;">키 SDS 변화</h3>
       <canvas id="indexSdsChart" style="max-height: 300px;"></canvas>
-      
+      <p style="font-size: 13px; color: rgba(255,255,255,0.65); margin-top: 16px; line-height: 1.5; text-align: center;">
+        ※ 키 SDS는 또래 평균과 비교해 키가 어느 정도인지 나타내는 표준 지표입니다.<br>
+        수치가 오를수록 또래 대비 키가 커졌다는 의미로, WCO31군의 상승폭이 더 컸습니다.
+      </p>
     </div>
 
     <p class="clinical-note">
@@ -1580,10 +1583,6 @@ img {
             <span class="value">제10-2572487호</span>
           </div>
           <div class="patent-item">
-            <span class="label">출원일</span>
-            <span class="value">2023년 03월 31일</span>
-          </div>
-          <div class="patent-item">
             <span class="label">등록일</span>
             <span class="value">2023년 08월 25일</span>
           </div>
@@ -1592,27 +1591,6 @@ img {
             <span class="value">주식회사 에르코스</span>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section traditional-section" id="traditional">
-  <div class="container">
-    <div class="traditional-grid">
-      <div class="traditional-image">
-        <!-- 🔴 전통식치 이미지 교체 -->
-        <img src="images/img05.jpg" alt="전통식치 이미지">
-      </div>
-      <div class="traditional-text">
-        <div class="section-label">Traditional Food Therapy</div>
-        <h2><a href="traditional.html" style="color: inherit;">전통식치(食治)의 지혜</a></h2>
-        <p>
-          식치(食治)는 음식으로 건강을 관리하는 전통 식이요법입니다.
-          총백은 단순 채소가 아닌 '약용 음식(Food-Medicine)'으로 분류되며,
-          동의보감 탕액편에도 수록돼 있습니다.
-        </p>
-        <a href="traditional.html" class="section-link">전통식치 자세히 보기 →</a>
       </div>
     </div>
   </div>
@@ -1670,9 +1648,28 @@ img {
 </section>
 
 <!-- ============================================================
-     PATENT (특허)
+     TRADITIONAL MEDICINE (전통식치)
      ============================================================ -->
-
+<section class="section traditional-section" id="traditional">
+  <div class="container">
+    <div class="traditional-grid">
+      <div class="traditional-image">
+        <!-- 🔴 전통식치 이미지 교체 -->
+        <img src="images/img05.jpg" alt="전통식치 이미지">
+      </div>
+      <div class="traditional-text">
+        <div class="section-label">Traditional Food Therapy</div>
+        <h2><a href="traditional.html" style="color: inherit;">전통식치(食治)의 지혜</a></h2>
+        <p>
+          식치(食治)는 음식으로 건강을 관리하는 전통 식이요법입니다.
+          총백은 단순 채소가 아닌 '약용 음식(Food-Medicine)'으로 분류되며,
+          동의보감 탕액편에도 수록돼 있습니다.
+        </p>
+        <a href="traditional.html" class="section-link">전통식치 자세히 보기 →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ============================================================
      FAQ

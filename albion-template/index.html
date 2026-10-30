@@ -1255,6 +1255,8 @@ img {
     padding: 40px 24px;
   }
 }
+.chart-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+@media (max-width: 768px) { .chart-grid-2 { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -1336,7 +1338,7 @@ img {
           <h4>핵심 포인트</h4>
           <p>
             총백의 따뜻한 기운(발산) + 귀리의 보익(영양 보충) =<br>
-            어린이 성장을 위한 식약동원(食藥同源) 조합
+            어린이 성장을 위한, 음식이 곧 약이 되는 식약동원(食藥同源) 조합
           </p>
         </div>
         <a href="ingredient.html" class="section-link">원료 자세히 보기 →</a>
@@ -1369,8 +1371,8 @@ img {
           </div>
         </div>
         <p class="card-desc">
-          파의 뿌리 흰 부분으로, 동의보감에서 단방으로 가장 많이 활용된 약재입니다.
-          따뜻한 성질(溫)과 매운맛(辛)으로 발한해표 작용을 하며, 기혈 순환을 돕습니다.
+          파의 뿌리 흰 부분으로, 동의보감에서 한 가지 약재만 쓰는 처방(단방)에 가장 많이 쓰인 약재입니다.
+          따뜻하고 매운 성질로 땀을 내 몸속 찬 기운을 밖으로 내보내고, 혈액·기운 순환을 돕습니다.
         </p>
         <ul class="card-features">
           <li><span class="check">✓</span> 동의보감 탕액편에 수록된 전통 식재료</li>
@@ -1436,11 +1438,11 @@ img {
       <div class="science-card">
         <div class="card-body">
           <span class="card-tag">전임상 연구</span>
-          <h3>종적 골성장 촉진 확인</h3>
+          <h3>키(세로) 뼈 성장 촉진 확인</h3>
           <p>
-            이유기 쥐 대상 동물실험에서, 고용량 WCO31 섭취군의 대퇴골·경골 길이가
-            동물모델에서 대퇴골·경골 길이 증가가 관찰되었습니다.
-            성장판 증식대·비대대 활성 촉진 및 장내미생물 개선 효과 확인.
+            이유기 쥐 대상 동물실험에서 고용량 WCO31 섭취군의
+            대퇴골·경골 길이 증가가 관찰되었습니다.
+            성장판 활성화 및 장내 미생물 개선 효과도 확인했습니다.
           </p>
           <div class="card-ref">
             Wu et al. J Functional Foods 2023;105:105567
@@ -1455,8 +1457,8 @@ img {
           <h3>성장 관련 수용체 결합</h3>
           <p>
             총백의 Fistuloside A/B/C와 귀리의 Avenacoside A 성분이
-            성장분화인자 GDF5 및 IGF1R 수용체와 강하게 결합(-9 kcal/mol 이하)하여
-            성장 관련 수용체(GDF5, IGF1R)와의 결합을 확인했습니다.
+            성장 관련 수용체인 성장분화인자 GDF5·IGF1R와
+            강하게 결합하는 것을 확인했습니다.
           </p>
           <div class="card-ref">
             Wu et al. J Functional Foods 2023;105:105567
@@ -1511,7 +1513,7 @@ img {
     </div>
 
     <!-- 임상 데이터 그래프 (Chart.js) -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;">
+    <div class="chart-grid-2">
       <div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 30px;">
         <h3 style="font-size: 18px; font-weight: 600; color: var(--white); margin-bottom: 20px; text-align: center;">키 성장 비교 (24주)</h3>
         <canvas id="indexHeightChart" style="max-height: 300px;"></canvas>
@@ -1584,8 +1586,8 @@ img {
         <h2><a href="traditional.html" style="color: inherit;">전통식치(食治)의 지혜</a></h2>
         <p>
           식치(食治)는 음식으로 건강을 관리하는 전통 식이요법입니다.
-          총백은 단순 채소가 아닌 '약용 음식(Food-Medicine)'으로 분류되어,
-          동의보감 탕액편에 총백이 수록된 전통 식재료입니다.
+          총백은 단순 채소가 아닌 '약용 음식(Food-Medicine)'으로 분류되며,
+          동의보감 탕액편에도 수록돼 있습니다.
         </p>
         <a href="traditional.html" class="section-link">전통식치 자세히 보기 →</a>
       </div>
@@ -1613,8 +1615,8 @@ img {
         </div>
         <h3>세포독성 시험 결과 유의한 독성 미관찰</h3>
         <p>
-          총백 추출물은 인간 정상 세포에 유의미한 세포 독성을 나타내지 않으며,
-          세포독성 시험 결과 유의한 독성은 관찰되지 않았습니다.
+          세포독성 시험 결과, 총백 추출물은 인간 정상 세포에
+          유의한 독성을 나타내지 않았습니다.
         </p>
       </div>
 
@@ -1636,7 +1638,7 @@ img {
         </div>
         <h3>열수 추출 공법</h3>
         <p>
-          화학 유기 용매를 배제하고 순수한 물과 열만 사용하는 열수 추출 공법으로,
+          유기 용매를 쓰지 않고 순수한 물과 열만 사용하는 열수 추출 공법으로,
           잔류 용매 걱정이 없습니다. 전통 탕전 방식을 현대화한 안전한 공법입니다.
         </p>
       </div>

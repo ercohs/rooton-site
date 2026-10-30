@@ -265,7 +265,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.25;
+  opacity: 0.5;
   z-index: 0;
 }
 @media (min-width: 769px) {
@@ -273,8 +273,14 @@ img {
   .hero::before { display: none; }
 }
 @media (max-width: 768px) {
-  /* 모바일: 세로 배너 이미지 유지, 영상 숨김 */
-  .hero-video { display: none; }
+  /* 모바일: 영상을 세로 배너로 표시 (현재 이미지와 동일 높이, 좌우는 크롭) */
+  .hero-video {
+    position: relative;
+    display: block;
+    height: auto;
+    aspect-ratio: 1024 / 1280;
+    opacity: 1;
+  }
 }
 
 /* 계단 상승 그래픽 (성장 이미지) */
@@ -1198,17 +1204,7 @@ img {
     background: var(--navy);
   }
   .hero::before {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1024 / 1280;
-    background-image: url('images/hero-bg-mobile.jpg');
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0.85;
-    z-index: 0;
+    display: none; /* 모바일도 영상으로 대체 */
   }
   /* 모바일: 남색 블러 오버레이 복원 */
   .hero::after {
@@ -1218,7 +1214,7 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(180deg, rgba(27, 39, 64, 0.3) 0%, rgba(27, 39, 64, 0.1) 40%, rgba(27, 39, 64, 0.5) 100%);
+    background: linear-gradient(180deg, rgba(27, 39, 64, 0.1) 0%, rgba(27, 39, 64, 0) 35%, rgba(27, 39, 64, 0.45) 100%);
     z-index: 0;
     pointer-events: none;
   }

@@ -635,7 +635,7 @@ img {
 }
 
 /* ============================================================
-   SCIENCE (과학적 근거)
+   SCIENCE (과학적 검증)
    ============================================================ */
 .science-section {
   background: var(--white);
@@ -1096,9 +1096,8 @@ img {
 .footer-logo img {
   height: 50px;
   width: auto;
-  background: var(--white);
-  border-radius: 6px;
-  padding: 6px 10px;
+  filter: brightness(0) invert(0.72);
+  opacity: 0.9;
 }
 
 .footer-social {
@@ -1182,12 +1181,13 @@ img {
     position: relative;
     display: block;
     width: 100%;
-    height: 50vh;
-    min-height: 320px;
+    height: 55vh;
+    min-height: 380px;
     background-image: url('images/hero-bg-mobile.jpg');
     background-position: center center;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
+    background-color: var(--navy);
     opacity: 0.85;
     z-index: 0;
   }
@@ -1208,7 +1208,7 @@ img {
     z-index: 2;
     max-width: 100%;
     width: 100%;
-    padding: 40px 24px 60px;
+    padding: 40px 24px 30px;
     background: var(--navy);
     text-align: center;
   }
@@ -1254,8 +1254,16 @@ img {
   .footer {
     padding: 40px 24px;
   }
+  .ingredient-intro {
+    padding-top: 30px;
+  }
+  .final-cta h2 {
+    font-size: 22px;
+  }
 }
 .chart-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+.chart-grid-2 > div { min-width: 0; }
+.clinical-section canvas { max-width: 100%; }
 @media (max-width: 768px) { .chart-grid-2 { grid-template-columns: 1fr; } }
 </style>
 </head>
@@ -1299,7 +1307,7 @@ img {
 <section class="hero">
   <div class="hero-content">
     <h2>
-      <strong>루톤의</strong> 성장의 뿌리 ON<br>
+      <strong>루톤</strong> 성장의 뿌리 ON<br>
       <span class="hero-sub2">ROOTON®의 총백귀리혼합물 WCO31</span>
     </h2>
     <p class="hero-subtitle">
@@ -1307,7 +1315,7 @@ img {
     </p>
     <div class="hero-cta-group">
       <a href="#ingredient" class="hero-cta-primary">원료 자세히 보기</a>
-      <a href="#science" class="hero-cta-outline">과학적 근거 확인</a>
+      <a href="#science" class="hero-cta-outline">과학적 검증 확인</a>
     </div>
   </div>
 </section>
@@ -1406,15 +1414,15 @@ img {
 </section>
 
 <!-- ============================================================
-     SCIENCE (과학적 근거)
+     SCIENCE (과학적 검증)
      ============================================================ -->
 <section class="section science-section" id="science">
   <div class="container">
     <div class="section-label">Scientific Evidence</div>
-    <h2 class="section-title"><a href="verification.html" style="color: inherit;">과학적 근거</a></h2>
+    <h2 class="section-title"><a href="verification.html" style="color: inherit;">과학적 검증</a></h2>
     <p class="section-desc">
       전통식치의 지혜를 현대 과학으로 검증했습니다.
-      <a href="verification.html" class="section-link">과학적 근거 자세히 보기 →</a>
+      <a href="verification.html" class="section-link">과학적 검증 자세히 보기 →</a>
     </p>
 
     <div class="science-grid">
@@ -1487,6 +1495,10 @@ img {
       <div class="clinical-stat">
         <div class="number">p &lt; 0.001</div>
         <div class="label">통계적 유의성</div>
+        <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-top: 10px; line-height: 1.5;">
+          결과가 우연히 나왔을 가능성이 0.1% 미만이라는 뜻으로,<br>
+          WCO31의 효과가 통계적으로 분명하게 확인됐음을 의미합니다.
+        </div>
       </div>
     </div>
 
@@ -1543,15 +1555,30 @@ img {
      ============================================================ -->
 <section class="section patent-section">
   <div class="container">
-    <div class="patent-grid">
+    <div class="patent-grid" style="grid-template-columns: 1fr; max-width: 760px; margin: 0 auto;">
       <div class="patent-text">
         <div class="section-label">Patent</div>
-        <h2>기술 보호, 특허 등록</h2>
+        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--rooton-green)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="8" r="6"></circle>
+            <path d="M9.3 8.1l1.9 1.9 3.5-3.6"></path>
+            <path d="M8.5 13.3L7 22l5-3 5 3-1.5-8.7"></path>
+          </svg>
+          <h2 style="margin-bottom: 0;">기술 보호, 특허 등록</h2>
+        </div>
         <p>
-          총백 및 귀리 추출물을 포함하는 조성물의 키 성장 촉진 효능은
-          대한민국 특허청에 등록되어 기술적 우수성을 인정받았습니다.
+          WCO31의 키 성장 촉진 기술은 대한민국 특허청에 공식 등록되어,
+          그 기술적 우수성을 인정받았습니다.
         </p>
         <div class="patent-info">
+          <div class="patent-item" style="flex-direction: column; align-items: flex-start; gap: 6px;">
+            <span class="label">발명의 명칭</span>
+            <span class="value" style="text-align: left; line-height: 1.5;">총백 및 귀리 추출물을 포함하는 어린이 및 청소년 키 성장 촉진용 조성물 및 그 제조방법</span>
+          </div>
+          <div class="patent-item">
+            <span class="label">특허번호</span>
+            <span class="value">제10-2572487호</span>
+          </div>
           <div class="patent-item">
             <span class="label">출원일</span>
             <span class="value">2023년 03월 31일</span>
@@ -1565,10 +1592,6 @@ img {
             <span class="value">주식회사 에르코스</span>
           </div>
         </div>
-      </div>
-      <div class="patent-image">
-        <!-- 🔴 특허증 이미지 교체 -->
-        <img src="images/img03.jpg" alt="특허증 이미지">
       </div>
     </div>
   </div>

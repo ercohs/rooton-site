@@ -15,8 +15,8 @@
   --sage-light: #E8EDD8;
   --beige: #F5F0E6;
   --cream: #FAF7F0;
-  --navy: #1B2740;
-  --navy-light: #24365A;
+  --navy: #20372B;
+  --navy-light: #20372B;
   --white: #FFFFFF;
   --gray: #8A8A8A;
   --dark-gray: #2B2B2B;
@@ -35,7 +35,7 @@ img { max-width: 100%; display: block; }
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; justify-content: space-between; align-items: center;
   padding: 16px 60px;
-  background: rgba(27, 39, 64, 0.95);
+  background: rgba(32, 55, 43, 0.95);
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 20px rgba(0,0,0,0.3);
 }
@@ -92,7 +92,7 @@ img { max-width: 100%; display: block; }
   left: 0;
   right: 0;
   height: 100vh;
-  background: rgba(27, 39, 64, 0.97);
+  background: rgba(32, 55, 43, 0.97);
   backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
@@ -226,6 +226,7 @@ canvas { max-width: 100%; }
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="css/refresh.css?v=3b446e7fa182">
 </head>
 <body>
 <nav class="nav" id="mainNav">
@@ -235,7 +236,8 @@ canvas { max-width: 100%; }
   <div class="nav-menu-links" id="navMenuLinks">
     <a href="ingredient.html">원료 소개</a>
     <a href="verification.html" class="active">과학적 검증</a>
-    <a href="patent.html">특허받은 제조기술</a>
+    <a href="patent.html">특허받은 공정</a>
+    <a href="product.html">제품안내</a>
     <a href="traditional.html">전통식치</a>
     <a href="faq.html">FAQ</a>
     <a href="contact.html" class="nav-cta">상담/문의</a>
@@ -250,7 +252,8 @@ canvas { max-width: 100%; }
   <div class="nav-fullmenu-inner">
     <a href="ingredient.html">원료 소개</a>
     <a href="verification.html">과학적 검증</a>
-    <a href="patent.html">특허받은 제조기술</a>
+    <a href="patent.html">특허받은 공정</a>
+    <a href="product.html">제품안내</a>
     <a href="traditional.html">전통식치</a>
     <a href="faq.html">FAQ</a>
     <a href="contact.html" class="nav-cta">상담/문의</a>
@@ -258,11 +261,11 @@ canvas { max-width: 100%; }
 </div>
 
 
-<section class="page-hero" style="background: linear-gradient(135deg, #1B2740 0%, #24365A 100%);">
+<section class="page-hero" style="background: linear-gradient(135deg, #20372B 0%, #20372B 100%);">
   <div class="container">
     <div class="breadcrumb"><a href="index.html">홈</a> &gt; <span>과학적 검증</span></div>
     <h1>과학적 검증</h1>
-    <p>전통식치의 지혜를 현대 과학으로 검증했습니다. 임상시험, 동물실험, 분자적 분석, 안전성 검증을 통해 신뢰를 확보했습니다.</p>
+    <p>전통식치의 지혜를 현대 과학으로 검증했습니다. 인체적용시험, 전임상 연구, 분자적 분석, 안전성 검증을 통해 신뢰를 확보했습니다.</p>
   </div>
 </section>
 
@@ -291,7 +294,7 @@ canvas { max-width: 100%; }
         <span class="tag">전임상 연구</span>
         <h3>키(세로) 뼈 성장 촉진 확인</h3>
         <p>
-          이유기 쥐 대상 동물실험에서 고용량 WCO31 섭취군의
+          성장기 전임상 모델에서 고용량 WCO31 섭취군의
           대퇴골·경골 길이 증가가 관찰되었습니다.
           성장판 활성화 및 장내 미생물 개선 효과도 확인했습니다.
         </p>
@@ -316,12 +319,13 @@ canvas { max-width: 100%; }
   <div class="container">
     <div class="section-label">Clinical Trial</div>
     <h2 class="section-title">인체적용시험 상세</h2>
+    <p class="section-desc">연구 제목: Effects of Allium fistulosum L. (Green Onion) Root and Avena sativa L. (Oat) Mixtures (WCO31) on the Height of Children: A Multi-Center, Randomized, Double-Blind, Placebo-Controlled Clinical Trial</p>
 
     <div class="content-grid">
       <div class="content-text">
         <h2>연구 설계</h2>
         <p>
-          • 다기관, 무작위배정, 이중맹검, 위약대조<br>
+          • 여러 기관에서 참여하고, 참가자를 무작위로 나눠 위약과 비교한 연구<br>
           • 대상: 건강한 만 6~8세, 키 3~50 백분위 아동 150명 분석<br>
           • 한국 소아청소년 성장도표 3~50 백분위수<br>
           • 2차 성징 미발현 아동<br>
@@ -333,7 +337,7 @@ canvas { max-width: 100%; }
         </p>
       </div>
       <div class="content-image">
-        <img src="images/news-1.jpg" alt="임상시험">
+        <figure class="body-visual"><img src="images/research-paper.png" alt="연구 논문과 분석 자료를 표현한 이미지" width="1536" height="1024" loading="lazy" decoding="async"><span class="image-caption">이해를 돕기 위한 이미지입니다.</span></figure>
       </div>
     </div>
   </div>
@@ -371,7 +375,7 @@ canvas { max-width: 100%; }
         </p>
       </div>
       <div class="content-image">
-        <img src="images/science-image.jpg" alt="성장 관련 수용체 결합">
+        <img src="images/receptor-concept.png" alt="성분과 수용체의 상호작용을 표현한 이미지" loading="lazy"><span class="image-caption">이해를 돕기 위한 이미지입니다.</span>
       </div>
     </div>
 
@@ -410,16 +414,16 @@ canvas { max-width: 100%; }
 <section class="section section-white">
   <div class="container">
     <div class="section-label">Preclinical Study</div>
-    <h2 class="section-title">동물실험 결과</h2>
+    <h2 class="section-title">전임상 연구 결과</h2>
 
     <div class="content-grid">
       <div class="content-image">
-        <img src="images/news-2.jpg" alt="동물실험">
+        <img src="images/preclinical-lab.png" alt="전임상 연구실과 실험 장비를 표현한 이미지" loading="lazy"><span class="image-caption">이해를 돕기 위한 이미지입니다.</span>
       </div>
       <div class="content-text">
-        <h2>이유기 쥐 대상 전임상 연구</h2>
+        <h2>성장 관련 전임상 연구</h2>
         <p>
-          생후 4주령 백서를 대상으로 한 동물실험에서, 고용량 WCO31 섭취군은
+          성장기 전임상 모델에서 고용량 WCO31 섭취군은
           대조군에 비해 대퇴골(femur)과 경골(tibia) 길이가 농도 의존적으로
           길어진 것을 확인했습니다.
         </p>
@@ -435,7 +439,7 @@ canvas { max-width: 100%; }
   </div>
 </section>
 
-<section class="section section-navy">
+<section class="section section-navy clinical-overview">
   <div class="container">
     <div class="section-label">Clinical Study</div>
     <h2 class="section-title">임상 연구 개요</h2>
@@ -517,35 +521,9 @@ canvas { max-width: 100%; }
   </div>
 </section>
 
-<section class="section section-white">
-  <div class="container">
-    <div class="section-label">Study Details</div>
-    <h2 class="section-title">연구 세부 내용</h2>
-
-    <div class="content-grid">
-      <div class="content-text">
-        <h2>연구 배경 및 목적</h2>
-        <p>
-          이전의 in vitro/in vivo 연구에서 파(green onion)와 귀리의 뼈 건강 효능이
-          확인된 바 있으며, 이를 바탕으로 두 소재의 혼합물인 WCO31이 어린이의
-          키 성장과 안전성에 미치는 영향을 평가하고자 했습니다.
-        </p>
-        <p>
-          <strong>WCO31은 천연 추출물을 이용한 성장 촉진 가능성을 제시한
-          임상적 근거</strong>로, 비용 효율적이고 안전하며 접근성이 높은
-          어린이 성장 보조 전략이 될 수 있음을 시사합니다.
-        </p>
-      </div>
-      <div class="content-image">
-        <img src="images/news-1.jpg" alt="임상 연구">
-      </div>
-    </div>
-  </div>
-</section>
 
 
-
-<section class="section section-white">
+<section class="section section-white safety-methods">
   <div class="container">
     <div class="section-label">Safety</div>
     <h2 class="section-title">안전성 검증 항목</h2>
@@ -556,22 +534,22 @@ canvas { max-width: 100%; }
 
     <div class="info-grid">
       <div class="info-card">
-        <div class="icon"><img src="images/icon-immune.svg" alt="세포독성 시험"></div>
+        <img class="safety-card-image" src="images/safety-cell.png" alt="세포 관찰을 표현한 이미지" loading="lazy"><span class="image-caption">이해를 돕기 위한 이미지입니다.</span>
         <h3>세포독성 시험</h3>
         <p>
           세포독성 시험 결과, 총백 추출물은 인간 정상 세포에 유의한 독성을 나타내지 않았습니다.
         </p>
       </div>
       <div class="info-card">
-        <div class="icon"><img src="images/icon-bone.svg" alt="FDA 인정"></div>
-        <h3>국제기관 인정</h3>
+        <img class="safety-card-image" src="images/safety-food.png" alt="오랜 식경험을 표현한 음식 이미지" loading="lazy"><span class="image-caption">이해를 돕기 위한 이미지입니다.</span>
+        <h3>식재료로서의 사용 이력</h3>
         <p>
           파(Allium 속)는 오랜 기간 인류의 식단에 포함되어 온 전통 식재료입니다.
           귀리는 영양가 높은 곡물로 널리 소비되어 왔습니다.
         </p>
       </div>
       <div class="info-card">
-        <div class="icon"><img src="images/icon-heart.svg" alt="열수추출"></div>
+        <img class="safety-card-image" src="images/safety-water.png" alt="물을 이용한 추출 공정을 표현한 이미지" loading="lazy"><span class="image-caption">이해를 돕기 위한 이미지입니다.</span>
         <h3>열수 추출 공법</h3>
         <p>
           유기 용매를 쓰지 않고 순수한 물과 열만 사용하는 열수 추출 공법으로,
@@ -603,7 +581,7 @@ canvas { max-width: 100%; }
         </p>
       </div>
       <div class="content-image">
-        <img src="images/news-3.jpg" alt="임상 안전성">
+        <img src="images/safety-clinical.png" alt="인체적용시험의 기록 과정을 표현한 이미지" loading="lazy"><span class="image-caption">이해를 돕기 위한 이미지입니다.</span>
       </div>
     </div>
   </div>

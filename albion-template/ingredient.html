@@ -17,8 +17,8 @@
   --sage-light: #E8EDD8;
   --beige: #F5F0E6;
   --cream: #FAF7F0;
-  --navy: #1B2740;
-  --navy-light: #24365A;
+  --navy: #20372B;
+  --navy-light: #20372B;
   --white: #FFFFFF;
   --gray: #8A8A8A;
   --dark-gray: #2B2B2B;
@@ -46,7 +46,7 @@ img { max-width: 100%; display: block; }
   justify-content: space-between;
   align-items: center;
   padding: 16px 60px;
-  background: rgba(27, 39, 64, 0.95);
+  background: rgba(32, 55, 43, 0.95);
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 20px rgba(0,0,0,0.3);
 }
@@ -401,7 +401,7 @@ img { max-width: 100%; display: block; }
   position: fixed;
   top: 0; left: 0; right: 0;
   height: 100vh;
-  background: rgba(27, 39, 64, 0.97);
+  background: rgba(32, 55, 43, 0.97);
   backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
@@ -464,6 +464,7 @@ p { margin-bottom: 16px; }
 .info-card p { margin-bottom: 8px; }
 .faq-answer { margin-bottom: 0; }
 </style>
+  <link rel="stylesheet" href="css/refresh.css?v=3b446e7fa182">
 </head>
 <body>
 
@@ -475,7 +476,8 @@ p { margin-bottom: 16px; }
   <div class="nav-menu-links" id="navMenuLinks">
     <a href="ingredient.html" class="active">원료 소개</a>
     <a href="verification.html">과학적 검증</a>
-    <a href="patent.html">특허받은 제조기술</a>
+    <a href="patent.html">특허받은 공정</a>
+    <a href="product.html">제품안내</a>
     <a href="traditional.html">전통식치</a>
     <a href="faq.html">FAQ</a>
     <a href="contact.html" class="nav-cta">상담/문의</a>
@@ -490,7 +492,8 @@ p { margin-bottom: 16px; }
   <div class="nav-fullmenu-inner">
     <a href="ingredient.html">원료 소개</a>
     <a href="verification.html">과학적 검증</a>
-    <a href="patent.html">특허받은 제조기술</a>
+    <a href="patent.html">특허받은 공정</a>
+    <a href="product.html">제품안내</a>
     <a href="traditional.html">전통식치</a>
     <a href="faq.html">FAQ</a>
     <a href="contact.html" class="nav-cta">상담/문의</a>
@@ -500,12 +503,12 @@ p { margin-bottom: 16px; }
 
 
 <!-- PAGE HERO -->
-<section class="page-hero" style="background: linear-gradient(135deg, #1B2740 0%, #24365A 100%);">
+<section class="page-hero" style="background: linear-gradient(135deg, #20372B 0%, #20372B 100%);">
   <div class="container">
     <div class="breadcrumb">
       <a href="index.html">홈</a> &gt; <span>원료 소개</span>
     </div>
-    <h1>ROOTON®의 총백귀리혼합물 WCO31</h1>
+    <h1>총백귀리혼합물 WCO31</h1>
     <p>전통식치의 지혜와 현대 과학의 검증이 만난 원료. 총백과 귀리의 시너지로 아이의 성장 환경을 생각합니다.</p>
   </div>
 </section>
@@ -515,7 +518,7 @@ p { margin-bottom: 16px; }
   <div class="container">
     <div class="content-grid" style="gap: 30px; align-items: center;">
       <div class="content-image" style="max-width: 480px;">
-        <img src="images/img04.jpg" alt="총백귀리혼합물" style="height: 320px;">
+        <figure class="body-visual"><img src="images/body-ingredients.png" alt="총백과 귀리 원료를 표현한 이미지" width="1536" height="1024" loading="lazy" decoding="async"><span class="image-caption">이해를 돕기 위한 이미지입니다.</span></figure>
       </div>
       <div class="content-text">
         <div class="section-label">Ingredient Overview</div>
@@ -535,16 +538,16 @@ p { margin-bottom: 16px; }
 </section>
 
 <!-- 원료 상세 -->
-<section class="section section-sage">
+<section class="section section-sage ingredient-pair-section">
   <div class="container">
     <div class="section-label">Key Ingredients</div>
     <h2 class="section-title">두 가지 원료의 만남</h2>
     <p class="section-desc">각 원료의 특성과 가치를 정직하게 소개합니다.</p>
 
-    <div class="content-grid" style="align-items: start;">
-      <div>
+    <div class="content-grid ingredient-pair-grid" style="align-items: start;">
+      <div class="ingredient-pair-card">
         <div class="section-label">총백 (蔥白)</div>
-        <h2 style="font-size: 28px; margin-bottom: 16px;">Allium fistulosum L. Root</h2>
+        <h2 class="ingredient-card-title">Allium fistulosum L. Root</h2>
         <p>
           파의 뿌리 흰 부분으로, 동의보감에서 단방으로 가장 많이 활용된 전통 식재료입니다.
         </p>
@@ -552,9 +555,9 @@ p { margin-bottom: 16px; }
           알리신(Allicin)과 플라보노이드(Quercetin 등) 성분이 풍부합니다.
         </p>
       </div>
-      <div>
+      <div class="ingredient-pair-card">
         <div class="section-label">귀리 (燕麥)</div>
-        <h2 style="font-size: 28px; margin-bottom: 16px;">Avena sativa L. Oat</h2>
+        <h2 class="ingredient-card-title">Avena sativa L. Oat</h2>
         <p>
           타임지 선정 10대 슈퍼푸드로, 복합 탄수화물·고단백·필수 미네랄이 풍부합니다.
           베타글루칸(β-glucan)을 함유한 영양가 높은 곡물입니다.
@@ -637,9 +640,35 @@ p { margin-bottom: 16px; }
         </p>
       </div>
       <div class="content-image">
-        <img src="images/stats-1.jpg" alt="면역력 시너지">
+        <img src="images/synergy-science.png" alt="두 원료의 시너지를 표현한 추상 이미지" loading="lazy"><span class="image-caption">이해를 돕기 위한 이미지입니다.</span>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="section section-beige">
+  <div class="container">
+    <div class="section-label">Ingredient Platform</div>
+    <h2 class="section-title">루톤의 원료 연구 영역</h2>
+    <p class="section-desc">WCO31 총백귀리혼합물을 중심으로, 성장 생애주기와 관련된 다양한 원료 영역으로 플랫폼 확장을 계획합니다.</p>
+    <div class="platform-map" aria-label="원료 연구 영역: 현재 WCO31 키성장 연구와 향후 뼈건강, 면역, 체지방·대사 영역 확장 계획">
+      <div class="platform-map-current">
+        <span class="platform-map-status">현재 연구 원료</span>
+        <div class="platform-map-core">
+          <div class="platform-map-symbol" aria-hidden="true">01</div>
+          <div><span class="platform-map-en">GROWTH</span><h3>키성장</h3><p>WCO31 총백귀리혼합물</p><a href="verification.html">연구 근거 보기 <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </div>
+      <div class="platform-map-future">
+        <span class="platform-map-status">향후 확장 계획 · 원료별 검토</span>
+        <div class="platform-map-branches">
+          <article><span class="platform-map-glyph" aria-hidden="true">Ca</span><div><span class="platform-map-en">BONE</span><h3>뼈건강</h3><p>골·미네랄 원료</p></div></article>
+          <article><span class="platform-map-glyph" aria-hidden="true">+</span><div><span class="platform-map-en">IMMUNE</span><h3>면역</h3><p>면역 기능성 원료</p></div></article>
+          <article><span class="platform-map-glyph" aria-hidden="true">%</span><div><span class="platform-map-en">METABOLIC</span><h3>체지방·대사</h3><p>체지방·대사 관련 원료</p></div></article>
+        </div>
+      </div>
+    </div>
+    <p class="product-note">인지·수면 등으로 연구 영역을 넓히는 방향도 계획하고 있습니다. 각 원료의 근거와 기능성은 개별적으로 안내하며, 위 영역이 모든 제품에 적용된다는 의미는 아닙니다.</p>
   </div>
 </section>
 
@@ -654,7 +683,7 @@ p { margin-bottom: 16px; }
 
     <div class="content-grid">
       <div class="content-image">
-        <img src="images/science-image.jpg" alt="영양 흡수">
+        <img src="images/ingredient-b1.png" alt="총백과 귀리, 추출 원료를 표현한 이미지" loading="lazy"><span class="image-caption">이해를 돕기 위한 이미지입니다.</span>
       </div>
       <div class="content-text">
         <h2>알리티아민(Allithiamine)의 힘</h2>
@@ -700,14 +729,14 @@ p { margin-bottom: 16px; }
         </p>
       </div>
       <div class="content-image">
-        <img src="images/stats-2.jpg" alt="항산화 시너지">
+        <img src="images/ingredient-antioxidant.png" alt="귀리와 총백의 식물성 원료" loading="lazy"><span class="image-caption">이해를 돕기 위한 이미지입니다.</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- 전통 식재료의 조화 -->
-<section class="section section-navy">
+<section class="section section-navy ingredient-harmony">
   <div class="container">
     <div class="section-label">Digestion</div>
     <h2 class="section-title">전통 식재료의 조화</h2>

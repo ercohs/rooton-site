@@ -465,6 +465,28 @@ p { margin-bottom: 16px; }
 .faq-answer { margin-bottom: 0; }
 </style>
   <link rel="stylesheet" href="css/refresh.css?v=3b446e7fa182">
+<style>
+/* Ingredient page only: revised research overview */
+.research-section .research-grid{display:grid;grid-template-columns:minmax(250px,1fr) minmax(0,1.93fr);gap:16px;margin-top:30px;align-items:stretch}
+.research-complete{display:flex;flex-direction:column;min-height:320px;padding:30px 28px;background:#203b2c;color:#fff;border-radius:20px}
+.research-pill{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;white-space:nowrap;border-radius:99px;font-size:14px;font-weight:700;line-height:1.35;padding:8px 16px}
+.research-pill-light{background:#e6eddf;color:#20372b}
+.research-pill-green{background:#6b8e5f;color:#fff}
+.research-complete-main{margin:auto 0;padding:28px 0}
+.research-complete-main h3{color:#fff;font-size:clamp(28px,3vw,39px);font-weight:750;letter-spacing:-.055em;line-height:1.24}
+.research-complete-main p{margin:6px 0 0;color:#fff;font-size:clamp(25px,2.7vw,36px);font-weight:400;line-height:1.3}
+.research-complete a{color:#fff;align-self:flex-start;font-size:17px;font-weight:700;text-decoration:underline;text-underline-offset:6px}
+.research-progress{padding:24px 22px 20px;background:#fffefa;border:1px solid #d8dfd1;border-radius:20px}
+.research-progress>h3{color:#20372b;font-size:clamp(21px,2.2vw,29px);letter-spacing:-.04em;line-height:1.3}
+.research-subtitle{margin:4px 0 16px;color:#727a70;font-size:16px}
+.research-progress-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.research-progress-card{display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:15px;min-height:205px;padding:15px 8px 16px;text-align:center;background:#f1f4ec;border-radius:15px}
+.research-progress-card svg{width:75px;height:75px;color:#557a52;max-width:100%}
+.research-progress-card h4{color:#20372b;font-size:clamp(13px,1.4vw,17px);line-height:1.45;font-weight:650;word-break:keep-all}
+.research-disclaimer{margin:20px 6px 0;color:#727a70;font-size:13px;line-height:1.8}
+@media(max-width:950px){.research-section .research-grid{grid-template-columns:1fr}.research-complete{min-height:270px}.research-progress-card{min-height:180px}}
+@media(max-width:580px){.research-complete{padding:26px 22px}.research-progress{padding:22px 16px}.research-progress-cards{grid-template-columns:1fr}.research-progress-card{min-height:112px;flex-direction:row;text-align:left;justify-content:flex-start;padding:16px;gap:16px}.research-progress-card svg{width:50px;height:50px;order:-1;flex:none}.research-progress-card h4{flex:1}.research-progress-card .research-pill{font-size:11px;padding:6px 9px;order:2}.research-disclaimer{font-size:12px}.research-complete-main h3{font-size:30px}}
+</style>
 </head>
 <body>
 
@@ -587,14 +609,9 @@ p { margin-bottom: 16px; }
       </thead>
       <tbody>
         <tr>
-          <td><strong>핵심 영양소</strong></td>
+          <td><strong>주요 성분</strong></td>
           <td>알리신, 비타민 C, 칼륨, 황화아릴</td>
           <td>베타글루칸, 식물성 단백질, 비타민 B군, 마그네슘</td>
-        </tr>
-        <tr>
-          <td><strong>주요 효능</strong></td>
-          <td>알리신, 비타민 C, 칼륨 함유</td>
-          <td>베타글루칸, 식물성 단백질, 비타민 B군 함유</td>
         </tr>
         <tr>
           <td><strong>한의학적 성질</strong></td>
@@ -646,29 +663,43 @@ p { margin-bottom: 16px; }
   </div>
 </section>
 
-<section class="section section-beige">
+<section class="section section-beige research-section">
   <div class="container">
     <div class="section-label">Ingredient Platform</div>
     <h2 class="section-title">루톤의 원료 연구 영역</h2>
-    <p class="section-desc">WCO31 총백귀리혼합물을 중심으로, 성장 생애주기와 관련된 다양한 원료 영역으로 플랫폼 확장을 계획합니다.</p>
-    <div class="platform-map" aria-label="원료 연구 영역: 현재 WCO31 키성장 연구와 향후 뼈건강, 면역, 체지방·대사 영역 확장 계획">
-      <div class="platform-map-current">
-        <span class="platform-map-status">현재 연구 원료</span>
-        <div class="platform-map-core">
-          <div class="platform-map-symbol" aria-hidden="true">01</div>
-          <div><span class="platform-map-en">GROWTH</span><h3>키성장</h3><p>WCO31 총백귀리혼합물</p><a href="verification.html">연구 근거 보기 <span aria-hidden="true">↗</span></a></div>
+    <p class="section-desc">총백귀리혼합물 WCO31의 연구자료를 소개하고, 신규 원료의 연구 가능성을 검토합니다.</p>
+    <div class="research-grid" aria-label="원료 연구 영역과 신규 원료 연구 현황">
+      <article class="research-complete">
+        <span class="research-pill research-pill-light">현재 소개 완료</span>
+        <div class="research-complete-main">
+          <h3>총백귀리혼합물</h3>
+          <p>WCO31</p>
         </div>
-      </div>
-      <div class="platform-map-future">
-        <span class="platform-map-status">향후 확장 계획 · 원료별 검토</span>
-        <div class="platform-map-branches">
-          <article><span class="platform-map-glyph" aria-hidden="true">Ca</span><div><span class="platform-map-en">BONE</span><h3>뼈건강</h3><p>골·미네랄 원료</p></div></article>
-          <article><span class="platform-map-glyph" aria-hidden="true">+</span><div><span class="platform-map-en">IMMUNE</span><h3>면역</h3><p>면역 기능성 원료</p></div></article>
-          <article><span class="platform-map-glyph" aria-hidden="true">%</span><div><span class="platform-map-en">METABOLIC</span><h3>체지방·대사</h3><p>체지방·대사 관련 원료</p></div></article>
+        <a href="verification.html">원료 및 연구자료 보기 <span aria-hidden="true">↗</span></a>
+      </article>
+      <div class="research-progress">
+        <h3>신규 원료 연구 진행 현황</h3>
+        <p class="research-subtitle">분야별 연구 단계를 확인하세요</p>
+        <div class="research-progress-cards">
+          <article class="research-progress-card">
+            <span class="research-pill research-pill-green">연구 진행 중</span>
+            <svg viewBox="0 0 80 80" fill="none" aria-hidden="true"><rect x="22" y="18" width="34" height="47" rx="3" stroke="currentColor" stroke-width="3"/><path d="M29 13h32v45M30 30h19M30 39h19M30 48h13" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+            <h4>뼈건강 관련 연구</h4>
+          </article>
+          <article class="research-progress-card">
+            <span class="research-pill research-pill-green">연구 진행 중</span>
+            <svg viewBox="0 0 80 80" fill="none" aria-hidden="true"><circle cx="34" cy="34" r="22" stroke="currentColor" stroke-width="3.5"/><path d="m50 50 21 21" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg>
+            <h4>면역 관련 연구</h4>
+          </article>
+          <article class="research-progress-card">
+            <span class="research-pill research-pill-green">연구 진행 중</span>
+            <svg viewBox="0 0 80 80" fill="none" aria-hidden="true"><path d="M32 12h16M36 12v22L19 62a6 6 0 0 0 5 9h32a6 6 0 0 0 5-9L44 34V12" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/><path d="M28 55c7 4 17-4 25 2" stroke="currentColor" stroke-width="3"/><circle cx="35" cy="61" r="2.5" fill="currentColor"/><circle cx="45" cy="52" r="3" fill="currentColor"/></svg>
+            <h4>체지방·대사 관련 연구</h4>
+          </article>
         </div>
       </div>
     </div>
-    <p class="product-note">인지·수면 등으로 연구 영역을 넓히는 방향도 계획하고 있습니다. 각 원료의 근거와 기능성은 개별적으로 안내하며, 위 영역이 모든 제품에 적용된다는 의미는 아닙니다.</p>
+    <p class="research-disclaimer">※ 각 항목은 연구 분야를 안내하며, 해당 기능성의 입증 또는 인정을 의미하지 않습니다.<br>실제 연구 착수 전인 항목은 ‘연구 검토 중’으로 표기합니다.</p>
   </div>
 </section>
 

@@ -163,3 +163,9 @@ input, select, textarea { border-radius: 12px !important; }
 .clinical-section .clinical-header p .section-link {
   border-bottom-color: #55BE83;
 }
+
+/* 이미지 캡션: 위 이미지와 간격 축소 + 오른쪽 여백 확보 */
+.image-caption {
+  margin-top: 4px;
+  margin-right: 12px;
+}

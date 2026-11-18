@@ -150,3 +150,16 @@ input, select, textarea { border-radius: 12px !important; }
 .patent-registration-mark strong { display:block; font-size:16px; line-height:1.3; letter-spacing:.02em; }
 .patent-registration-mark small { display:block; margin-top:5px; color:#d6e4d4; font-size:12px; line-height:1.4; }
 @media (max-width:600px) { .patent-registration-mark { width:100%; padding:13px 15px; } .patent-registration-mark svg { width:40px; height:40px; } }
+
+/* ============================================================
+   임상 섹션 포인트 컬러 — 버튼 컬러(#55BE83) 적용
+   (임상 데이터 자세히 보기 / p값 / 연구 설계 / 주요 결과)
+   ============================================================ */
+.clinical-section .clinical-header p .section-link,
+.clinical-section .clinical-stat .number,
+.clinical-section .clinical-detail-card h4 {
+  color: #55BE83;
+}
+.clinical-section .clinical-header p .section-link {
+  border-bottom-color: #55BE83;
+}

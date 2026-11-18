@@ -169,3 +169,11 @@ input, select, textarea { border-radius: 12px !important; }
   margin-top: 4px;
   margin-right: 12px;
 }
+
+/* 안전성 카드: 썸네일 바로 아래로 캡션을 붙이고, 제목과의 간격 확보 */
+.safety-methods .safety-card-image {
+  margin-bottom: 0;
+}
+.safety-methods .info-card h3 {
+  margin-top: 14px;
+}
